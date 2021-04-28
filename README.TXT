@@ -6,9 +6,9 @@ alles, was er/sie wissen muss. Üblicherweise sollte der Kommentar
 zumindest die folgenden Angaben umfassen:
 ------------------------------------------------------------------------
 
-PROJEKTBEZEICHNUNG:
-PROJEKTZWECK:
-VERSION oder DATUM:
+PROJEKTBEZEICHNUNG: RubyRun
+PROJEKTZWECK:Informatik Gruppenprojekt
+VERSION oder DATUM: 20210428
 WIE IST DAS PROJEKT ZU STARTEN:
 AUTOR(EN):
 BENUTZERHINWEISE:
