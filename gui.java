@@ -6,6 +6,7 @@ import javax.swing.Timer;
 public class gui extends JPanel implements ActionListener
 {
     Image hintergrund;
+    Image spielfigur;
     
     Timer time;
     int key;
@@ -21,6 +22,9 @@ public class gui extends JPanel implements ActionListener
     //Position des Hintergrundes, wird mit motionx und motiony verrechnet
     int backgroundy;
     int backgroundx;
+    
+    //int spielfigurx;
+    //int spielfigury;
     public gui()
     {
         key = 0;
@@ -28,8 +32,13 @@ public class gui extends JPanel implements ActionListener
         motiony = 0;
         
         setFocusable(true);
+        
         ImageIcon u = new ImageIcon("guibackground.jpg");
         hintergrund = u.getImage();
+        
+        ImageIcon s = new ImageIcon("guiSpielfigur1.png");
+        spielfigur = s.getImage();
+        
         addKeyListener(new Keystroke());
         
         time = new Timer(5,this);
@@ -63,6 +72,7 @@ public class gui extends JPanel implements ActionListener
         }
         */
         f2.drawImage(hintergrund,backgroundx,backgroundy,null);
+        f2.drawImage(spielfigur,10,10,null);
     }
     public void movement()
     {
