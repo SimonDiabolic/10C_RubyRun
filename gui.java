@@ -53,9 +53,7 @@ public class gui extends JPanel implements ActionListener
         
         time = new Timer(5,this);
         time.start();
-        
-        
-        
+
     }
     public void actionPerformed(ActionEvent x)
     {
