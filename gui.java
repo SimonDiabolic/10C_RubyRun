@@ -36,6 +36,7 @@ public class gui extends JPanel implements ActionListener
     //int spielfigury;
     public gui()
     {
+                
         key = 0;
         motionx = 0;
         motiony = 0;
@@ -52,43 +53,7 @@ public class gui extends JPanel implements ActionListener
         
         time = new Timer(5,this);
         time.start();
-        //____________________________________________________________
-        //fenster = new JFrame ("Zeichenfläche");
-        //fenster. setResizable (false);
-        //fenster. setVisible (true);
-        //fenster. setLayout (null);
-        //fenster. getContentPane (). setBackground (new Color (240, 240, 240));
-        //Insets i = fenster.getInsets();
-        //fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
-        JComponent hintergrund = new JComponent ()
-        {
-             /**
-             * Zeichnet das Hintergrundmuster.
-             */
-            public void paintComponent (Graphics g)
-            {
-                g. setColor (Color. lightGray);
-                for (int i = 1; i <= hoeheFenster / (rasterGroesse * 2); i++)
-                {
-                    g. drawLine (0, hoeheFenster / 2 + i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 + i * rasterGroesse);
-                    g. drawLine (0, hoeheFenster / 2 - i * rasterGroesse, breiteFenster - 1, hoeheFenster / 2 - i * rasterGroesse);
-                }
-                for (int i = 1; i <= breiteFenster / (rasterGroesse * 2); i++)
-                {
-                    g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
-                    g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
-                }
-                g. setColor (Color. black);
-                g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
-                g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
-            }
-        };
-        hintergrund. setVisible (true);
-        hintergrund. setSize (breiteFenster, hoeheFenster);
-        hintergrund. setLocation (0, 0);
-        //fenster. add (hintergrund);
         
-        //Test^____________________________________
     }
     public void actionPerformed(ActionEvent x)
     {
