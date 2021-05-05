@@ -6,12 +6,12 @@
 class test
 {
     int x, y;
-    Aufsammelbares hihi;
+    Keys hihi;
     test (int px, int py)
     {
         x = px;
         y = py;
-        hihi = new Aufsammelbares (5, 5);
+        hihi = new Keys (5, 5);
     }
     boolean lol ()
     {
