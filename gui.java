@@ -10,7 +10,7 @@ public class gui extends JPanel implements ActionListener
     private static final int hoeheFenster = rasterGroesse * 20;
     private static final int breiteFenster = rasterGroesse * 26;
     private static gui g = null;
-    //private JFrame fenster = null;
+    private JFrame fenster = null;
     
     //_____Test^ 
     
@@ -53,13 +53,14 @@ public class gui extends JPanel implements ActionListener
         time = new Timer(5,this);
         time.start();
         //____________________________________________________________
-        //fenster = new JFrame ("Zeichenfläche");
-        //fenster. setResizable (false);
-        //fenster. setVisible (true);
-        //fenster. setLayout (null);
-        //fenster. getContentPane (). setBackground (new Color (240, 240, 240));
-        //Insets i = fenster.getInsets();
-        //fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
+        fenster = new JFrame ("Zeichenfläche");
+        fenster. setResizable (false);
+        fenster. setVisible (true);
+        fenster. setLayout (null);
+        fenster. getContentPane (). setBackground (new Color (240, 240, 240));
+        Insets i = fenster.getInsets();
+        fenster. setSize (breiteFenster, hoeheFenster + i.top);         // Ausgleich für Fenstertitel
+        
         JComponent hintergrund = new JComponent ()
         {
              /**
@@ -78,7 +79,7 @@ public class gui extends JPanel implements ActionListener
                     g. drawLine (breiteFenster / 2 + i * rasterGroesse, 0, breiteFenster / 2 + i * rasterGroesse, hoeheFenster - 1);
                     g. drawLine (breiteFenster / 2 - i * rasterGroesse, 0, breiteFenster / 2 - i * rasterGroesse, hoeheFenster - 1);
                 }
-                g. setColor (Color. black);
+                g. setColor (Color. lightGray);
                 g. drawLine (0, hoeheFenster / 2, breiteFenster - 1, hoeheFenster / 2);
                 g. drawLine (breiteFenster / 2, 0, breiteFenster / 2, hoeheFenster - 1);
             }
@@ -86,7 +87,7 @@ public class gui extends JPanel implements ActionListener
         hintergrund. setVisible (true);
         hintergrund. setSize (breiteFenster, hoeheFenster);
         hintergrund. setLocation (0, 0);
-        //fenster. add (hintergrund);
+        fenster. add (hintergrund);
         
         //Test^____________________________________
     }
