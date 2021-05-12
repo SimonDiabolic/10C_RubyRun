@@ -1,3 +1,5 @@
+package game;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -36,11 +38,6 @@ public class gui extends JPanel implements ActionListener
     //int spielfigury;
     public gui()
     {
-                
-        key = 0;
-        motionx = 0;
-        motiony = 0;
-        
         setFocusable(true);
         
         ImageIcon u = new ImageIcon("guibackground.jpg");
