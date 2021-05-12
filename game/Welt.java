@@ -5,41 +5,40 @@ import java.awt.image.BufferedImage;
 //---------------------//
 public class Welt
 {
-  //private Kachel[] [] kacheln;
-  //static int breite = 50;
-  //static int hoehe = 50;
   private int weltx;
-  private int welty;
-  private BufferedImage background;
+  private int welty;  
   private Spieler spieler;
+  private Kachel[] [] kacheln;
+  static int breite = 20;
+  static int hoehe = 20;
   
   public Welt()
   {
-      spieler = new Spieler(Main.width/2, Main.height/2);
-      background = Imageloader.loadImage("guibackground");
-      /*kacheln = new Kachel[breite] [hoehe];
-      for(int x = 0; x <breite;x++)
+      spieler = new Spieler(40,0);
+      kacheln = new Kachel[breite] [hoehe];
+      for(int x = 0; x < breite;x++)
       {
-         for(int y = 0; y <breite;y++)
+         for(int y = 0; y < breite;y++)
          {
              kacheln[x] [y] = new Kachel(x,y,0);
          }
-      }*/
+      }
   }
   public void update()
   {
-     spieler.update(false); 
+     
+      
+      spieler.update(true); 
   }
   public void draw(Graphics g)
   {
-      g.drawImage(background,0,0,null);
-      spieler.draw(g);
-      /*for(int x = 0; x <breite;x++)
+      for(int x = 0; x < breite;x++)
       {
-         for(int y = 0; y <breite;y++)
+         for(int y = 0; y < breite;y++)
          {
              kacheln[x] [y].draw(g);
          }
-      }*/
+      }
+      spieler.draw(g);
   }
 }

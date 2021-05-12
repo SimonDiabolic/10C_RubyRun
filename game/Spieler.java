@@ -13,8 +13,8 @@ public class Spieler
  private int y;
  private int xADD;
  private int yADD;
- private int width = 30;
- private int height = 30;
+ private int width = 40;
+ private int height = 40;
  private BufferedImage look;
  public Spieler(int x, int y)
  {
@@ -37,10 +37,5 @@ public class Spieler
          if(Keyboard.isKeyPressed(KeyEvent.VK_D)) x =x+40;
          if(Keyboard.isKeyPressed(KeyEvent.VK_A)) x =x-40;
      }
-     if(playermove)
-     if(x < 0) x = 0;
-     if(x + width > Main.width) x = Main.width - width;
-     if(y < 0) y = 0;
-     if(y + height > Main.height) x = Main.height - height;
  }
 }

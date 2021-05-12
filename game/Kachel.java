@@ -1,6 +1,6 @@
 package game;
 //---------------------//
-import java.awt.image.*;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 //---------------------//
 public class Kachel
@@ -20,7 +20,7 @@ public class Kachel
     }
     public void draw(Graphics g)
     {
-        g.drawImage(look, x*Textur.kachelgroesse, x*Textur.kachelgroesse, null);
+        g.drawImage(look, x*Textur.kachelgroesse, y*Textur.kachelgroesse, null);
     }
     public int getLookID()
     {

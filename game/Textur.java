@@ -9,4 +9,8 @@ public class Textur
     static BufferedImage wandFuellelement = Imageloader.loadImage("wandFuellelement");
     
     static int kachelgroesse = ranke.getHeight();
+    public static         void main(String[] args)
+    {
+        System.out.println(kachelgroesse);
+    }
 }
