@@ -13,8 +13,8 @@ public class Spieler
  private int y;
  private int xADD;
  private int yADD;
- private int width = 40;
- private int height = 40;
+ private int width = Textur.kachelgroesse;
+ private int height = Textur.kachelgroesse;
  private BufferedImage look;
  public Spieler(int x, int y)
  {
@@ -32,10 +32,10 @@ public class Spieler
  {
      if(playermove)
      {
-         if(Keyboard.isKeyPressed(KeyEvent.VK_W)) y =y-40;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_S)) y =y+40;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_D)) x =x+40;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_A)) x =x-40;
+         if(Keyboard.isKeyPressed(KeyEvent.VK_W)) y =y-Textur.kachelgroesse;
+         if(Keyboard.isKeyPressed(KeyEvent.VK_S)) y =y+Textur.kachelgroesse;
+         if(Keyboard.isKeyPressed(KeyEvent.VK_D)) x =x+Textur.kachelgroesse;
+         if(Keyboard.isKeyPressed(KeyEvent.VK_A)) x =x-Textur.kachelgroesse;
      }
  }
 }
