@@ -1,19 +1,22 @@
 package game;
+//---------------------//
 import javax.swing.JFrame;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+//---------------------//
 public class Frame extends JFrame
 {
   private BufferStrategy strat;
-  private Spieler spieler;
+  private Welt welt;
   public Frame()
   {
       super("RubyRun");
-      
       addKeyListener(new Keyboard());
-      
-      spieler = new Spieler(300,300);
+      welt = new Welt();
   }
   public void makestrat()
   {
@@ -29,12 +32,10 @@ public class Frame extends JFrame
   }
   public void draw(Graphics g)
   {
-      g.setColor(Color.BLACK);
-      g.fillRect(0,0,Main.width,Main.height);
-      spieler.draw(g);
+      welt.draw(g);
   }
   public void update()
   {
-      spieler.update();
+      welt.update();
   }
 }
