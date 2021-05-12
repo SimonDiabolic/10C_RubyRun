@@ -19,6 +19,7 @@ public class Kachel
         if(lookid == 1) look = Textur.wandFuellelement;
         if(lookid == 2) look = Textur.rubin;
         if(lookid == 3) look = Textur.spawn;
+        if(lookid == 4) look = Textur.stein;
     }
     public void draw(Graphics g)
     {
