@@ -10,9 +10,10 @@ public class Kachel
     private int lookid;
     private BufferedImage look;
     
+    
     public Kachel(int x, int y, int lookid)
     {
-        this.x = x;
+        this.x = x; 
         this.y = y;
         this.lookid = lookid;
         if(lookid == 0) look = Textur.ranke;
@@ -20,6 +21,9 @@ public class Kachel
         if(lookid == 2) look = Textur.rubin;
         if(lookid == 3) look = Textur.spawn;
     }
+    
+    
+    
     public void draw(Graphics g)
     {
         g.drawImage(look, x*Textur.kachelgroesse, y*Textur.kachelgroesse, null);
