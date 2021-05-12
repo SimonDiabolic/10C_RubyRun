@@ -17,6 +17,8 @@ public class Kachel
         this.lookid = lookid;
         if(lookid == 0) look = Textur.ranke;
         if(lookid == 1) look = Textur.wandFuellelement;
+        if(lookid == 2) look = Textur.rubin;
+        if(lookid == 3) look = Textur.spawn;
     }
     public void draw(Graphics g)
     {
