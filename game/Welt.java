@@ -34,6 +34,7 @@ public class Welt
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3);
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,4);
          }
       }
   }
@@ -47,7 +48,7 @@ public class Welt
          {
              int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
              int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
-
+             if(kacheln[spielerposx] [spielerposy].getLookID() == 1)
              {
                  //System.out.println("Außerhalb des Spielfeldes");
                  spieler.resetPosition();  
