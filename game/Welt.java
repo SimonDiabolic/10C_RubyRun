@@ -13,10 +13,11 @@ public class Welt
   static int level = 0;
   static int breite;
   static int hoehe;
-  
+  private int spawnx;
+  private int spawny;
   public Welt()
   {
-      spieler = new Spieler(40,40);
+      spieler = new Spieler(spawnx,spawny);
       loadNextLevel();
   }
   public void loadNextLevel()
@@ -33,11 +34,13 @@ public class Welt
              if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
-             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3);
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x = spawnx,y = spawny,3);
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,4);
          }
       }
   }
+  
+  
   public void update()
   {
 
