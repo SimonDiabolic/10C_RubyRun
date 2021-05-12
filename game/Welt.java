@@ -16,7 +16,7 @@ public class Welt
   
   public Welt()
   {
-      spieler = new Spieler(40,0);
+      spieler = new Spieler(40,40);
       loadNextLevel();
   }
   public void loadNextLevel()
@@ -39,9 +39,22 @@ public class Welt
   }
   public void update()
   {
-     
-      
+
       spieler.update(true); 
+      for(int x = 0; x < 1;x++)
+      {
+         for(int y = 0; y < 1;y++)
+         {
+             int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
+             int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
+
+             {
+                 //System.out.println("Außerhalb des Spielfeldes");
+                 spieler.resetPosition();  
+             }
+         }
+      }
+      
   }
   public void draw(Graphics g)
   {

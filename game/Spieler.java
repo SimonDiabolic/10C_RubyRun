@@ -11,8 +11,10 @@ public class Spieler
 {
  private int x;
  private int y;
- private int xADD;
- private int yADD;
+ private int oldx;
+ private int oldy;
+ private int newx;
+ private int newy;
  private int width = Textur.kachelgroesse;
  private int height = Textur.kachelgroesse;
  private BufferedImage look;
@@ -32,11 +34,38 @@ public class Spieler
  {
      if(playermove)
      {
-         if(Keyboard.isKeyPressed(KeyEvent.VK_W)) y =y-Textur.kachelgroesse;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_S)) y =y+Textur.kachelgroesse;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_D)) x =x+Textur.kachelgroesse;
-         if(Keyboard.isKeyPressed(KeyEvent.VK_A)) x =x-Textur.kachelgroesse;
+         if(Keyboard.isKeyPressed(KeyEvent.VK_W)) 
+         {newy = 1;}
+         if(Keyboard.isKeyPressed(KeyEvent.VK_S))
+         {newy = -1;}
+         if(Keyboard.isKeyPressed(KeyEvent.VK_D))
+         {newx = 1;}
+         if(Keyboard.isKeyPressed(KeyEvent.VK_A))
+         {newx = -1;}
+          oldy = y;
+          oldx = x;
+         if(newy == -1)
+         {y = y+Textur.kachelgroesse; newy = 0;}
+         if(newy == 1)
+         {y = y-Textur.kachelgroesse; newy = 0;}
+         if(newx == 1)
+         {x = x+Textur.kachelgroesse; newx = 0;}
+         if(newx == -1)
+         {x = x-Textur.kachelgroesse; newx = 0;}
      }
+ }
+ public int getXPos()
+ {
+     return x;
+ }
+ public int getYPos()
+ {
+     return y;
+ }
+ public void resetPosition()
+ {
+     x=oldx;
+     y=oldy;
  }
 }
 
