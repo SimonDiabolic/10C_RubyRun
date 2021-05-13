@@ -36,8 +36,8 @@ public class Welt
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
              {
-                 spawnx = x*40;
-                 spawny = y*40;
+                 spawnx = x*Textur.kachelgroesse;
+                 spawny = y*Textur.kachelgroesse;
                  kacheln[x] [y] = new Kachel(x,y,3);
              }
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,4);
@@ -57,13 +57,15 @@ public class Welt
   }
   public void draw(Graphics g)
   {
+       
       for(int x = 0; x < breite;x++)
       {
          for(int y = 0; y < hoehe;y++)
          {
              kacheln[x] [y].draw(g);
-         }
+         }      
       }
+    
       spieler.draw(g);
   }
 }
