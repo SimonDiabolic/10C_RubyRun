@@ -54,7 +54,7 @@ public class Welt
       hoehe = map.getHeight();
       kacheln = new Kachel[breite] [hoehe];
 
-      for(int x = 0; x < breite;x++)
+       for(int x = 0; x < breite;x++)
           {
              for(int y = 0; y < hoehe;y++)
              {
@@ -94,7 +94,7 @@ public class Welt
                      spawnx = x*Textur.kachelgroesse;
                      spawny = y*Textur.kachelgroesse;
                  }
-
+    
                  
           }
        }  
@@ -109,49 +109,48 @@ public class Welt
         // }
          // }
   }
-      public void update()
-      {
-         spieler.update(true); 
-         int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
-         int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
-         if(kacheln[spielerposx] [spielerposy].getLookID() == 1)
-                 {
-                     spieler.resetPosition();  
-                 }
-         int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
-         int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
-         if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
-         {   
-             // rubin1.RubinFall(true);
-         }
-         if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
-         {    
-             // rubin1.RubinFall(true);
-         }
-         if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
-         {
-             // rubin1.RubinFall(true);
-         }
-      }
-      public void draw(Graphics g)
-      {
-           
-          for(int x = 0; x < breite;x++)
-          {
-             for(int y = 0; y < hoehe;y++)
+  public void update()
+  {
+     spieler.update(true); 
+     int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
+     int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
+     if(kacheln[spielerposx] [spielerposy].getLookID() == 1)
              {
-                 kacheln[x] [y].draw(g);
-             }      
-          }
-          for(int rubinX = 0; rubinX < i;rubinX++)
-          {
-            for(int rubinY = 0; rubinY < j;rubinY++)
-            {
-                rubineErstellen[rubinX] [rubinY].draw(g);
-            }
-          }
-        
-          spieler.draw(g);
+                 spieler.resetPosition();  
+             }
+     int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
+     int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     {   
+         // rubin1.RubinFall(true);
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
+     {    
+         // rubin1.RubinFall(true);
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
+     {
+         // rubin1.RubinFall(true);
+     }
+  }
+  public void draw(Graphics g)
+  {
+       
+      for(int x = 0; x < breite;x++)
+      {
+         for(int y = 0; y < hoehe;y++)
+         {
+             kacheln[x] [y].draw(g);
+         }      
       }
-  
+      for(int rubinX = 0; rubinX < i;rubinX++)
+      {
+        for(int rubinY = 0; rubinY < j;rubinY++)
+        {
+            rubineErstellen[rubinX] [rubinY].draw(g);
+        }
+      }
+    
+      spieler.draw(g);
+  }
 }
