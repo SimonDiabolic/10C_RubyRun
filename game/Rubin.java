@@ -7,12 +7,18 @@ public class Rubin
     private BufferedImage rubin;
     public static int rubinX;
     public static int rubinY;
+
+    static boolean spieleraufrubin;
+    public static int punkte;
+
     static boolean dropISvalid;
+
     Rubin (int rubinX, int rubinY)
     {
         this.rubinX = rubinX;
         this.rubinY = rubinY;
         rubin = Imageloader.loadImage("rubin");
+        punkte = 0;
     }
     public void draw(Graphics g)
     {
@@ -38,5 +44,20 @@ public class Rubin
     {
      rubinY= rubinY-Textur.kachelgroesse;
     }
+    public static void SpielerAufRubin()
+    {
+        if ((rubinX==Spieler.x) && (rubinY==Spieler.y))
+        {
+            spieleraufrubin = true;
+        }
+    }
+    public static void Aufsammeln()
+    {
+        if (spieleraufrubin = true)
+        {
+            punkte = punkte + 1;
+        }
+    }
+    
 }
 

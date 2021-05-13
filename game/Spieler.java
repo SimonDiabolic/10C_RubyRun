@@ -9,8 +9,8 @@ import java.io.IOException;
 //---------------------//
 public class Spieler
 {
- private int x;
- private int y;
+ public static int x;
+ public static int y;
  private int oldx;
  private int oldy;
  private int newx;
@@ -23,7 +23,7 @@ public class Spieler
      this/*(Spricht globale Variable an)*/.x = x;
      this.y = y;
      
-     look = Imageloader.loadImage("spieler");
+    look = Imageloader.loadImage("spieler");
     
  }
  public void draw(Graphics g)
