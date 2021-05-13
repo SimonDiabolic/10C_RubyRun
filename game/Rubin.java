@@ -7,7 +7,7 @@ public class Rubin
     private BufferedImage rubin;
     public static int rubinX;
     public static int rubinY;
-    static boolean faellt;
+    static boolean dropISvalid;
     Rubin (int rubinX, int rubinY)
     {
         this.rubinX = rubinX;
@@ -30,12 +30,12 @@ public class Rubin
     {
         if (freierFall)
         {
-            
+
             rubinY = rubinY + Textur.kachelgroesse;
         }
     }
     public static void resetPosition()
-   {
+    {
      rubinY= rubinY-Textur.kachelgroesse;
     }
 }
