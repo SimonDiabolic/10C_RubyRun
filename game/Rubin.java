@@ -7,8 +7,12 @@ public class Rubin
     private BufferedImage rubin;
     public static int rubinX;
     public static int rubinY;
+
     static boolean spieleraufrubin;
     public static int punkte;
+
+    static boolean dropISvalid;
+
     Rubin (int rubinX, int rubinY)
     {
         this.rubinX = rubinX;
@@ -32,7 +36,7 @@ public class Rubin
     {
         if (freierFall)
         {
-            
+
             rubinY = rubinY + Textur.kachelgroesse;
         }
     }
