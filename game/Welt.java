@@ -17,8 +17,8 @@ public class Welt
   private int spawny;
   public Welt()
   {
-      spieler = new Spieler(spawnx,spawny);
       loadNextLevel();
+      spieler = new Spieler(spawnx,spawny);
   }
   public void loadNextLevel()
   {
@@ -28,43 +28,38 @@ public class Welt
       kacheln = new Kachel[breite] [hoehe];
       for(int x = 0; x < breite;x++)
       {
-         for(int y = 0; y < breite;y++)
+         for(int y = 0; y < hoehe;y++)
          {
              Color c = new Color(map.getRGB(x,y));
              if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
-             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x = spawnx,y = spawny,3);
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
+             {
+                 spawnx = x*40;
+                 spawny = y*40;
+                 kacheln[x] [y] = new Kachel(x,y,3);
+             }
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,4);
          }
-      }
+      }      
   }
-  
-  
   public void update()
   {
-
-      spieler.update(true); 
-      for(int x = 0; x < 1;x++)
-      {
-         for(int y = 0; y < 1;y++)
-         {
-             int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
-             int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
-             if(kacheln[spielerposx] [spielerposy].getLookID() == 1)
+     spieler.update(true); 
+     int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
+     int spielerposy = (int) (spieler.getYPos())/Textur.kachelgroesse;
+     if(kacheln[spielerposx] [spielerposy].getLookID() == 1)
              {
                  //System.out.println("Außerhalb des Spielfeldes");
                  spieler.resetPosition();  
              }
-         }
-      }
-      
   }
   public void draw(Graphics g)
   {
       for(int x = 0; x < breite;x++)
       {
-         for(int y = 0; y < breite;y++)
+         for(int y = 0; y < hoehe;y++)
          {
              kacheln[x] [y].draw(g);
          }
