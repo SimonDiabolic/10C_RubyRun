@@ -4,22 +4,29 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 //---------------------//
+/**
+ * Die Welt in der ein Level stattfindet 
+ */
 public class Welt
 {
-  private int weltx;
-  private int welty;  
   private Spieler spieler;
+  
   private Kachel[] [] kacheln;
-  static int level = 0;
+  
   static int breite;
   static int hoehe;
+  //Koordinaten  
   private int spawnx;
   private int spawny;
   public Welt()
   {
-      loadNextLevel();
+      loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
   }
+  /*
+   *  MapLoader -- Läd Levelkarte von gfx/LEVELBEZEICHNUNG und konvertiert diese Pixel für Pixel hierbei gilt:
+   *  RGB werte werden als Code benutzt
+   */
   public void loadNextLevel()
   {
       BufferedImage map = Imageloader.loadImage("devLevel");
@@ -31,19 +38,24 @@ public class Welt
          for(int y = 0; y < hoehe;y++)
          {
              Color c = new Color(map.getRGB(x,y));
-             if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0);
-             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
-             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
-             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3);
-             //if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y]get
-             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,4);
+             /**
+              * if(c.getRed()==ROTWERT && c.getGreen()==GRUENWERT && c.getBlue()==BLAUWERT) kacheln[x] [y] = new Kachel(POSITIONx,POSITIONy,lookID);
+              */
+             if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0); //LookID 0 = Ranke
+             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1); //LookID 1 = FüllelementWand
+             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2); //LookID 2 = Rubin
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3); //LookID 3 = Spawnpunkt
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,4); //LookID 4 = Stein
+             
+             /**
+              * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 3) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
+              */
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
              {
                  spawnx = x*40;
                  spawny = y*40;
                  kacheln[x] [y] = new Kachel(x,y,3);
              }
-             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,4);
          }
       }      
   }

@@ -2,7 +2,9 @@ package game;
 //---------------------//
 import java.awt.image.BufferedImage;
 //---------------------//
-
+/**
+ * Läd die Texturen aus dem gfx package und weißt ihnen Attributnamen zu
+ */
 public class Textur
 {
     static BufferedImage ranke = Imageloader.loadImage("rankeHintergrund");
@@ -10,9 +12,13 @@ public class Textur
     static BufferedImage rubin = Imageloader.loadImage("rubin");
     static BufferedImage spawn = Imageloader.loadImage("spawn");
     static BufferedImage stein = Imageloader.loadImage("stein");
-    
-    static int kachelgroesse = ranke.getHeight();
-    public static         void main(String[] args)
+
+    /*
+     * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
+     */  
+    static int kachelgroesse = ranke.getHeight();  
+    // Methode zur Ausgabe der Kachelgröße in der Konsole:
+    public static void main(String[] args)
     {
         System.out.println(kachelgroesse);
     }
