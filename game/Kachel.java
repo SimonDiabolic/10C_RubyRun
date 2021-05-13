@@ -34,4 +34,8 @@ public class Kachel
     {
         return lookid;
     }
+    public boolean gethasRuby()
+    {
+        return hasRuby;
+    }
 }
