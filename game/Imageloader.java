@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 //---------------------//
 /**
- * Methode um bilder aus gfx zu laden:
+ * Methode um Bilder aus dem Ordner gfx zu laden:
  * 
  * BezeichnungzuLadenesElement = Imageloader.loadImage("NamezuLadenesElement");
  */
@@ -20,6 +20,7 @@ public class Imageloader
     catch (IOException e) 
     {
         e.printStackTrace();
+        System.out.println("Grafik" +name +"nicht gefunden");
     }
     return null;
   }
