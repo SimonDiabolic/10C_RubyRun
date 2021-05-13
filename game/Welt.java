@@ -10,18 +10,19 @@ import java.awt.Color;
 public class Welt
 {
   private Spieler spieler;
-  
-  private Kachel[] [] kacheln;
-  
+  public static Kachel[] [] kacheln;
+  static int level = 0;
   static int breite;
   static int hoehe;
   //Koordinaten  
   private int spawnx;
   private int spawny;
+  private static Rubin rubin1;
   public Welt()
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
+      rubin1 = new Rubin (40,40);
   }
   /*
    *  MapLoader -- Läd Levelkarte von gfx/LEVELBEZEICHNUNG und konvertiert diese Pixel für Pixel hierbei gilt:
@@ -50,16 +51,25 @@ public class Welt
              /**
               * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 3) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
               */
+             if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0);
+             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
+             if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)   
+             { 
+                 // rubinx = x*Textur.kachelgroesse;
+                 // rubiny = y*Textur.kachelgroesse;
+                 kacheln[x] [y] = new Kachel(x,y,2);
+                }
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3);
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
              {
-                 spawnx = x*40;
-                 spawny = y*40;
+                 spawnx = x*Textur.kachelgroesse;
+                 spawny = y*Textur.kachelgroesse;
                  kacheln[x] [y] = new Kachel(x,y,3);
              }
          }
       }      
   }
-  public void update()
+    public void update()
   {
      spieler.update(true); 
      int spielerposx = (int) (spieler.getXPos())/Textur.kachelgroesse;
@@ -69,16 +79,44 @@ public class Welt
                  //System.out.println("Außerhalb des Spielfeldes");
                  spieler.resetPosition();  
              }
-  }
+     int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
+     int rubinPositionY= (int) (Rubin.getRubinY())/Textur.kachelgroesse;
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     {
+               
+         rubin1.RubinFall(true);
+         System.out.println(rubinPositionY);
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
+     {    
+          
+         rubin1.RubinFall(true);
+         System.out.println(rubinPositionY);
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
+     {
+                 
+         rubin1.RubinFall(true);
+         System.out.println(rubinPositionY);
+     }
+     else if (Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 1)
+         Rubin.resetPosition();
+        
+        }
+  
   public void draw(Graphics g)
   {
+       
       for(int x = 0; x < breite;x++)
       {
          for(int y = 0; y < hoehe;y++)
          {
              kacheln[x] [y].draw(g);
-         }
+         }      
       }
+    
       spieler.draw(g);
+      rubin1.draw(g);
   }
+  
 }
