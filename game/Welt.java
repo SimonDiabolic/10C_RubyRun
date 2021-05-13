@@ -3,6 +3,8 @@ package game;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
+import java.awt.Shape;
+import java.awt.*;
 //---------------------//
 /**
  * Die Welt in der ein Level stattfindet 
@@ -18,11 +20,13 @@ public class Welt
   private int spawnx;
   private int spawny;
   private static Rubin rubin1;
+ 
   public Welt()
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
       rubin1 = new Rubin (40,40);
+      
   }
   /*
    *  MapLoader -- Läd Levelkarte von gfx/LEVELBEZEICHNUNG und konvertiert diese Pixel für Pixel hierbei gilt:
