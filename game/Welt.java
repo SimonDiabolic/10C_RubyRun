@@ -34,6 +34,9 @@ public class Welt
              if(c.getRed()==0&&c.getGreen() == 255&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,0);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 0)      kacheln[x] [y] = new Kachel(x,y,1);
              if(c.getRed()==255&&c.getGreen() == 0&& c.getBlue() == 255)    kacheln[x] [y] = new Kachel(x,y,2);
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3);
+             //if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)      kacheln[x] [y]get
+             if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,4);
              if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
              {
                  spawnx = x*Textur.kachelgroesse;

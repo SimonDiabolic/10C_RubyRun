@@ -10,5 +10,5 @@ PROJEKTBEZEICHNUNG: RubyRun
 PROJEKTZWECK:Informatik Gruppenprojekt
 VERSION oder DATUM: 20210428
 WIE IST DAS PROJEKT ZU STARTEN:
-AUTOR(EN):
+AUTOR(EN):Simon Görke; Nina Rassmusen; Tim Schreiner; Leonard Wanjetschek
 BENUTZERHINWEISE:
