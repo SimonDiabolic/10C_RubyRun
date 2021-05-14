@@ -12,7 +12,6 @@ public class Textur
     static BufferedImage rubin = Imageloader.loadImage("rubin");
     static BufferedImage spawn = Imageloader.loadImage("spawn");
     static BufferedImage stein = Imageloader.loadImage("stein");
-
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  

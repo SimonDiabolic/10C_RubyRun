@@ -12,7 +12,7 @@ public class Kachel
     private BufferedImage look;
     
     
-    public Kachel(int x, int y, int lookid)
+    public Kachel(int x, int y, int lookid, boolean hasRuby)
     {
         this.x = x; 
         this.y = y;
