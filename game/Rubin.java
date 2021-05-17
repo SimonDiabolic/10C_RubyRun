@@ -5,18 +5,18 @@ import java.awt.Graphics;
 public class Rubin
 {
     private BufferedImage look;
-    public static int rubinX;
-    public static int rubinY;
+    public static int rubinposx;
+    public static int rubinposy;
 
     static boolean spieleraufrubin;
     public static int punkte;
 
     static boolean dropISvalid;
 
-    Rubin (int rubinX, int rubinY)
+    Rubin (int rubinposx, int rubinposy)
     {
-        this.rubinX = rubinX;
-        this.rubinY = rubinY;
+        this.rubinposx = rubinposx;
+        this.rubinposy = rubinposy;
         look = Imageloader.loadImage("rubin");
 
         punkte = 0;
@@ -32,24 +32,20 @@ public class Rubin
         
         // if (freierFall)
         // {
-            // rubinY = rubinY + Textur.kachelgroesse;
+            // rubinposy = rubinposy + Textur.kachelgroesse;
         // }
         return false;
  
     }
     public void draw(Graphics g)
     {
-     g.drawImage(look, (int) rubinX, (int) rubinY, null);
+     g.drawImage(look, rubinposx*Textur.kachelgroesse, rubinposy*Textur.kachelgroesse, null);
     }
-    
-    
-    
-    
-    public static int getRubinX() { return rubinX; }
-    public static int getRubinY() { return rubinY; }
+    public static int getRubinX() { return rubinposx; }
+    public static int getRubinY() { return rubinposy; }
     public static void SpielerAufRubin()
     {
-        if ((rubinX==Spieler.x) && (rubinY==Spieler.y))
+        if ((rubinposx==Spieler.x) && (rubinposy==Spieler.y))
         {
             spieleraufrubin = true;
         }
