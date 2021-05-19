@@ -13,6 +13,7 @@ public class Rubin
 
     static boolean dropISvalid;
 
+    
     Rubin (int rubinposx, int rubinposy)
     {
         this.rubinposx = rubinposx;
