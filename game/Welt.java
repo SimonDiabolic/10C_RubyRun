@@ -30,6 +30,7 @@ public class Welt
       private int anzahlRubine;
       private int rubinposy;
       private int rubinposx;
+      private Rubin Ronnie;
       
       //Rubin
 
@@ -40,6 +41,7 @@ public class Welt
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
       rubine.add(new Rubin(spawnx,spawny));
+      Ronnie = new Rubin(40,40);
       
   }
 
@@ -99,11 +101,12 @@ public class Welt
              {
                  spieler.resetPosition();  
              }
-      for(int i = 0; i < rubine.size();i++)
-          {
-                     rubine.get(i).update();
-           }
-             
+     for(int i = 0; i < rubine.size();i++)
+      {
+                 rubine.get(i).update();
+      }
+           Ronnie.update();
+           Ronnie.RubinCollection();  
      // int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
      // int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
      // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
@@ -132,7 +135,9 @@ public class Welt
       for(int i = 0; i < rubine.size();i++)
       {
              rubine.get(i).draw(g);
+             // System.out.println("abcTEST");
       }
+      Ronnie.draw(g);
       spieler.draw(g);
   }
 }

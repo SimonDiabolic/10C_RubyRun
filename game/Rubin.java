@@ -19,7 +19,8 @@ public class Rubin
         this.rubinposx = rubinposx;
         this.rubinposy = rubinposy;
         look = Imageloader.loadImage("rubin");
-
+        
+        spieleraufrubin = false;
         punkte = 0;
     }
         public boolean update(/*boolean freierFall*/)
@@ -36,28 +37,31 @@ public class Rubin
             // rubinposy = rubinposy + Textur.kachelgroesse;
         // }
         return false;
- 
+     
     }
     public void draw(Graphics g)
     {
-     g.drawImage(look, rubinposx*Textur.kachelgroesse, rubinposy*Textur.kachelgroesse, null);
+     g.drawImage(look, rubinposx, rubinposy, null);
     }
     public static int getRubinX() { return rubinposx; }
     public static int getRubinY() { return rubinposy; }
-    public static void SpielerAufRubin()
+    public static void RubinCollection()
     {
-        if ((rubinposx==Spieler.x) && (rubinposy==Spieler.y))
+        if ((rubinposx==Spieler.getXPos()) && (rubinposy==Spieler.getYPos()))
         {
-            spieleraufrubin = true;
+            Tango();
+            System.out.println("TANGO!");
+        }
+        else
+        {
+            spieleraufrubin = false;
         }
     }
-    public static void Aufsammeln()
-    {
-        if (spieleraufrubin = true)
-        {
+    public static void Tango()
+    {           
             punkte = punkte + 1;
-        }
+            System.out.println(punkte);
+            
     }
-    
 }
 
