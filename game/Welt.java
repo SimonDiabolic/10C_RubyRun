@@ -134,10 +134,17 @@ public class Welt
       }
       for(int i = 0; i < rubine.size();i++)
       {
-             rubine.get(i).draw(g);
+          Rubin R2= rubine.get(i);
+          R2.draw(g);
+             
              // System.out.println("abcTEST");
       }
-      Ronnie.draw(g);
+      for(Rubin name: rubine)
+      // {Zugriff auf alle Feldelemente
+        
+      // }
+      
       spieler.draw(g);
-  }
+    }
+  
 }
