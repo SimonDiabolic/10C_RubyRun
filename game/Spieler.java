@@ -54,11 +54,11 @@ public class Spieler
          {x = x-Textur.kachelgroesse; newx = 0;}
      }
  }
- public int getXPos()
+ public static int getXPos()
  {
      return x;
  }
- public int getYPos()
+ public static int getYPos()
  {
      return y;
  }

@@ -22,6 +22,8 @@ public class Kachel
         if(lookid == 2) look = Textur.ranke; hasRuby = true; //Feld als Rubin erkannt; hat Rankentextur; wird mit Boolean hasRuby(true) versehen
         if(lookid == 3) look = Textur.spawn;
         if(lookid == 4) look = Textur.stein;
+        if(lookid == 5) look = Textur.AusgangZU;
+        if(lookid == 6) look = Textur.AusgangAUF;
     }
     public void draw(Graphics g)
     {
@@ -35,4 +37,9 @@ public class Kachel
     {
         return hasRuby;
     }
+    public void setLookID(int l)
+    {
+        lookid = l;
+    }
+    
 }
