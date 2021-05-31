@@ -51,6 +51,7 @@ public class Rubin
         {
             Tango();
             System.out.println("TANGO!");
+            // Welt.Ronnie = null;
         }
         else
         {
@@ -60,6 +61,7 @@ public class Rubin
     public static void Tango()
     {           
             punkte = punkte + 1;
+            
             System.out.println(punkte);
             
     }
