@@ -30,6 +30,8 @@ public class Welt
       private int anzahlRubine;
       private int rubinposy;
       private int rubinposx;
+      private Rubin theo;
+      private Rubin theo1;
       
       //Rubin
 
@@ -40,7 +42,8 @@ public class Welt
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
       rubine.add(new Rubin(spawnx,spawny));
-      
+        theo = new Rubin(40, 40);    
+        theo1 = new Rubin(80, 40);
   }
 
   /*
