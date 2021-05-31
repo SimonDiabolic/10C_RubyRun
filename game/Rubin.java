@@ -23,7 +23,7 @@ public class Rubin
         spieleraufrubin = false;
         punkte = 0;
     }
-        public boolean update(/*boolean freierFall*/)
+    public boolean update(/*boolean freierFall*/)
     {
      int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
      int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
