@@ -36,6 +36,7 @@ public class Welt
       private Lock Lock;
       private int spawnLOCKy;
       private int spawnLOCKx;
+      private double zuSammelndeRubine;
 
       //Rubin
 
@@ -46,7 +47,7 @@ public class Welt
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
       Lock = new Lock(spawnLOCKx,spawnLOCKy);
-
+        
   }
 
   /*
@@ -80,7 +81,8 @@ public class Welt
                       */
                      if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)
                      {
-                         anzahlRubine = anzahlRubine+1;
+                         anzahlRubine++;
+                         System.out.println(anzahlRubine);
                          rubinposx = x;
                          rubinposy = y;
                          rubine.add(new Rubin(rubinposx,rubinposy));
@@ -100,9 +102,12 @@ public class Welt
                      {
                          spawnLOCKx = x*Textur.kachelgroesse;
                          spawnLOCKy = y*Textur.kachelgroesse;
+                         
                      }
               }
                }
+       
+
   }
   public void update()
   {
@@ -122,7 +127,7 @@ public class Welt
          for(int y = 0; y < hoehe;y++)
          {
 
-             if(kacheln[x] [y].getLookID() == 6 && punkte >= 10)
+             if(kacheln[x] [y].getLookID() == 6 && punkte >= zuSammelndeRubine)
 
              {
                  kacheln[x] [y].setLookID(5);    
@@ -142,6 +147,8 @@ public class Welt
     if (underPlayer != null) {
         rubine.remove(underPlayer);
         punkte++;
+        double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
+        System.out.println("benötigte Rubine" + zuSammelndeRubine);
     }
     
     
