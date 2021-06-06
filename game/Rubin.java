@@ -18,20 +18,23 @@ public class Rubin
         look = Imageloader.loadImage("rubin");
         
     }
-    public boolean update(/*boolean freierFall*/)
+    public boolean update()
     {
-     int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
-     int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse) /*+1*/;
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0) return true;     
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)  return true;    
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)  return true;    
-
-        
-        // if (freierFall)
-        // {
-            // rubinposy = rubinposy + Textur.kachelgroesse;
-        // }
-        return false;
+     // int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
+     // int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
+     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     // {   
+         // rubinposy = rubinposy + Textur.kachelgroesse;
+     // }
+     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
+     // {    
+         // rubinposy = rubinposy + Textur.kachelgroesse;
+     // }
+     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
+     // {
+         // rubinposy = rubinposy + Textur.kachelgroesse;
+     // }
+     return false;
      
     }
     public void draw(Graphics g)
