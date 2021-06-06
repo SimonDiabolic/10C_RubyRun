@@ -31,6 +31,8 @@ public class Welt
       private int rubinposy;
       private int rubinposx;
 
+      private int punkte;
+      
       public static Rubin Ronnie;
 
       
@@ -42,9 +44,6 @@ public class Welt
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new Spieler(spawnx,spawny);
-      rubine.add(new Rubin(spawnx,spawny));
-
-      Ronnie = new Rubin(40,40);
       
 
   }
@@ -60,6 +59,7 @@ public class Welt
       hoehe = map.getHeight();
       kacheln = new Kachel[breite] [hoehe];
       rubine = new LinkedList<Rubin>();
+      punkte = 0;
            for(int x = 0; x < breite;x++)
               {
                  for(int y = 0; y < hoehe;y++)
@@ -83,9 +83,8 @@ public class Welt
                          rubinposx = x;
                          rubinposy = y;
                          rubine.add(new Rubin(rubinposx,rubinposy));
-                         System.out.println("Rubin erzeugt bei:" +rubinposx +" und " + rubinposy + " " +rubine.getLast());       
-                     }
-                     /**
+                    }
+                                         /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 3) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
                       */
                      if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
@@ -113,15 +112,29 @@ public class Welt
       {
          for(int y = 0; y < hoehe;y++)
          {
-             if(kacheln[x] [y].getLookID() == 5 && Rubin.punkte >= 10)
+             if(kacheln[x] [y].getLookID() == 5 && punkte >= 10)
              {
                      kacheln[x] [y].setLookID(6);
                      System.out.println(kacheln[x][y].getLookID() + " ist die neue LookID");
              }
          }      
       }
-           Ronnie.update();
-           Ronnie.RubinCollection();  
+    Rubin underPlayer = null;
+    for (Rubin r : rubine) {
+        r.update();
+        if (r.RubinCollection()) {
+            underPlayer = r;
+        }
+        
+    } 
+    if (underPlayer != null) {
+        rubine.remove(underPlayer);
+        punkte++;
+    }
+    
+    
+    
+     //   Ronnie.RubinCollection();  
      // int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
      // int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
      // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      

@@ -62,7 +62,7 @@ public class Spieler
  {
      return y;
  }
- //fskvd
+ 
  public void resetPosition()
  {
      x=oldx;

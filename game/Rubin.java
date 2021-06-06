@@ -5,28 +5,23 @@ import java.awt.Graphics;
 public class Rubin
 {
     private BufferedImage look;
-    public static int rubinposx;
-    public static int rubinposy;
+    public int rubinposx;
+    public int rubinposy;
 
-    static boolean spieleraufrubin;
-    public static int punkte;
-
-    static boolean dropISvalid;
+    boolean dropISvalid;
 
     
     Rubin (int rubinposx, int rubinposy)
     {
-        this.rubinposx = rubinposx;
-        this.rubinposy = rubinposy;
+        this.rubinposx = rubinposx * Textur.kachelgroesse;
+        this.rubinposy = rubinposy * Textur.kachelgroesse;
         look = Imageloader.loadImage("rubin");
         
-        spieleraufrubin = false;
-        punkte = 0;
     }
-        public boolean update(/*boolean freierFall*/)
+    public boolean update(/*boolean freierFall*/)
     {
-     int rubinPositionX = (int) (Rubin.getRubinX())/Textur.kachelgroesse;
-     int rubinPositionY= (int) ((Rubin.getRubinY())/Textur.kachelgroesse)+1;
+     int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
+     int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse) /*+1*/;
      if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0) return true;     
      if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)  return true;    
      if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)  return true;    
@@ -43,27 +38,18 @@ public class Rubin
     {
      g.drawImage(look, rubinposx, rubinposy, null);
     }
-    public static int getRubinX() { return rubinposx; }
-    public static int getRubinY() { return rubinposy; }
-    public static void RubinCollection()
+    public int getRubinX() { return rubinposx; }
+    public int getRubinY() { return rubinposy; }
+    public boolean RubinCollection()
     {
         if ((rubinposx==Spieler.getXPos()) && (rubinposy==Spieler.getYPos()))
         {
-            Tango();
-            System.out.println("TANGO!");
-            // Welt.Ronnie = null;
+            return true;
         }
         else
         {
-            spieleraufrubin = false;
+            return false;
         }
-    }
-    public static void Tango()
-    {           
-            punkte = punkte + 1;
-            
-            System.out.println(punkte);
-            
     }
 }
 
