@@ -34,6 +34,9 @@ public class Welt
       private int punkte;
       
       public static Rubin Ronnie;
+      private Lock Lock;
+      private int spawnLOCKy;
+      private int spawnLOCKx;
 
       
       //Rubin
@@ -70,10 +73,10 @@ public class Welt
                       */
                      if(c.getRed()==0   &&c.getGreen() == 255   && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,0,false);   //LookID 0 = Ranke
                      if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,1,false);   //LookID 1 = FüllelementWand
-                     if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,2,true);    //LookID 2 = Rubin
+                     if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,2,true) ;    //LookID 2 = Rubin
                      if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3,false);   //LookID 3 = Spawnpunkt
                      if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,4,false);   //LookID 4 = Stein
-                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new Kachel(x,y,5,false);   //LookID 5 = Ausgang
+                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new Kachel(x,y,6,false);   //LookID 6 = Ausgang
                      /**
                       * Erfragt Koordinaten aller Rubinkacheln (hasRuby(true))
                       */
@@ -92,6 +95,15 @@ public class Welt
                          spawnx = x*Textur.kachelgroesse;
                          spawny = y*Textur.kachelgroesse;
                      }
+                     /**
+                      * Erfragt die Koordinaten des Ausganges und setzt dort ein Schloss
+                      */
+                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)
+                     {
+                         spawnLOCKx = x*Textur.kachelgroesse;
+                         spawnLOCKy = y*Textur.kachelgroesse;
+                         Lock = new Lock(spawnLOCKx,spawnLOCKy);
+                     }
               }
                }
   }
@@ -104,7 +116,7 @@ public class Welt
      {
          spieler.resetPosition();  
      }
-     if(kacheln[spielerposx] [spielerposy].getLookID() == 5)
+     if(kacheln[spielerposx] [spielerposy].getLookID() == 6)
      {
          spieler.resetPosition();  
      }
@@ -112,10 +124,12 @@ public class Welt
       {
          for(int y = 0; y < hoehe;y++)
          {
+
              if(kacheln[x] [y].getLookID() == 5 && punkte >= 10)
+
              {
-                     kacheln[x] [y].setLookID(6);
-                     System.out.println(kacheln[x][y].getLookID() + " ist die neue LookID");
+                 kacheln[x] [y].setLookID(6);    
+                 Lock = null;
              }
          }      
       }
@@ -167,7 +181,7 @@ public class Welt
              
              // System.out.println("abcTEST");
       }
-
+      //if(Rubin.punkte <= 10) Lock.draw(g);
       spieler.draw(g);
     }
   
