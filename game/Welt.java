@@ -21,15 +21,17 @@ public class Welt
       private Spieler spieler;
       public static Kachel[] [] kacheln;
       public LinkedList<Rubin> rubine;
+      public LinkedList<Stein> steine;
  
       static int breite;
-      static int hoehe;
-      //Koordinaten  
+      static int hoehe; 
       private int spawnx;
       private int spawny;
       private int anzahlRubine;
       private int rubinposy;
       private int rubinposx;
+      private int steinposy;
+      private int steinposx;
 
       private int punkte;
       
@@ -37,10 +39,6 @@ public class Welt
       private int spawnLOCKy;
       private int spawnLOCKx;
       private double zuSammelndeRubine;
-
-      //Rubin
-
-      //Koordinaten  
  
   public Welt()
   {
@@ -61,6 +59,7 @@ public class Welt
       hoehe = map.getHeight();
       kacheln = new Kachel[breite] [hoehe];
       rubine = new LinkedList<Rubin>();
+      steine = new LinkedList<Stein>();
       punkte = 0;
            for(int x = 0; x < breite;x++)
               {
@@ -72,9 +71,9 @@ public class Welt
                       */
                     if(c.getRed()==0   &&c.getGreen() == 255   && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,0,false);   //LookID 0 = Ranke
                     if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,1,false);   //LookID 1 = FüllelementWand
-                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,2,true) ;    //LookID 2 = Rubin
+                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,2,true) ;   //LookID 2 = Rubin
                     if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,3,false);   //LookID 3 = Spawnpunkt
-                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,4,false);   //LookID 4 = Stein
+                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,0,false);   //LookID 4 = Stein
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new Kachel(x,y,6,false);   //LookID 6 = Ausgang
                      /**
                       * Erfragt Koordinaten aller Rubinkacheln (hasRuby(true))
@@ -82,10 +81,16 @@ public class Welt
                      if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)
                      {
                          anzahlRubine++;
-                         System.out.println(anzahlRubine);
+                         // System.out.println(anzahlRubine);
                          rubinposx = x;
                          rubinposy = y;
                          rubine.add(new Rubin(rubinposx,rubinposy));
+                     }
+                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 0)
+                     {
+                         steinposx = x;
+                         steinposy = y;
+                         steine.add(new Stein(steinposx,steinposy));
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 3) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
@@ -148,11 +153,13 @@ public class Welt
         rubine.remove(underPlayer);
         punkte++;
         double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
-        System.out.println("benötigte Rubine" + zuSammelndeRubine);
+        // System.out.println("benötigte Rubine" + zuSammelndeRubine);
     }
+    for (Stein s : steine) 
+    {
+     s.update();
     
-    
-    
+    }
     }
   public void draw(Graphics g)
   {    
@@ -168,7 +175,12 @@ public class Welt
           Rubin r= rubine.get(i);
           r.draw(g);
       }
-      // if(punkte < 10) Lock.draw(g);
+      for(int i = 0; i < steine.size();i++)
+      {
+          Stein s= steine.get(i);
+          s.draw(g);
+      }
+      if(punkte < zuSammelndeRubine) Lock.draw(g);
       spieler.draw(g);
       
     }
