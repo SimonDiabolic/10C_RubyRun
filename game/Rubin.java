@@ -20,22 +20,38 @@ public class Rubin
     }
     public boolean update()
     {
-     // int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
-     // int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
-     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
-     // {   
-         // rubinposy = rubinposy + Textur.kachelgroesse;
-     // }
-     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
-     // {    
-         // rubinposy = rubinposy + Textur.kachelgroesse;
-     // }
-     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
-     // {
-         // rubinposy = rubinposy + Textur.kachelgroesse;
-     // }
+     int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
+     int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
+
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     {   
+         faellt();
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
+     {    
+         faellt();
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 3)      
+     {    
+         faellt();
+     }
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
+     {
+         faellt();
+     }
+     
      return false;
      
+    }
+    public void faellt()
+    {
+     // int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
+     // int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
+     // if (!((rubinposx==getRubinX()) && (rubinposy==getRubinY()) || (rubinposx==Stein.getSteinX()) && (rubinposy==Stein.getSteinY()))) 
+        // {
+            // rubinposy = rubinposy + Textur.kachelgroesse;
+        // }   
+        
     }
     public void draw(Graphics g)
     {

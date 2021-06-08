@@ -26,8 +26,8 @@ public class Stein
     {
      g.drawImage(look, steinposx, steinposy, null);
     }
-    public int getRubinX() { return steinposx; }
-    public int getRubinY() { return steinposy; }
+    public int getSteinX() { return steinposx; }
+    public int getSteinY() { return steinposy; }
     public boolean SteinSpielerColision()
     {
         if ((steinposx==Spieler.getXPos()) && (steinposy==Spieler.getYPos()))
