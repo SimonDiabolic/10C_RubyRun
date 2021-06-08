@@ -8,22 +8,19 @@ public class Kachel
     private int x;
     private int y;
     private int lookid;
-    private boolean hasRuby;
     private BufferedImage look;
     
     
-    public Kachel(int x, int y, int lookid, boolean hasRuby)
+    public Kachel(int x, int y, int lookid)
     {
         this.x = x; 
         this.y = y;
         this.lookid = lookid;
         if(lookid == 0) look = Textur.ranke;
         if(lookid == 1) look = Textur.wandFuellelement;
-        if(lookid == 2) look = Textur.ranke; hasRuby = true; //Feld als Rubin erkannt; hat Rankentextur; wird mit Boolean hasRuby(true) versehen
-        if(lookid == 3) look = Textur.spawn;
-        if(lookid == 4) look = Textur.stein;
-        if(lookid == 5) look = Textur.AusgangZU;
-        if(lookid == 6) look = Textur.AusgangAUF;
+        if(lookid == 2) look = Textur.spawn;
+        if(lookid == 3) look = Textur.AusgangAUF;
+        if(lookid == 4) look = Textur.ranke; //Ausgang kontrolle, feld nur direkt nach AusgangAUF erreichbar, wenn player auf feld game ende
     }
     public void draw(Graphics g)
     {
@@ -33,13 +30,4 @@ public class Kachel
     {
         return lookid;
     }
-    public boolean gethasRuby()
-    {
-        return hasRuby;
-    }
-    public void setLookID(int l)
-    {
-        lookid = l;
-    }
-    
 }

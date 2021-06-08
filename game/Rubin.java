@@ -47,7 +47,7 @@ public class Rubin
     {
      // int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
      // int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
-     // if (!((rubinposx==getRubinX()) && (rubinposy==getRubinY()) || (rubinposx==Stein.getSteinX()) && (rubinposy==Stein.getSteinY()))) 
+     // if (!()) 
         // {
             // rubinposy = rubinposy + Textur.kachelgroesse;
         // }   

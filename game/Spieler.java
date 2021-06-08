@@ -53,6 +53,16 @@ public class Spieler
          if(newx == -1)
          {x = x-Textur.kachelgroesse; newx = 0;}
      }
+     int spielerposx = (int) (getXPos())/Textur.kachelgroesse;
+     int spielerposy = (int) (getYPos())/Textur.kachelgroesse;
+     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 1)
+     {
+         resetPosition();  
+     }
+     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 4)
+     {
+         System.exit(1); 
+     }
  }
  public static int getXPos()
  {
@@ -62,7 +72,6 @@ public class Spieler
  {
      return y;
  }
- 
  public void resetPosition()
  {
      x=oldx;
