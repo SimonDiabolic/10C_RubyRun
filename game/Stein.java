@@ -22,7 +22,7 @@ public class Stein
     {
         if (Welt.kacheln[steinposx/Textur.kachelgroesse][steinposy/Textur.kachelgroesse+1].getLookID()==0)
         {
-            steinposy = steinposy + 5;
+            steinposy = steinposy + 10;
         }
     }
     public void move ()
