@@ -25,19 +25,7 @@ public class Rubin
 
      if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
      {   
-         faellt();
-     }
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 2)      
-     {    
-         faellt();
-     }
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 3)      
-     {    
-         faellt();
-     }
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 4)      
-     {
-         faellt();
+         rubinposy = rubinposy + Textur.kachelgroesse;
      }
      
      return false;
