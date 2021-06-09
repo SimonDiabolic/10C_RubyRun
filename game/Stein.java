@@ -18,9 +18,16 @@ public class Stein
         look = Imageloader.loadImage("stein");
         
     }
-    public boolean update()
+    public void update()
     {
-     return false;
+        if (Welt.kacheln[steinposx/Textur.kachelgroesse][steinposy/Textur.kachelgroesse+1].getLookID()==0)
+        {
+            steinposy = steinposy + 5;
+        }
+    }
+    public void move ()
+    {
+        
     }
     public void draw(Graphics g)
     {
