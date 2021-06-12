@@ -21,7 +21,11 @@ public class Rubin
     public boolean update()
     {
 
-
+     // if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     // {   
+         // rubinposy = rubinposy + Textur.kachelgroesse;
+     // }
+     
 
      return false;
     }
