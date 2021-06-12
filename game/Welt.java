@@ -130,7 +130,12 @@ public class Welt
      {
             underPlayer = r;
      }
-        
+     int rubinPositionX = (int) (r.getRubinX())/Textur.kachelgroesse;
+     int rubinPositionY= (int) ((r.getRubinY())/Textur.kachelgroesse)+1;
+     if ((rubinPositionY==r.getRubinY() || kacheln[rubinPositionX] [rubinPositionY].getLookID() != 1)) 
+        {
+            r.faellt();
+        }   
     } 
     if (underPlayer != null) {
         rubine.remove(underPlayer);
@@ -157,6 +162,7 @@ public class Welt
             spieler.resetPosition();
         }
     }
+    
     }
   public void draw(Graphics g)
   {    
