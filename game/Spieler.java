@@ -11,8 +11,8 @@ public class Spieler
 {
  public static int x;
  public static int y;
- private int oldx;
- private int oldy;
+ private static int oldx;
+ private static int oldy;
  private int newx;
  private int newy;
  private int width = Textur.kachelgroesse;
@@ -72,7 +72,7 @@ public class Spieler
  {
      return y;
  }
- public void resetPosition()
+ public static void resetPosition()
  {
      x=oldx;
      y=oldy;
