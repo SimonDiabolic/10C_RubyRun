@@ -29,17 +29,10 @@ public class Rubin
      }
      
      return false;
-     
     }
     public void faellt()
-    {
-     // int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
-     // int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
-     // if (!()) 
-        // {
-            // rubinposy = rubinposy + Textur.kachelgroesse;
-        // }   
-        
+    {        
+     rubinposy = rubinposy + Textur.kachelgroesse;                 
     }
     public void draw(Graphics g)
     {

@@ -7,16 +7,23 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.IOException;
+import java.awt.event.KeyEvent;
 //---------------------//
 public class Frame extends JFrame
 {
   private BufferStrategy strat;
   private Welt welt;
+  private Menu menu;
+  static int spielzustand;
   public Frame()
   {
       super("RubyRun");
-      addKeyListener(new Keyboard());
+      Keyboard kb = new Keyboard();
+      addKeyListener(kb);
+      addMouseMotionListener(kb);
+      addMouseListener(kb);
       welt = new Welt();
+      menu = new Menu();
   }
   public void makestrat()
   {
@@ -32,11 +39,34 @@ public class Frame extends JFrame
   }
   public void draw(Graphics g)
   {
-      welt.draw(g);
+      switch (spielzustand)
+      {
+          case 0:
+              menu.draw(g);
+                          break;
+          case 1:
+              welt.draw(g);
+                          break;
+          default:
+          
+          break;
+      }
   }
   public void update()
   {
-      welt.update();
+      switch (spielzustand)
+      {
+          case 0:
+              menu.update();
+                          break;
+          case 1:
+              welt.update();
+              if(Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
+                          break;
+          default:
+          
+          break;
+      }
   }
 }
 
