@@ -36,9 +36,9 @@ public class Spieler
      if(playermove)
      {
          if(Keyboard.isKeyPressed(KeyEvent.VK_W)) 
-         {newy = 1;}
+         {newy = 1;direction = 0;}
          if(Keyboard.isKeyPressed(KeyEvent.VK_S))
-         {newy = -1;}
+         {newy = -1;direction = 0;}
          if(Keyboard.isKeyPressed(KeyEvent.VK_D))
          {newx = 1; direction = 1;}
          if(Keyboard.isKeyPressed(KeyEvent.VK_A))

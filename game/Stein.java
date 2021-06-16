@@ -22,13 +22,12 @@ public class Stein
     {
         if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),0,0,steinposx,steinposy,0,0))
         {
-            if(Welt.kacheln[steinposx/Textur.kachelgroesse + Spieler.getDirection()][steinposy/Textur.kachelgroesse].getLookID()==0)
+            if(Welt.kacheln[steinposx/Textur.kachelgroesse + Spieler.getDirection()][steinposy/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
               {
                   steinposx = steinposx + Spieler.getDirection()*Textur.kachelgroesse;
               }
             else
             {
-              
               Spieler.resetPosition();
             }
             
