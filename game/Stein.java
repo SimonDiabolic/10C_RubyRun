@@ -20,6 +20,11 @@ public class Stein
     }
     public void update()
     {
+        
+        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),0,0,steinposx,steinposy,0,0))
+        {
+            Spieler.resetPosition();
+        }
         if (Welt.kacheln[steinposx/Textur.kachelgroesse][steinposy/Textur.kachelgroesse+1].getLookID()==0)
         {
             steinposy = steinposy + 10;

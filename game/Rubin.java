@@ -23,7 +23,7 @@ public class Rubin
      int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
      int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
 
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0)      
+     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0 )      
      {   
          rubinposy = rubinposy + Textur.kachelgroesse;
      }
