@@ -18,7 +18,6 @@ public class Main
      f.setVisible(true);
      
      f.makestrat();
-     
      while(true)
      {
          f.update();

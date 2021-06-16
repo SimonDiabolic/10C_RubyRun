@@ -14,6 +14,11 @@ public class Textur
     static BufferedImage stein = Imageloader.loadImage("stein");
     static BufferedImage AusgangZU = Imageloader.loadImage("AusgangZU");
     static BufferedImage AusgangAUF = Imageloader.loadImage("AusgangAUF");
+    static BufferedImage background = Imageloader.loadImage("background");
+    static BufferedImage titel = Imageloader.loadImage("titel");
+    static BufferedImage button = Imageloader.loadImage("button");
+    static BufferedImage buttonmouseover = Imageloader.loadImage("buttonmaus");
+    static BufferedImage buttonpressed = Imageloader.loadImage("buttonpressed");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  
