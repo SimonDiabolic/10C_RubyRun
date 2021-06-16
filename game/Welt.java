@@ -47,8 +47,7 @@ public class Welt
       spieler = new Spieler(spawnx,spawny);
       Lock = new Lock(lockx,locky);
       LockExists = true;
-      double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
-      System.out.println(lockx + "" + locky);  
+      double zuSammelndeRubine = Math.round(anzahlRubine*0.75); 
       System.out.println("erzeugte Rubine: " + anzahlRubine);  
       System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
       System.out.println("Punkte:" + punkte);
@@ -122,17 +121,17 @@ public class Welt
   }
   public void update()
   {
-    spieler.update(true); 
-    Rubin underPlayer = null;
-    for (Rubin r : rubine) {
-     r.update();
-     if (r.RubinCollection()) 
-     {
+      spieler.update(true); 
+      Rubin underPlayer = null;
+      for (Rubin r : rubine) {
+         r.update();
+         if (r.RubinCollection()) 
+         {
             underPlayer = r;
-     }
+         }
         
-    } 
-    if (underPlayer != null) {
+      } 
+      if (underPlayer != null) {
         rubine.remove(underPlayer);
         punkte++;
         System.out.println("Punkte: " + punkte);
@@ -143,21 +142,21 @@ public class Welt
              System.out.println("Schloss entfernt");
              LockExists = false;
             }
-    }
-    for (Stein s : steine) 
-    {
-     s.update();
+      }
+      for (Stein s : steine) 
+      {
+         s.update();
     
-    }
-    double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
-    if(punkte < zuSammelndeRubine)
-    {
+      }
+      double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
+      if(punkte < zuSammelndeRubine)
+      {
         if(Lock.SpielerAufSchloss())
         {
             spieler.resetPosition();
         }
-    }
-    }
+      }
+  }
   public void draw(Graphics g)
   {    
       for(int x = 0; x < breite;x++)
