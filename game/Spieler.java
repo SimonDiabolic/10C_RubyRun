@@ -17,6 +17,7 @@ public class Spieler
  private int newy;
  private int width = Textur.kachelgroesse;
  private int height = Textur.kachelgroesse;
+ public static int direction;
  private BufferedImage look;
  public Spieler(int x, int y)
  {
@@ -39,9 +40,9 @@ public class Spieler
          if(Keyboard.isKeyPressed(KeyEvent.VK_S))
          {newy = -1;}
          if(Keyboard.isKeyPressed(KeyEvent.VK_D))
-         {newx = 1;}
+         {newx = 1; direction = 1;}
          if(Keyboard.isKeyPressed(KeyEvent.VK_A))
-         {newx = -1;}
+         {newx = -1; direction = -1;}
           oldy = y;
           oldx = x;
          if(newy == -1)
@@ -77,5 +78,10 @@ public class Spieler
      x=oldx;
      y=oldy;
  }
+ public static int getDirection()
+ {
+     return direction;
+ }
 }
+
 
