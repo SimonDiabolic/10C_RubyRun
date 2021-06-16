@@ -14,7 +14,7 @@ public class Main
      f.setLayout(null);  
      f.setLocationRelativeTo(null);
      f.setResizable(false);
-     f.setUndecorated(true);
+     // f.setUndecorated(true);
      f.setVisible(true);
      
      f.makestrat();

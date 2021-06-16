@@ -47,8 +47,7 @@ public class Welt
       spieler = new Spieler(spawnx,spawny);
       Lock = new Lock(lockx,locky);
       LockExists = true;
-      double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
-      System.out.println(lockx + "" + locky);  
+      double zuSammelndeRubine = Math.round(anzahlRubine*0.75); 
       System.out.println("erzeugte Rubine: " + anzahlRubine);  
       System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
       System.out.println("Punkte:" + punkte);
