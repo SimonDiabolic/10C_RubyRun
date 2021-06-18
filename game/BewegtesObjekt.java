@@ -1,14 +1,16 @@
 package game;
 
+import java.awt.image.BufferedImage;
+
 public abstract class BewegtesObjekt
 {
-    public int X;
-    public int Y;
-    
-    BewegtesObjekt (int X, int Y)
+    protected int x;
+    protected int y;
+    protected BufferedImage look;
+    BewegtesObjekt (int x, int y)
     {
-        this.X = X * Textur.kachelgroesse;
-        this.Y = Y * Textur.kachelgroesse;
+        this.x = x * Textur.kachelgroesse;
+        this.y = y * Textur.kachelgroesse;
         
     }
 }

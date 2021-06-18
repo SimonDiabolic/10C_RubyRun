@@ -2,29 +2,20 @@ package game;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 
-public class Stein
+public class Stein extends BewegtesObjekt
 {
-    private BufferedImage look;
-    public int steinposx;
-    public int steinposy;
-
-    boolean dropISvalid;
-
-    
-    Stein (int steinposx, int steinposy)
+    Stein (int x, int y)
     {
-        this.steinposx = steinposx * Textur.kachelgroesse;
-        this.steinposy = steinposy * Textur.kachelgroesse;
+        super(x,y);
         look = Imageloader.loadImage("stein");
-        
     }
     public void update()
     {
-        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),0,0,steinposx,steinposy,0,0))
+        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),0,0,x,y,0,0))
         {
-            if(Welt.kacheln[steinposx/Textur.kachelgroesse + Spieler.getDirection()][steinposy/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
+            if(Welt.kacheln[x/Textur.kachelgroesse + Spieler.getDirection()][y/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
               {
-                  steinposx = steinposx + Spieler.getDirection()*Textur.kachelgroesse;
+                  x = x + Spieler.getDirection()*Textur.kachelgroesse;
               }
             else
             {
@@ -32,9 +23,9 @@ public class Stein
             }
             
         }
-        if (Welt.kacheln[steinposx/Textur.kachelgroesse][steinposy/Textur.kachelgroesse+1].getLookID()==0)
+        if (Welt.kacheln[x/Textur.kachelgroesse][y/Textur.kachelgroesse+1].getLookID()==0)
         {
-            steinposy = steinposy + 10;
+            y = y + Textur.kachelgroesse/2;
         }
     }
     public void move ()
@@ -43,13 +34,13 @@ public class Stein
     }
     public void draw(Graphics g)
     {
-     g.drawImage(look, steinposx, steinposy, null);
+     g.drawImage(look, x, y, null);
     }
-    public int getSteinX() { return steinposx; }
-    public int getSteinY() { return steinposy; }
+    public int getSteinX() { return x; }
+    public int getSteinY() { return y; }
     public boolean SteinSpielerColision()
     {
-        if ((steinposx==Spieler.getXPos()) && (steinposy==Spieler.getYPos()))
+        if ((x==Spieler.getXPos()) && (y==Spieler.getYPos()))
         {
             return true;
         }

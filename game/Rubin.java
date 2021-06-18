@@ -2,47 +2,30 @@ package game;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 
-public class Rubin
+public class Rubin extends BewegtesObjekt
 {
-    private BufferedImage look;
-    public int rubinposx;
-    public int rubinposy;
-
-    boolean dropISvalid;
-
-    
-    Rubin (int rubinposx, int rubinposy)
+    Rubin (int x, int y)
     {
-        this.rubinposx = rubinposx * Textur.kachelgroesse;
-        this.rubinposy = rubinposy * Textur.kachelgroesse;
+        super(x,y);
         look = Imageloader.loadImage("rubin");
         
     }
-    public boolean update()
+    public void update()
     {
-     int rubinPositionX = (int) (getRubinX())/Textur.kachelgroesse;
-     int rubinPositionY= (int) ((getRubinY())/Textur.kachelgroesse)+1;
-
-     if(Welt.kacheln[rubinPositionX] [rubinPositionY].getLookID() == 0 )      
+     if(Welt.kacheln[getRubinX()/Textur.kachelgroesse] [(getRubinY()/Textur.kachelgroesse)+1].getLookID() == 0 )      
      {   
-         rubinposy = rubinposy + Textur.kachelgroesse;
+         y = y + Textur.kachelgroesse;
      }
-     
-     return false;
-    }
-    public void faellt()
-    {        
-     rubinposy = rubinposy + Textur.kachelgroesse;                 
     }
     public void draw(Graphics g)
     {
-     g.drawImage(look, rubinposx, rubinposy, null);
+     g.drawImage(look, x, y, null);
     }
-    public int getRubinX() { return rubinposx; }
-    public int getRubinY() { return rubinposy; }
+    public int getRubinX() { return x; }
+    public int getRubinY() { return y; }
     public boolean RubinCollection()
     {
-        if ((rubinposx==Spieler.getXPos()) && (rubinposy==Spieler.getYPos()))
+        if ((getRubinX()==Spieler.getXPos()) && (getRubinY()==Spieler.getYPos()))
         {
             return true;
         }
