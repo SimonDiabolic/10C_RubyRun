@@ -10,22 +10,9 @@ public class Rubin extends BewegtesObjekt
         look = Imageloader.loadImage("rubin");
         
     }
-    public void update()
-    {
-     if(Welt.kacheln[getRubinX()/Textur.kachelgroesse] [(getRubinY()/Textur.kachelgroesse)+1].getLookID() == 0 )      
-     {   
-         y = y + Textur.kachelgroesse;
-     }
-    }
-    public void draw(Graphics g)
-    {
-     g.drawImage(look, x, y, null);
-    }
-    public int getRubinX() { return x; }
-    public int getRubinY() { return y; }
     public boolean RubinCollection()
     {
-        if ((getRubinX()==Spieler.getXPos()) && (getRubinY()==Spieler.getYPos()))
+        if ((getX()==Spieler.getXPos()) && (getY()==Spieler.getYPos()))
         {
             return true;
         }
