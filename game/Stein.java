@@ -23,10 +23,6 @@ public class Stein extends BewegtesObjekt
             }
             
         }
-        if (Welt.kacheln[x/Textur.kachelgroesse][y/Textur.kachelgroesse+1].getLookID()==0)
-        {
-            y = y + Textur.kachelgroesse/2;
-        }
     }
     public void draw(Graphics g)
     {
@@ -34,6 +30,10 @@ public class Stein extends BewegtesObjekt
     }
     public int getSteinX() { return x; }
     public int getSteinY() { return y; }
+    public void move ()
+    {
+        
+    }
     public boolean SteinSpielerColision()
     {
         if ((x==Spieler.getXPos()) && (y==Spieler.getYPos()))

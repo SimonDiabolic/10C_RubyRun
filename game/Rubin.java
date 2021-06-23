@@ -29,7 +29,7 @@ public class Rubin extends BewegtesObjekt
     public int getRubinY() { return y; }
     public boolean RubinCollection()
     {
-        if ((getRubinX()==Spieler.getXPos()) && (getRubinY()==Spieler.getYPos()))
+        if ((getX()==Spieler.getXPos()) && (getY()==Spieler.getYPos()))
         {
             return true;
         }

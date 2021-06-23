@@ -20,8 +20,7 @@ public class Welt
 
       private Spieler spieler;
       public static Kachel[] [] kacheln;
-      public LinkedList<Rubin> rubine;
-      public LinkedList<Stein> steine;
+      public LinkedList<BewegtesObjekt> zeugs;
  
       static int breite;
       static int hoehe; 
@@ -63,8 +62,7 @@ public class Welt
       breite = map.getWidth();
       hoehe = map.getHeight();
       kacheln = new Kachel[breite] [hoehe];
-      rubine = new LinkedList<Rubin>();
-      steine = new LinkedList<Stein>();
+      zeugs = new LinkedList<BewegtesObjekt>();
       punkte = 0;
            for(int x = 0; x < breite;x++)
               {
@@ -89,13 +87,13 @@ public class Welt
                          anzahlRubine++;
                          rubinposx = x;
                          rubinposy = y;
-                         rubine.add(new Rubin(rubinposx,rubinposy));
+                         zeugs.add(new Rubin(rubinposx,rubinposy));
                      }
                      if(c.getRed()==0 &&c.getGreen() == 0   && c.getBlue() == 0)
                      {
                          steinposx = x;
                          steinposy = y;
-                         steine.add(new Stein(steinposx,steinposy));
+                         zeugs.add(new Stein(steinposx,steinposy));
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
@@ -122,17 +120,30 @@ public class Welt
   public void update()
   {
       spieler.update(true); 
-      Rubin underPlayer = null;
-      for (Rubin r : rubine) {
-         r.update();
-         if (r.RubinCollection()) 
+      BewegtesObjekt underPlayer = null;
+      for (BewegtesObjekt z : zeugs) {
+         z.update();
+         if (z.RubinCollection()) 
          {
-            underPlayer = r;
+            underPlayer = z;
          }
         
       } 
+       // for(int i = 0; i < zeugs.size();i++)
+        // {
+        // BewegtesObjekt a = zeugs.get(i); 
+           // for(int j = 0; j < zeugs.size();j++)
+        // {
+          // BewegtesObjekt b = zeugs.get(j);
+          // if (!((a.getX()==b.getX()) && (a.getY()==b.getY()+Textur.kachelgroesse) /*&&(Welt.kacheln[a.getX()/Textur.kachelgroesse] [(a.getY()/Textur.kachelgroesse)+1].getLookID() == 0 )*/))
+          // {
+            // a.y = a.y + Textur.kachelgroesse;
+          // }
+        // }
+        // }
+      
       if (underPlayer != null) {
-        rubine.remove(underPlayer);
+        zeugs.remove(underPlayer);
         punkte++;
         System.out.println("Punkte: " + punkte);
         double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
@@ -143,16 +154,6 @@ public class Welt
              LockExists = false;
             }
       }
-      for (Stein s : steine) 
-      {
-         s.update();
-            // if(Collision.RechteckZuRechteck(Rubin.getRubinX(),Rubin.getRubinY(),0,0,s.getSteinX(),s.getSteinY(),0,0))
-            // {
-                
-            // }
-      }
-      
-      
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       if(punkte < zuSammelndeRubine)
       {
@@ -171,15 +172,11 @@ public class Welt
              kacheln[x] [y].draw(g);
          }      
       }
-      for(int i = 0; i < rubine.size();i++)
+      for(int i = 0; i < zeugs.size();i++)
       {
-          Rubin r= rubine.get(i);
+          BewegtesObjekt r= zeugs.get(i);
           r.draw(g);
-      }
-      for(int i = 0; i < steine.size();i++)
-      {
-          Stein s= steine.get(i);
-          s.draw(g);
+          
       }
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       if(punkte < zuSammelndeRubine)
