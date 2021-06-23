@@ -14,8 +14,12 @@ public class Rubin extends BewegtesObjekt
     {
      if(Welt.kacheln[getRubinX()/Textur.kachelgroesse] [(getRubinY()/Textur.kachelgroesse)+1].getLookID() == 0 )      
      {   
-         y = y + Textur.kachelgroesse;
+         if (!((getRubinX()==getRubinX()) && (getRubinY()==getRubinY()+1)))
+             {
+                 y = y + Textur.kachelgroesse;
+             }
      }
+     
     }
     public void draw(Graphics g)
     {

@@ -11,7 +11,7 @@ public class Stein extends BewegtesObjekt
     }
     public void update()
     {
-        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),0,0,x,y,0,0))
+        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),1,1,x,y,1,1))
         {
             if(Welt.kacheln[x/Textur.kachelgroesse + Spieler.getDirection()][y/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
               {
@@ -27,10 +27,6 @@ public class Stein extends BewegtesObjekt
         {
             y = y + Textur.kachelgroesse/2;
         }
-    }
-    public void move ()
-    {
-        
     }
     public void draw(Graphics g)
     {

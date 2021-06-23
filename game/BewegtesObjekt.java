@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.image.BufferedImage;
+import java.awt.Graphics;
 
 public abstract class BewegtesObjekt
 {
@@ -12,5 +13,9 @@ public abstract class BewegtesObjekt
         this.x = x * Textur.kachelgroesse;
         this.y = y * Textur.kachelgroesse;
         
+    }
+        public void draw(Graphics g)
+    {
+     g.drawImage(look, x, y, null);
     }
 }

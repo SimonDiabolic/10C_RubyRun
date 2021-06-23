@@ -146,8 +146,13 @@ public class Welt
       for (Stein s : steine) 
       {
          s.update();
-    
+            // if(Collision.RechteckZuRechteck(Rubin.getRubinX(),Rubin.getRubinY(),0,0,s.getSteinX(),s.getSteinY(),0,0))
+            // {
+                
+            // }
       }
+      
+      
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       if(punkte < zuSammelndeRubine)
       {
