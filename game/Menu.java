@@ -19,7 +19,7 @@ public class Menu
         buttons = new Button[3];
         BufferedImage[] texturen = {Textur.button, Textur.buttonmouseover, Textur.buttonpressed};  
         
-        Font f = new Font("SansSerif",0/*Fett/Kursiv*/,0/*Schriftgröße*/);
+        Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
         buttons[0] = new Button(200, "Spiel starten", texturen, f); 
         buttons[1] = new Button(350, "Spiel beenden", texturen, f); 
