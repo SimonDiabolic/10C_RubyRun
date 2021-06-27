@@ -15,14 +15,34 @@ public class STEIN extends BEWEGTESOBJEKT
         {
             if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirection()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirection() != 0)
               {
+                  int nextx = x + (SPIELER.getDirection() * TEXTUR.kachelgroesse);
+                  int nexty = y;
+                  if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 )
+                  {
+                      boolean moveok = true;
+                      for (BEWEGTESOBJEKT i : other) 
+                      {
+                          if (nextx / TEXTUR.kachelgroesse == i.getX() / TEXTUR.kachelgroesse && nexty / TEXTUR.kachelgroesse == i.getY() / TEXTUR.kachelgroesse) 
+                          {
+                              moveok = false;
+                              
+                          }
+                      }
+                      if (moveok)
+                      {
+                          x = x + (SPIELER.getDirection() * TEXTUR.kachelgroesse);
+                      }
+                      else
+                      {
+                          SPIELER.resetPosition();
+                      }
                   
-                  x = x + SPIELER.getDirection()*TEXTUR.kachelgroesse;
-                  
-              }
+                  }
+               }
             else
             {
               SPIELER.resetPosition();
-            }            
+            }         
         }
         super.update();
         
