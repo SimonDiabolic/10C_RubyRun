@@ -33,6 +33,7 @@ public class Welt
       private int steinposx;
 
       private int punkte;
+      private Font font;
       
       private Lock Lock;
       private int locky;
@@ -46,10 +47,8 @@ public class Welt
       spieler = new Spieler(spawnx,spawny);
       Lock = new Lock(lockx,locky);
       LockExists = true;
-      double zuSammelndeRubine = Math.round(anzahlRubine*0.75); 
-      System.out.println("erzeugte Rubine: " + anzahlRubine);  
-      System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
-      System.out.println("Punkte:" + punkte);
+      
+      font = new Font("Monospaced", Font.BOLD,30);
   }
 
   /*
@@ -139,12 +138,12 @@ public class Welt
       if (underPlayer != null) {
         zeugs.remove(underPlayer);
         punkte++;
-        System.out.println("Punkte: " + punkte);
+        // System.out.println("Punkte: " + punkte);
         double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
         if(punkte >= zuSammelndeRubine && LockExists == true )
             {    
              Lock = null;
-             System.out.println("Schloss entfernt");
+             // System.out.println("Schloss entfernt");
              LockExists = false;
             }
       }
@@ -173,12 +172,19 @@ public class Welt
           
       }
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
+      
       if(punkte < zuSammelndeRubine)
       {
           Lock.draw(g);
       }
       spieler.draw(g);
       
+      g.setColor(Color.BLACK);
+      g.setFont(font);
+      g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 740+g.getFont().getSize());
+      // System.out.println("erzeugte Rubine: " + anzahlRubine);  
+      // System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
+      // System.out.println("Punkte:" + punkte);
     }
   
 }

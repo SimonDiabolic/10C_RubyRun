@@ -30,9 +30,9 @@ public class Button
         g.setFont(font);
         fm = g.getFontMetrics();
         g.drawImage(look[ButtonStatus], x, y, null);
-        g.setColor(Color.BLUE);
-        g.drawString(name, 0,0/*x + look[ButtonStatus].getWidth()/2 - fm.stringWidth(name)/2,
-                y + look[ButtonStatus].getHeight()/2 + font.getSize()/2*/);
+        g.setColor(Color.BLACK);
+        g.drawString(name,x + look[ButtonStatus].getWidth()/2 - fm.stringWidth(name)/2,
+                y + look[ButtonStatus].getHeight()/2 + font.getSize()/2-3);
     }
     public boolean update()
     {
