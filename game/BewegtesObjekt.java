@@ -37,7 +37,7 @@ public abstract class BewegtesObjekt
                 }
             }
             if (moveok)
-                y = nexty * Textur.kachelgroesse;
+                y = y+20;//nexty * Textur.kachelgroesse;
         } 
  
     }

@@ -15,10 +15,10 @@ public class UIBOTTOM
     {
         this.x = x; 
         this.y = y;
-        look = Imageloader.loadImage("UIbottom");
+        look = Textur.bar;
     }
     public void draw(Graphics g)
     {
-        g.drawImage(look, x*Textur.kachelgroesse, y*Textur.kachelgroesse, null);
+        g.drawImage(look, x, y, null);
     }
 }
