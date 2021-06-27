@@ -40,6 +40,7 @@ public class Welt
       private int lockx;
       private double zuSammelndeRubine;
       private boolean LockExists;
+      private UIBOTTOM uibottom;
  
   public Welt()
   {
@@ -60,6 +61,7 @@ public class Welt
       BufferedImage map = Imageloader.loadImage("devLevel");
       breite = map.getWidth();
       hoehe = map.getHeight();
+      uibottom = new UIBOTTOM(0,800);
       kacheln = new Kachel[breite] [hoehe];
       zeugs = new LinkedList<BewegtesObjekt>();
       punkte = 0;
@@ -158,6 +160,7 @@ public class Welt
   }
   public void draw(Graphics g)
   {    
+      uibottom.draw(g);
       for(int x = 0; x < breite;x++)
       {
          for(int y = 0; y < hoehe;y++)
