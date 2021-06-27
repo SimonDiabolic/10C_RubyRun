@@ -82,6 +82,10 @@ public class SPIELER
  {
      return direction;
  }
+ 
+ 
+  
+    
 }
 
 

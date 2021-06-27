@@ -33,6 +33,8 @@ public class WELT
       private int steinposx;
 
       private int punkte;
+      private int leben;
+      private int damage;
       private Font font;
       
       private LOCK Lock;
@@ -48,6 +50,7 @@ public class WELT
       spieler = new SPIELER(spawnx,spawny);
       Lock = new LOCK(lockx,locky);
       LockExists = true;
+      
       
       font = new Font("Monospaced", Font.BOLD,30);
   }
@@ -65,6 +68,8 @@ public class WELT
       kacheln = new KACHEL[breite] [hoehe];
       zeugs = new LinkedList<BEWEGTESOBJEKT>();
       punkte = 0;
+      damage = 0;
+      leben = 5;
            for(int x = 0; x < breite;x++)
               {
                  for(int y = 0; y < hoehe;y++)
@@ -130,14 +135,20 @@ public class WELT
          {
             underPlayer = i;
          }
-         // for (BewegtesObjekt j : zeugs)
-         // {
-         // if(Collision.RechteckZuRechteck(i.x,i.y, Textur.kachelgroesse, Textur.kachelgroesse, j.x, j.y, Textur.kachelgroesse, 
-                     // Textur.kachelgroesse))
-                     // {
-                         // i.resetPosition();
-                    // }
-                    // }
+         if (i.SpielerAufStein())
+         {
+             damage++;
+             if (damage == 15)
+             {
+                 leben--;
+                 damage = 0;
+                 
+                 if (leben == 0)
+                 {
+                     
+                    }
+                }
+         }
       } 
       if (underPlayer != null) {
         zeugs.remove(underPlayer);
@@ -192,6 +203,7 @@ public class WELT
       g.setColor(Color.BLACK);
       g.setFont(font);
       g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 740+g.getFont().getSize());
+      g.drawString("Leben: " + leben + "/5", 50, 780+g.getFont().getSize());
       // System.out.println("erzeugte Rubine: " + anzahlRubine);  
       // System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
       // System.out.println("Punkte:" + punkte);

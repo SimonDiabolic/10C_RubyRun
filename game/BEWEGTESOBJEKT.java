@@ -48,6 +48,7 @@ public abstract class BEWEGTESOBJEKT
     }
     public boolean RubinCollection(){return false;}
     //public void fallen(){y = y + Textur.kachelgroesse;}
+    public boolean SpielerAufStein(){return false;}
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);
