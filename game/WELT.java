@@ -145,7 +145,7 @@ public class WELT
                  
                  if (leben == 0)
                  {
-                     
+                     System.exit(0);
                     }
                 }
          }
