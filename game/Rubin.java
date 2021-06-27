@@ -13,11 +13,7 @@ public class Rubin extends BewegtesObjekt
     }
     public void update()
     {
-                if(Welt.kacheln[getX()/Textur.kachelgroesse] [(getY()/Textur.kachelgroesse)+1].getLookID() == 0 )
-                {
-                    y = y + Textur.kachelgroesse;
-                    // oldy = y - Textur.kachelgroesse;   
-                } 
+        super.update();
     }
     public void draw(Graphics g)
     {

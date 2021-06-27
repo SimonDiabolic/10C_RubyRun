@@ -24,11 +24,7 @@ public class Stein extends BewegtesObjekt
               Spieler.resetPosition();
             }            
         }
-        if(Welt.kacheln[getX()/Textur.kachelgroesse] [(getY()/Textur.kachelgroesse)+1].getLookID() == 0 )
-        {       
-            y = y + Textur.kachelgroesse;   
-            
-        }  
+        super.update();
         
     }
     public void draw(Graphics g)
