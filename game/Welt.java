@@ -114,8 +114,10 @@ public class Welt
                          
                      }
               }
-               }
-       
+         }
+       for (BewegtesObjekt i : zeugs) {
+           i.setOther(zeugs);
+        }
 
   }
   public void update()
@@ -157,6 +159,11 @@ public class Welt
             spieler.resetPosition();
         }
       }
+      /*
+       for (BewegtesObjekt i : zeugs) {
+           i.setOther(zeugs);
+        }
+       */
   }
   public void draw(Graphics g)
   {    
