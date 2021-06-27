@@ -15,7 +15,7 @@ public class UIBOTTOM
     {
         this.x = x; 
         this.y = y;
-        look = TEXTUR.bar;
+        look = Textur.bar;
     }
     public void draw(Graphics g)
     {

@@ -17,7 +17,7 @@ public class Menu
     public Menu()
     {
         buttons = new Button[3];
-        BufferedImage[] texturen = {TEXTUR.button, TEXTUR.buttonmouseover, TEXTUR.buttonpressed};  
+        BufferedImage[] texturen = {Textur.button, Textur.buttonmouseover, Textur.buttonpressed};  
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
@@ -25,8 +25,8 @@ public class Menu
         buttons[1] = new Button(350, "Spiel beenden", texturen, f); 
         buttons[2] = new Button(500, "About", texturen, f); 
         
-        background = TEXTUR.background;
-        title = TEXTUR.titel;
+        background = Textur.background;
+        title = Textur.titel;
         breite = background.getWidth();
         hoehe = background.getHeight();
         

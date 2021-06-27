@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 /**
  * Läd die Texturen aus dem gfx package und weißt ihnen Attributnamen zu
  */
-public class TEXTUR
+public class Textur
 {
     static BufferedImage ranke = Imageloader.loadImage("rankeHintergrund");
     static BufferedImage wandFuellelement = Imageloader.loadImage("wandFuellelement");

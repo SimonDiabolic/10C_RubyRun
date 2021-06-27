@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 public class Frame extends JFrame
 {
   private BufferStrategy strat;
-  private WELT welt;
+  private Welt welt;
   private Menu menu;
   static int spielzustand;
   public Frame()
@@ -22,7 +22,7 @@ public class Frame extends JFrame
       addKeyListener(kb);
       addMouseMotionListener(kb);
       addMouseListener(kb);
-      welt = new WELT();
+      welt = new Welt();
       menu = new Menu();
   }
   public void makestrat()

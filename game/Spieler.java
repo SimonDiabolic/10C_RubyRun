@@ -15,8 +15,8 @@ public class Spieler
  private static int oldy;
  private int newx;
  private int newy;
- private int width = TEXTUR.kachelgroesse;
- private int height = TEXTUR.kachelgroesse;
+ private int width = Textur.kachelgroesse;
+ private int height = Textur.kachelgroesse;
  public static int direction;
  private BufferedImage look;
  public Spieler(int x, int y)
@@ -46,25 +46,24 @@ public class Spieler
           oldy = y;
           oldx = x;
          if(newy == -1)
-         {y = y+TEXTUR.kachelgroesse; newy = 0;}
+         {y = y+Textur.kachelgroesse; newy = 0;}
          if(newy == 1)
-         {y = y-TEXTUR.kachelgroesse; newy = 0;}
+         {y = y-Textur.kachelgroesse; newy = 0;}
          if(newx == 1)
-         {x = x+TEXTUR.kachelgroesse; newx = 0;}
+         {x = x+Textur.kachelgroesse; newx = 0;}
          if(newx == -1)
-         {x = x-TEXTUR.kachelgroesse; newx = 0;}
+         {x = x-Textur.kachelgroesse; newx = 0;}
      }
-     int spielerposx = (int) (getXPos())/TEXTUR.kachelgroesse;
-     int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
-     if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 1)
+     int spielerposx = (int) (getXPos())/Textur.kachelgroesse;
+     int spielerposy = (int) (getYPos())/Textur.kachelgroesse;
+     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 1)
      {
          resetPosition();  
      }
-     if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 4)
+     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 4)
      {
          System.exit(1); 
      }
-
  }
  public static int getXPos()
  {
