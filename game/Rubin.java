@@ -3,12 +3,12 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-public class Rubin extends BewegtesObjekt
+public class Rubin extends BEWEGTESOBJEKT
 {
     Rubin (int x, int y)
     {
         super(x,y);
-        look = Textur.rubin;
+        look = TEXTUR.rubin;
         
     }
     public void update()

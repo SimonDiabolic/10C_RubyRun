@@ -1,6 +1,6 @@
 package game;
 
-public class Main
+public class MAIN
 {
   static int width = 800;
   static int height = 880;
