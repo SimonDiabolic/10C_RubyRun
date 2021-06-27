@@ -11,18 +11,25 @@ public class Stein extends BewegtesObjekt
     }
     public void update()
     {
-        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),1,1,x,y,1,1))
+        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),10,10,x,y,10,10))
         {
             if(Welt.kacheln[x/Textur.kachelgroesse + Spieler.getDirection()][y/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
               {
+                  
                   x = x + Spieler.getDirection()*Textur.kachelgroesse;
+                  
               }
             else
             {
               Spieler.resetPosition();
-            }
-            
+            }            
         }
+        if(Welt.kacheln[getX()/Textur.kachelgroesse] [(getY()/Textur.kachelgroesse)+1].getLookID() == 0 )
+        {       
+            y = y + Textur.kachelgroesse;   
+            
+        }  
+        
     }
     public void draw(Graphics g)
     {
@@ -30,20 +37,5 @@ public class Stein extends BewegtesObjekt
     }
     public int getSteinX() { return x; }
     public int getSteinY() { return y; }
-    public void move ()
-    {
-        
-    }
-    public boolean SteinSpielerColision()
-    {
-        if ((x==Spieler.getXPos()) && (y==Spieler.getYPos()))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }
 

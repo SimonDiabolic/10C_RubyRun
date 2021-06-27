@@ -7,6 +7,8 @@ public abstract class BewegtesObjekt
 {
     protected int x;
     protected int y;
+    protected int oldx;
+    protected int oldy;
     protected BufferedImage look;
     BewegtesObjekt (int x, int y)
     {
@@ -17,15 +19,16 @@ public abstract class BewegtesObjekt
     public int getX() { return x; }
     public int getY() { return y; }
     public void update()
+    {  
+      
+    }
+    public void resetPosition()
     {
-
-    
-      if(Welt.kacheln[getX()/Textur.kachelgroesse] [(getY()/Textur.kachelgroesse)+1].getLookID() == 0 )
-        {
-            y = y + Textur.kachelgroesse;
-        }   
+     // x=oldx;
+     y=oldy;
     }
     public boolean RubinCollection(){return false;}
+    public void fallen(){y = y + Textur.kachelgroesse;}
         public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);

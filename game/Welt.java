@@ -121,27 +121,21 @@ public class Welt
   {
       spieler.update(true); 
       BewegtesObjekt underPlayer = null;
-      for (BewegtesObjekt z : zeugs) {
-         z.update();
-         if (z.RubinCollection()) 
+      for (BewegtesObjekt i : zeugs) {
+         i.update();
+         if (i.RubinCollection()) 
          {
-            underPlayer = z;
+            underPlayer = i;
          }
-        
+         // for (BewegtesObjekt j : zeugs)
+         // {
+         // if(Collision.RechteckZuRechteck(i.x,i.y, Textur.kachelgroesse, Textur.kachelgroesse, j.x, j.y, Textur.kachelgroesse, 
+                     // Textur.kachelgroesse))
+                     // {
+                         // i.resetPosition();
+                    // }
+                    // }
       } 
-       // for(int i = 0; i < zeugs.size();i++)
-        // {
-        // BewegtesObjekt a = zeugs.get(i); 
-           // for(int j = 0; j < zeugs.size();j++)
-        // {
-          // BewegtesObjekt b = zeugs.get(j);
-          // if (!((a.getX()==b.getX()) && (a.getY()==b.getY()+Textur.kachelgroesse) /*&&(Welt.kacheln[a.getX()/Textur.kachelgroesse] [(a.getY()/Textur.kachelgroesse)+1].getLookID() == 0 )*/))
-          // {
-            // a.y = a.y + Textur.kachelgroesse;
-          // }
-        // }
-        // }
-      
       if (underPlayer != null) {
         zeugs.remove(underPlayer);
         punkte++;
