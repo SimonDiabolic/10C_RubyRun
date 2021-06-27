@@ -3,12 +3,12 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-public class Rubin extends BewegtesObjekt
+public class RUBIN extends BEWEGTESOBJEKT
 {
-    Rubin (int x, int y)
+    RUBIN (int x, int y)
     {
         super(x,y);
-        look = Textur.rubin;
+        look = TEXTUR.rubin;
         
     }
     public void update()
@@ -23,7 +23,7 @@ public class Rubin extends BewegtesObjekt
     public int getRubinY() { return y; }
     public boolean RubinCollection()
     {
-        if ((getX()==Spieler.getXPos()) && (getY()==Spieler.getYPos()))
+        if ((getX()==SPIELER.getXPos()) && (getY()==SPIELER.getYPos()))
         {
             return true;
         }

@@ -4,35 +4,35 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-public abstract class BewegtesObjekt
+public abstract class BEWEGTESOBJEKT
 {
     protected int x;
     protected int y;
     protected int oldx;
     protected int oldy;
     protected BufferedImage look;
-    protected LinkedList<BewegtesObjekt> other;
-    BewegtesObjekt (int x, int y)
+    protected LinkedList<BEWEGTESOBJEKT> other;
+    BEWEGTESOBJEKT (int x, int y)
     {
-        this.x = x * Textur.kachelgroesse;
-        this.y = y * Textur.kachelgroesse;
+        this.x = x * TEXTUR.kachelgroesse;
+        this.y = y * TEXTUR.kachelgroesse;
     }
     public int getX() { return x; }
     public int getY() { return y; }
-    public void setOther(LinkedList<BewegtesObjekt> o)
+    public void setOther(LinkedList<BEWEGTESOBJEKT> o)
     {
         other = o;
     }
     public void update()
     {  
-        int nextx = x / Textur.kachelgroesse ;
-        int nexty = y / Textur.kachelgroesse + 1;
-        if(Welt.kacheln[nextx] [nexty].getLookID() == 0 )
+        int nextx = x / TEXTUR.kachelgroesse ;
+        int nexty = y / TEXTUR.kachelgroesse + 1;
+        if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
         {
             boolean moveok = true;
-            for (BewegtesObjekt i : other) {
-                if (nextx == i.getX() / Textur.kachelgroesse && 
-                    nexty == i.getY() / Textur.kachelgroesse) {
+            for (BEWEGTESOBJEKT i : other) {
+                if (nextx == i.getX() / TEXTUR.kachelgroesse && 
+                    nexty == i.getY() / TEXTUR.kachelgroesse) {
                     moveok = false;
                 }
             }

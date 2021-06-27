@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 //---------------------//
-public class Spieler
+public class SPIELER
 {
  public static int x;
  public static int y;
@@ -15,16 +15,16 @@ public class Spieler
  private static int oldy;
  private int newx;
  private int newy;
- private int width = Textur.kachelgroesse;
- private int height = Textur.kachelgroesse;
+ private int width = TEXTUR.kachelgroesse;
+ private int height = TEXTUR.kachelgroesse;
  public static int direction;
  private BufferedImage look;
- public Spieler(int x, int y)
+ public SPIELER(int x, int y)
  {
      this/*(Spricht globale Variable an)*/.x = x;
      this.y = y;
      
-    look = Imageloader.loadImage("spieler");
+    look = IMAGELOADER.loadImage("spieler");
     
  }
  public void draw(Graphics g)
@@ -35,32 +35,32 @@ public class Spieler
  {
      if(playermove)
      {
-         if(Keyboard.isKeyPressed(KeyEvent.VK_W)) 
+         if(KEYBOARD.isKeyPressed(KeyEvent.VK_W)) 
          {newy = 1;direction = 0;}
-         if(Keyboard.isKeyPressed(KeyEvent.VK_S))
+         if(KEYBOARD.isKeyPressed(KeyEvent.VK_S))
          {newy = -1;direction = 0;}
-         if(Keyboard.isKeyPressed(KeyEvent.VK_D))
+         if(KEYBOARD.isKeyPressed(KeyEvent.VK_D))
          {newx = 1; direction = 1;}
-         if(Keyboard.isKeyPressed(KeyEvent.VK_A))
+         if(KEYBOARD.isKeyPressed(KeyEvent.VK_A))
          {newx = -1; direction = -1;}
           oldy = y;
           oldx = x;
          if(newy == -1)
-         {y = y+Textur.kachelgroesse; newy = 0;}
+         {y = y+TEXTUR.kachelgroesse; newy = 0;}
          if(newy == 1)
-         {y = y-Textur.kachelgroesse; newy = 0;}
+         {y = y-TEXTUR.kachelgroesse; newy = 0;}
          if(newx == 1)
-         {x = x+Textur.kachelgroesse; newx = 0;}
+         {x = x+TEXTUR.kachelgroesse; newx = 0;}
          if(newx == -1)
-         {x = x-Textur.kachelgroesse; newx = 0;}
+         {x = x-TEXTUR.kachelgroesse; newx = 0;}
      }
-     int spielerposx = (int) (getXPos())/Textur.kachelgroesse;
-     int spielerposy = (int) (getYPos())/Textur.kachelgroesse;
-     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 1)
+     int spielerposx = (int) (getXPos())/TEXTUR.kachelgroesse;
+     int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
+     if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 1)
      {
          resetPosition();  
      }
-     if(Welt.kacheln[spielerposx] [spielerposy].getLookID() == 4)
+     if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 4)
      {
          System.exit(1); 
      }

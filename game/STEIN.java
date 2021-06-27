@@ -2,26 +2,26 @@ package game;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 
-public class Stein extends BewegtesObjekt
+public class STEIN extends BEWEGTESOBJEKT
 {
-    Stein (int x, int y)
+    STEIN (int x, int y)
     {
         super(x,y);
-        look = Textur.stein;
+        look = TEXTUR.stein;
     }
     public void update()
     {
-        if(Collision.RechteckZuRechteck(Spieler.getXPos(),Spieler.getYPos(),10,10,x,y,10,10))
+        if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
         {
-            if(Welt.kacheln[x/Textur.kachelgroesse + Spieler.getDirection()][y/Textur.kachelgroesse].getLookID()==0 && Spieler.getDirection() != 0)
+            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirection()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirection() != 0)
               {
                   
-                  x = x + Spieler.getDirection()*Textur.kachelgroesse;
+                  x = x + SPIELER.getDirection()*TEXTUR.kachelgroesse;
                   
               }
             else
             {
-              Spieler.resetPosition();
+              SPIELER.resetPosition();
             }            
         }
         super.update();

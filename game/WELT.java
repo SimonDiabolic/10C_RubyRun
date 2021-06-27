@@ -15,12 +15,12 @@ import java.awt.*;
 /**
  * Die Welt in der ein Level stattfindet 
  */
-public class Welt
+public class WELT
 {
 
-      private Spieler spieler;
-      public static Kachel[] [] kacheln;
-      public LinkedList<BewegtesObjekt> zeugs;
+      private SPIELER spieler;
+      public static KACHEL[] [] kacheln;
+      public LinkedList<BEWEGTESOBJEKT> zeugs;
  
       static int breite;
       static int hoehe; 
@@ -35,18 +35,18 @@ public class Welt
       private int punkte;
       private Font font;
       
-      private Lock Lock;
+      private LOCK Lock;
       private int locky;
       private int lockx;
       private double zuSammelndeRubine;
       private boolean LockExists;
       private UIBOTTOM uibottom;
  
-  public Welt()
+  public WELT()
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
-      spieler = new Spieler(spawnx,spawny);
-      Lock = new Lock(lockx,locky);
+      spieler = new SPIELER(spawnx,spawny);
+      Lock = new LOCK(lockx,locky);
       LockExists = true;
       
       font = new Font("Monospaced", Font.BOLD,30);
@@ -58,12 +58,12 @@ public class Welt
    */
   public void loadNextLevel()
   {
-      BufferedImage map = Imageloader.loadImage("devLevel");
+      BufferedImage map = IMAGELOADER.loadImage("devLevel");
       breite = map.getWidth();
       hoehe = map.getHeight();
       uibottom = new UIBOTTOM(0,800);
-      kacheln = new Kachel[breite] [hoehe];
-      zeugs = new LinkedList<BewegtesObjekt>();
+      kacheln = new KACHEL[breite] [hoehe];
+      zeugs = new LinkedList<BEWEGTESOBJEKT>();
       punkte = 0;
            for(int x = 0; x < breite;x++)
               {
@@ -73,13 +73,13 @@ public class Welt
                      /**
                       * if(c.getRed()==ROTWERT && c.getGreen()==GRUENWERT && c.getBlue()==BLAUWERT) kacheln[x] [y] = new Kachel(POSITIONx,POSITIONy,lookID);
                       */
-                    if(c.getRed()==0   &&c.getGreen() == 255   && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,0);   //LookID 0 = Ranke
-                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,1);   //LookID 1 = FüllelementWand
-                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,0);   //LookID 0
-                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new Kachel(x,y,2);   //LookID 2 = Spawnpunkt
-                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new Kachel(x,y,0);   //LookID 0
-                    if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new Kachel(x,y,3);   //LookID 3 = Ausgang
-                    if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new Kachel(x,y,4);   //LookID 4 = AusgangControll
+                    if(c.getRed()==0   &&c.getGreen() == 255   && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
+                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1 = FüllelementWand
+                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0
+                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
+                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0
+                    if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
+                    if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4);   //LookID 4 = AusgangControll
                      /**
                       * Erfragt Koordinaten aller Rubinkacheln (hasRuby(true))
                       */
@@ -88,34 +88,34 @@ public class Welt
                          anzahlRubine++;
                          rubinposx = x;
                          rubinposy = y;
-                         zeugs.add(new Rubin(rubinposx,rubinposy));
+                         zeugs.add(new RUBIN(rubinposx,rubinposy));
                      }
                      if(c.getRed()==0 &&c.getGreen() == 0   && c.getBlue() == 0)
                      {
                          steinposx = x;
                          steinposy = y;
-                         zeugs.add(new Stein(steinposx,steinposy));
+                         zeugs.add(new STEIN(steinposx,steinposy));
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
                       */
                      if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
                      {
-                         spawnx = x*Textur.kachelgroesse;
-                         spawny = y*Textur.kachelgroesse;
+                         spawnx = x*TEXTUR.kachelgroesse;
+                         spawny = y*TEXTUR.kachelgroesse;
                      }
                      /**
                       * Erfragt die Koordinaten des Ausganges und setzt dort ein Schloss
                       */
                      if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)
                      {
-                         lockx = x*Textur.kachelgroesse;
-                         locky = y*Textur.kachelgroesse;
+                         lockx = x*TEXTUR.kachelgroesse;
+                         locky = y*TEXTUR.kachelgroesse;
                          
                      }
               }
          }
-       for (BewegtesObjekt i : zeugs) {
+       for (BEWEGTESOBJEKT i : zeugs) {
            i.setOther(zeugs);
         }
 
@@ -123,8 +123,8 @@ public class Welt
   public void update()
   {
       spieler.update(true); 
-      BewegtesObjekt underPlayer = null;
-      for (BewegtesObjekt i : zeugs) {
+      BEWEGTESOBJEKT underPlayer = null;
+      for (BEWEGTESOBJEKT i : zeugs) {
          i.update();
          if (i.RubinCollection()) 
          {
@@ -177,7 +177,7 @@ public class Welt
       }
       for(int i = 0; i < zeugs.size();i++)
       {
-          BewegtesObjekt r= zeugs.get(i);
+          BEWEGTESOBJEKT r= zeugs.get(i);
           r.draw(g);
           
       }

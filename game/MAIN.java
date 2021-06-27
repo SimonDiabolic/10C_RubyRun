@@ -1,13 +1,13 @@
 package game;
 
-public class Main
+public class MAIN
 {
   static int width = 800;
   static int height = 920;
   
   public static void main(String[] args)
   {
-     Frame f = new Frame();
+     FRAME f = new FRAME();
      
      f.setDefaultCloseOperation(3); //3 entspricht EXOIT_ON_CLOSE
      f.setSize(width,height);

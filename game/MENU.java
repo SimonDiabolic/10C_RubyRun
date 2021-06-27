@@ -6,27 +6,27 @@ import java.awt.Font;
 
 //---------------------//
 
-public class Menu
+public class MENU
 {
     private BufferedImage background;
     private BufferedImage title;
-    private Button[] buttons;
+    private BUTTON[] buttons;
     public static int hoehe;
     public static int breite;
     
-    public Menu()
+    public MENU()
     {
-        buttons = new Button[3];
-        BufferedImage[] texturen = {Textur.button, Textur.buttonmouseover, Textur.buttonpressed};  
+        buttons = new BUTTON[3];
+        BufferedImage[] texturen = {TEXTUR.button, TEXTUR.buttonmouseover, TEXTUR.buttonpressed};  
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
-        buttons[0] = new Button(200, "Spiel starten", texturen, f); 
-        buttons[1] = new Button(350, "Spiel beenden", texturen, f); 
-        buttons[2] = new Button(500, "About", texturen, f); 
+        buttons[0] = new BUTTON(200, "Spiel starten", texturen, f); 
+        buttons[1] = new BUTTON(350, "Spiel beenden", texturen, f); 
+        buttons[2] = new BUTTON(500, "About", texturen, f); 
         
-        background = Textur.background;
-        title = Textur.titel;
+        background = TEXTUR.background;
+        title = TEXTUR.titel;
         breite = background.getWidth();
         hoehe = background.getHeight();
         
@@ -46,7 +46,7 @@ public class Menu
       {
           if(buttons[i].update())
           {
-              if (i == 0) Frame.spielzustand = 1;
+              if (i == 0) FRAME.spielzustand = 1;
               else if (i == 1) System.exit(0);
               else if (i == 2);
           }

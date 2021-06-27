@@ -6,7 +6,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class Keyboard implements KeyListener, MouseMotionListener, MouseListener
+public class KEYBOARD implements KeyListener, MouseMotionListener, MouseListener
 {
   private static boolean[] keys = new boolean[1024];
   private static int mousex;
