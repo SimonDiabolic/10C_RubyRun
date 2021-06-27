@@ -9,21 +9,21 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.awt.event.KeyEvent;
 //---------------------//
-public class Frame extends JFrame
+public class FRAME extends JFrame
 {
   private BufferStrategy strat;
-  private Welt welt;
-  private Menu menu;
+  private WELT welt;
+  private MENU menu;
   static int spielzustand;
-  public Frame()
+  public FRAME()
   {
       super("RubyRun");
-      Keyboard kb = new Keyboard();
+      KEYBOARD kb = new KEYBOARD();
       addKeyListener(kb);
       addMouseMotionListener(kb);
       addMouseListener(kb);
-      welt = new Welt();
-      menu = new Menu();
+      welt = new WELT();
+      menu = new MENU();
   }
   public void makestrat()
   {
@@ -61,7 +61,7 @@ public class Frame extends JFrame
                           break;
           case 1:
               welt.update();
-              if(Keyboard.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
+              if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
                           break;
           default:
           

@@ -9,13 +9,13 @@ import java.awt.image.BufferedImage;
  * 
  * BezeichnungzuLadenesElementImCode = Imageloader.loadImage("NamezuLadenesElementImOrdner");
  */
-public class Imageloader
+public class IMAGELOADER
 {
   public static BufferedImage loadImage(String name)
   {
     try
     {
-       return ImageIO.read(Imageloader.class.getClassLoader().getResourceAsStream("gfx/"+name+".png"));
+       return ImageIO.read(IMAGELOADER.class.getClassLoader().getResourceAsStream("gfx/"+name+".png"));
     } 
     catch (IOException e) 
     {

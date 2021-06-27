@@ -7,7 +7,7 @@ import java.awt.FontMetrics;
 import java.awt.Color;
 
 //---------------------//
-public class Button
+public class BUTTON
 {
     private int x,y;
     private Font font;
@@ -16,14 +16,14 @@ public class Button
     private BufferedImage[] look;
     private int ButtonStatus;
     private Color color;
-    public Button(int y, String name, BufferedImage[] look, Font font)
+    public BUTTON(int y, String name, BufferedImage[] look, Font font)
     {
         this.y = y;
         this.name = name;
         this.look = look;
         this.font = font;
         
-        x = Menu.breite/2 + look[ButtonStatus].getWidth()/2;
+        x = MENU.breite/2 + look[ButtonStatus].getWidth()/2;
     }
     public void draw(Graphics g)
     {
@@ -36,19 +36,19 @@ public class Button
     }
     public boolean update()
     {
-         if(Keyboard.getButton() != 1&& ButtonStatus == 2)
+         if(KEYBOARD.getButton() != 1&& ButtonStatus == 2)
          {
              ButtonStatus = 0;
              return true;
          }
         
          ButtonStatus = 0;
-         int MausX = Keyboard.getMouseX();
-         int MausY = Keyboard.getMouseY();
-         if(Collision.RechteckZuRechteck(MausX,MausY, 0, 0, x, y, look[ButtonStatus].getWidth(), 
+         int MausX = KEYBOARD.getMouseX();
+         int MausY = KEYBOARD.getMouseY();
+         if(COLLISION.RechteckZuRechteck(MausX,MausY, 0, 0, x, y, look[ButtonStatus].getWidth(), 
                      look[ButtonStatus].getHeight()))
                      {
-                        if(Keyboard.getButton() == 1) ButtonStatus = 2;
+                        if(KEYBOARD.getButton() == 1) ButtonStatus = 2;
                         else ButtonStatus = 1;
                      }
          return false;
