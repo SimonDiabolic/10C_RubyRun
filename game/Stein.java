@@ -7,7 +7,7 @@ public class Stein extends BewegtesObjekt
     Stein (int x, int y)
     {
         super(x,y);
-        look = Imageloader.loadImage("stein");
+        look = Textur.stein;
     }
     public void update()
     {

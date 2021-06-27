@@ -8,7 +8,7 @@ public class Rubin extends BewegtesObjekt
     Rubin (int x, int y)
     {
         super(x,y);
-        look = Imageloader.loadImage("rubin");
+        look = Textur.rubin;
         
     }
     public void update()

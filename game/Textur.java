@@ -19,6 +19,7 @@ public class Textur
     static BufferedImage button = Imageloader.loadImage("button");
     static BufferedImage buttonmouseover = Imageloader.loadImage("buttonmaus");
     static BufferedImage buttonpressed = Imageloader.loadImage("buttonpressed");
+    static BufferedImage bar = Imageloader.loadImage("bar");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  
