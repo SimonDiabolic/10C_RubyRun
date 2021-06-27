@@ -42,6 +42,8 @@ public class Welt
       private boolean LockExists;
       private UIBOTTOM uibottom;
  
+      
+      public static final Color BEIGE = new Color(147,117,58);
   public Welt()
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
@@ -130,14 +132,6 @@ public class Welt
          {
             underPlayer = i;
          }
-         // for (BewegtesObjekt j : zeugs)
-         // {
-         // if(Collision.RechteckZuRechteck(i.x,i.y, Textur.kachelgroesse, Textur.kachelgroesse, j.x, j.y, Textur.kachelgroesse, 
-                     // Textur.kachelgroesse))
-                     // {
-                         // i.resetPosition();
-                    // }
-                    // }
       } 
       if (underPlayer != null) {
         zeugs.remove(underPlayer);
@@ -159,11 +153,6 @@ public class Welt
             spieler.resetPosition();
         }
       }
-      /*
-       for (BewegtesObjekt i : zeugs) {
-           i.setOther(zeugs);
-        }
-       */
   }
   public void draw(Graphics g)
   {    
@@ -189,12 +178,9 @@ public class Welt
       }
       spieler.draw(g);
       
-      g.setColor(Color.BLACK);
+      g.setColor(BEIGE);
       g.setFont(font);
-      g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 740+g.getFont().getSize());
-      // System.out.println("erzeugte Rubine: " + anzahlRubine);  
-      // System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
-      // System.out.println("Punkte:" + punkte);
+      g.drawString(punkte +"/"+(int)zuSammelndeRubine, 60, 870+g.getFont().getSize());
     }
   
 }

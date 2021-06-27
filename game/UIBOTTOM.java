@@ -20,5 +20,6 @@ public class UIBOTTOM
     public void draw(Graphics g)
     {
         g.drawImage(look, x, y, null);
+
     }
 }
