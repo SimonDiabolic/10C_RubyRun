@@ -5,17 +5,17 @@ import java.util.LinkedList;
 
 public class SCHLANGE extends BEWEGTESOBJEKT
 {
-    private int direction;
+    int bewegungsrichtung;
     SCHLANGE (int x, int y)
     {
         super(x,y);
-        direction = 1;
-        look = TEXTUR.schlange;
         
+        look = TEXTUR.schlange;
+        bewegungsrichtung = 1;
     }
     public void update()
     {   
-        
+        SchlangeBewegung();
     }
     public void draw(Graphics g)
     {
@@ -33,6 +33,26 @@ public class SCHLANGE extends BEWEGTESOBJEKT
         {
             return false;
         }
+    }
+    public void SchlangeBewegung()
+    {
+        int nextx = x / TEXTUR.kachelgroesse ;
+        int nexty = y / TEXTUR.kachelgroesse + bewegungsrichtung;
+        boolean moveok = false;
+        if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
+        {
+            moveok = true;
+            for (BEWEGTESOBJEKT i : other) {
+                if (nextx == i.getX() / TEXTUR.kachelgroesse && 
+                    nexty == i.getY() / TEXTUR.kachelgroesse )  {
+                    moveok = false;
+                }
+            }             
+        } 
+        if (moveok)
+                y = y + 20*bewegungsrichtung;
+            else    
+                bewegungsrichtung = bewegungsrichtung * -1;
     }
 }
 
