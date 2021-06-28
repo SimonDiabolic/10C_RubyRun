@@ -14,6 +14,7 @@ public class FRAME extends JFrame
   private BufferStrategy strat;
   private WELT welt;
   private MENU menu;
+
   static int spielzustand;
   public FRAME()
   {
@@ -24,6 +25,7 @@ public class FRAME extends JFrame
       addMouseListener(kb);
       welt = new WELT();
       menu = new MENU();
+      
   }
   public void makestrat()
   {
@@ -47,8 +49,11 @@ public class FRAME extends JFrame
           case 1:
               welt.draw(g);
                           break;
+                          
+         
+                                  
           default:
-          
+        
           break;
       }
   }
