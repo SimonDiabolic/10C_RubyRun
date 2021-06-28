@@ -26,6 +26,7 @@ public class FRAME extends JFrame
       addMouseListener(kb);
       menu = new MENU();
       levelwahl = new LEVELWAHL();
+      WELT welt = null;
       
 
       
@@ -53,7 +54,7 @@ public class FRAME extends JFrame
               levelwahl.draw(g);
                           break;                
           case 2:
-              welt = new WELT();
+              if(welt == null) {welt = new WELT();}
               welt.draw(g);
                           break;
                           
