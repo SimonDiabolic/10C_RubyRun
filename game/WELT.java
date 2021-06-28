@@ -156,7 +156,7 @@ public class WELT
          {
             SpielerAufBusch = i;
          }
-         if (i.SpielerAufStein())
+         if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
              if (damage == 5)
