@@ -29,12 +29,14 @@ public class WELT
       private int spawny;
       private int anzahlRubine;
 
+      
       public int punkte;
       private int leben;
       private int damage;
       private Font font;
       private FontMetrics fm;
       
+      static String level;
       private LOCK Lock;
       private int locky;
       private int lockx;
@@ -60,7 +62,8 @@ public class WELT
    */
   public void loadNextLevel()
   {
-      BufferedImage map = IMAGELOADER.loadImage("level4");
+      String karte = LEVELWAHL.level;
+      BufferedImage map = IMAGELOADER.loadImage(karte);
       breite = map.getWidth();
       hoehe = map.getHeight();
       uibottom = new UIBOTTOM(0,800);

@@ -14,17 +14,24 @@ public class LEVELWAHL
     private BUTTON[] buttons;
     public static int hoehe;
     public static int breite;
-    
+    static String level;
     public LEVELWAHL()
     {
-        buttons = new BUTTON[3];
+        buttons = new BUTTON[10];
         BufferedImage[] texturen = {TEXTUR.x1, TEXTUR.x2,TEXTUR.x2};  
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
         buttons[0] = new BUTTON(135,195, "", texturen, f); 
         buttons[1] = new BUTTON(280,210, "", texturen, f); 
-        buttons[2] = new BUTTON(426,195, "", texturen, f); 
+        buttons[2] = new BUTTON(426,195, "", texturen, f);
+        buttons[3] = new BUTTON(560,236, "", texturen, f); 
+        buttons[4] = new BUTTON(544,367, "", texturen, f); 
+        buttons[5] = new BUTTON(415,458, "", texturen, f); 
+        buttons[6] = new BUTTON(247,436, "", texturen, f); 
+        buttons[7] = new BUTTON(158,532, "", texturen, f); 
+        buttons[8] = new BUTTON(295,666, "", texturen, f); 
+        buttons[9] = new BUTTON(543,651, "", texturen, f); 
         
         background = TEXTUR.background;
         map = TEXTUR.map;
@@ -49,9 +56,16 @@ public class LEVELWAHL
       {
           if(buttons[i].update())
           {
-              if (i == 0) FRAME.spielzustand = 2;
-              else if (i == 1) System.exit(0);
-              else if (i == 2);
+              if (i == 0)      {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 1) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 2) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 3) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 4) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 5) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 6) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 7) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 8) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 9) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
           }
       }
     }

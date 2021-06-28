@@ -24,9 +24,11 @@ public class FRAME extends JFrame
       addKeyListener(kb);
       addMouseMotionListener(kb);
       addMouseListener(kb);
-      welt = new WELT();
       menu = new MENU();
       levelwahl = new LEVELWAHL();
+      
+
+      
   }
   public void makestrat()
   {
@@ -51,6 +53,7 @@ public class FRAME extends JFrame
               levelwahl.draw(g);
                           break;                
           case 2:
+              welt = new WELT();
               welt.draw(g);
                           break;
                           
@@ -81,5 +84,6 @@ public class FRAME extends JFrame
           break;
       }
   }
+
 }
 
