@@ -14,8 +14,9 @@ public class FRAME extends JFrame
   private BufferStrategy strat;
   private WELT welt;
   private MENU menu;
-
+  private LEVELWAHL levelwahl;
   static int spielzustand;
+  
   public FRAME()
   {
       super("RubyRun");
@@ -25,7 +26,7 @@ public class FRAME extends JFrame
       addMouseListener(kb);
       welt = new WELT();
       menu = new MENU();
-      
+      levelwahl = new LEVELWAHL();
   }
   public void makestrat()
   {
@@ -46,6 +47,9 @@ public class FRAME extends JFrame
           case 0:
               menu.draw(g);
                           break;
+          case 2:
+              levelwahl.draw(g);
+                          break;                
           case 1:
               welt.draw(g);
                           break;

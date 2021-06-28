@@ -45,6 +45,7 @@ public abstract class BEWEGTESOBJEKT
     public boolean BuschDecay(){return false;}
     public boolean SpielerAufStein(){return false;}
     public boolean SaphirCollection(){return false;}
+    public boolean SchlangeSchlaegtSpieler(){return false;}
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);

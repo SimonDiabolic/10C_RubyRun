@@ -22,6 +22,7 @@ public class TEXTUR
     static BufferedImage bar = IMAGELOADER.loadImage("bar");
     static BufferedImage busch = IMAGELOADER.loadImage("Busch");
     static BufferedImage saphir = IMAGELOADER.loadImage("saphir");
+    static BufferedImage schlange = IMAGELOADER.loadImage("schlange");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  

@@ -51,7 +51,6 @@ public class WELT
       Lock = new LOCK(lockx,locky);
       LockExists = true;
       
-      
       font = new Font("Monospaced", Font.BOLD,26); 
   }
 
@@ -61,7 +60,7 @@ public class WELT
    */
   public void loadNextLevel()
   {
-      BufferedImage map = IMAGELOADER.loadImage("devLevel");
+      BufferedImage map = IMAGELOADER.loadImage("level4");
       breite = map.getWidth();
       hoehe = map.getHeight();
       uibottom = new UIBOTTOM(0,800);
@@ -79,18 +78,19 @@ public class WELT
                       * if(c.getRed()==ROTWERT && c.getGreen()==GRUENWERT && c.getBlue()==BLAUWERT) kacheln[x] [y] = new Kachel(POSITIONx,POSITIONy,lookID);
                       */
                     if(c.getRed()==150   &&c.getGreen() == 150   && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
-                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1 = FüllelementWand
+                    if(c.getRed()==255 &&c.getGreen() == 115    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1 = FüllelementWand
                     if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
-                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
                     if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4);   //LookID 4 = AusgangControll
                     if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Busch
-                    if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 255)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin
+                    if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin
                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Saphir
+                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Stein
+                    if(c.getRed()==0   &&c.getGreen() == 255     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
                      /**
                       * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
-                     if(c.getRed()==255 &&c.getGreen() == 0 && c.getBlue() == 255)
+                     if(c.getRed()==255 &&c.getGreen() == 0 && c.getBlue() == 0)
                      {
                          anzahlRubine++;
                          zeugs.add(new RUBIN(x,y));
@@ -106,6 +106,10 @@ public class WELT
                      if(c.getRed()==0   &&c.getGreen() == 0    && c.getBlue() == 255)
                      {
                          zeugs.add(new SAPHIR(x,y));                         
+                     }
+                     if(c.getRed()==0   &&c.getGreen() == 255    && c.getBlue() == 0)
+                     {
+                         zeugs.add(new SCHLANGE(x,y));                         
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
