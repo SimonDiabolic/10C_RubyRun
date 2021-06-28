@@ -25,6 +25,9 @@ public class TEXTUR
     static BufferedImage schlange = IMAGELOADER.loadImage("schlange");
     static BufferedImage hr = IMAGELOADER.loadImage("Herzrot");
     static BufferedImage hs = IMAGELOADER.loadImage("Herzschwarz");
+    static BufferedImage map = IMAGELOADER.loadImage("map");
+    static BufferedImage x1 = IMAGELOADER.loadImage("x1");
+    static BufferedImage x2 = IMAGELOADER.loadImage("x2");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  

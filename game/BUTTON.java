@@ -16,14 +16,15 @@ public class BUTTON
     private BufferedImage[] look;
     private int ButtonStatus;
     private Color color;
-    public BUTTON(int y, String name, BufferedImage[] look, Font font)
+    public BUTTON(int x, int y, String name, BufferedImage[] look, Font font)
     {
         this.y = y;
+        this.x = x;
         this.name = name;
         this.look = look;
         this.font = font;
         
-        x = MENU.breite/2 + look[ButtonStatus].getWidth()/2;
+        
     }
     public void draw(Graphics g)
     {
