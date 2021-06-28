@@ -28,10 +28,6 @@ public class WELT
       private int spawnx;
       private int spawny;
       private int anzahlRubine;
-      private int rubinposy;
-      private int rubinposx;
-      private int steinposy;
-      private int steinposx;
 
       private int punkte;
       private int leben;
@@ -45,6 +41,8 @@ public class WELT
       private double zuSammelndeRubine;
       private boolean LockExists;
       private UIBOTTOM uibottom;
+      
+      
  
   public WELT()
   {
@@ -80,33 +78,39 @@ public class WELT
                      /**
                       * if(c.getRed()==ROTWERT && c.getGreen()==GRUENWERT && c.getBlue()==BLAUWERT) kacheln[x] [y] = new Kachel(POSITIONx,POSITIONy,lookID);
                       */
-                    if(c.getRed()==0   &&c.getGreen() == 255   && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
+                    if(c.getRed()==150   &&c.getGreen() == 150   && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
                     if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1 = FüllelementWand
-                    if(c.getRed()==255 &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0
-                    if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 255)      kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
+                    if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
                     if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
                     if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4);   //LookID 4 = AusgangControll
+                    if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Busch
+                    if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 255)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin
+                    if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Saphir
                      /**
-                      * Erfragt Koordinaten aller Rubinkacheln (hasRuby(true))
+                      * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
                      if(c.getRed()==255 &&c.getGreen() == 0 && c.getBlue() == 255)
                      {
                          anzahlRubine++;
-                         rubinposx = x;
-                         rubinposy = y;
-                         zeugs.add(new RUBIN(rubinposx,rubinposy));
+                         zeugs.add(new RUBIN(x,y));
                      }
                      if(c.getRed()==0 &&c.getGreen() == 0   && c.getBlue() == 0)
                      {
-                         steinposx = x;
-                         steinposy = y;
-                         zeugs.add(new STEIN(steinposx,steinposy));
+                         zeugs.add(new STEIN(x,y));
+                     }
+                     if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)
+                     {
+                         zeugs.add(new BUSCH(x,y));                         
+                     }
+                     if(c.getRed()==0   &&c.getGreen() == 0    && c.getBlue() == 255)
+                     {
+                         zeugs.add(new SAPHIR(x,y));                         
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
                       */
-                     if(c.getRed()==0&&c.getGreen() == 0&& c.getBlue() == 255)    
+                     if(c.getRed()==0&&c.getGreen() == 150&& c.getBlue() == 150)    
                      {
                          spawnx = x*TEXTUR.kachelgroesse;
                          spawny = y*TEXTUR.kachelgroesse;
@@ -130,12 +134,23 @@ public class WELT
   public void update()
   {
       spieler.update(true); 
-      BEWEGTESOBJEKT underPlayer = null;
+      BEWEGTESOBJEKT SpielerAufRubin = null;
+      BEWEGTESOBJEKT SpielerAufBusch = null;
+      BEWEGTESOBJEKT SpielerAufSaphir = null;
+      double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       for (BEWEGTESOBJEKT i : zeugs) {
          i.update();
          if (i.RubinCollection()) 
          {
-            underPlayer = i;
+            SpielerAufRubin = i;
+         }
+         if (i.SaphirCollection()) 
+         {
+            SpielerAufSaphir = i;
+         }
+         if (i.BuschDecay()) 
+         {
+            SpielerAufBusch = i;
          }
          if (i.SpielerAufStein())
          {
@@ -152,19 +167,24 @@ public class WELT
                 }
          }
       } 
-      if (underPlayer != null) {
-        zeugs.remove(underPlayer);
+      if (SpielerAufRubin != null) {
+        zeugs.remove(SpielerAufRubin);
         punkte++;
-        // System.out.println("Punkte: " + punkte);
-        double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
         if(punkte >= zuSammelndeRubine && LockExists == true )
             {    
              Lock = null;
-             // System.out.println("Schloss entfernt");
              LockExists = false;
             }
       }
-      double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
+      if (SpielerAufSaphir != null) {
+        zeugs.remove(SpielerAufSaphir);
+        // Levelwahl.saphire++;
+        
+      }
+      if (SpielerAufBusch != null) 
+      {
+          zeugs.remove(SpielerAufBusch);
+      }
       if(punkte < zuSammelndeRubine)
       {
         if(Lock.SpielerAufSchloss())
@@ -172,11 +192,6 @@ public class WELT
             spieler.resetPosition();
         }
       }
-      /*
-       for (BewegtesObjekt i : zeugs) {
-           i.setOther(zeugs);
-        }
-       */
   }
   public void draw(Graphics g)
   {    
