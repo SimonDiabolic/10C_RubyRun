@@ -120,9 +120,9 @@ public class WELT
                      }
               }
          }
-       for (BEWEGTESOBJEKT i : zeugs) {
+         for (BEWEGTESOBJEKT i : zeugs) {
            i.setOther(zeugs);
-        }
+         }
 
   }
   public void update()
@@ -138,7 +138,7 @@ public class WELT
          if (i.SpielerAufStein())
          {
              damage++;
-             if (damage == 15)
+             if (damage == 5)
              {
                  leben--;
                  damage = 0;
@@ -202,8 +202,8 @@ public class WELT
       
       g.setColor(Color.BLACK);
       g.setFont(font);
-      g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 740+g.getFont().getSize());
-      g.drawString("Leben: " + leben + "/5", 50, 780+g.getFont().getSize());
+      g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 770+g.getFont().getSize());
+      g.drawString("Leben: " + leben + "/5", 50, 770+g.getFont().getSize());
       // System.out.println("erzeugte Rubine: " + anzahlRubine);  
       // System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
       // System.out.println("Punkte:" + punkte);
