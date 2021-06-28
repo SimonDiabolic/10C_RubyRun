@@ -50,7 +50,7 @@ public class SCHLANGE extends BEWEGTESOBJEKT
             }             
         } 
         if (moveok)
-                y = y + 20*bewegungsrichtung;
+                y = y + 10*bewegungsrichtung;
             else    
                 bewegungsrichtung = bewegungsrichtung * -1;
     }

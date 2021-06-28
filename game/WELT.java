@@ -170,7 +170,7 @@ public class WELT
                  
                  if (leben == 0)
                  {
-                     System.exit(0);
+                     FRAME.spielzustand = 1;
                     }
                 }
          }
@@ -186,7 +186,7 @@ public class WELT
       }
       if (SpielerAufSaphir != null) {
         zeugs.remove(SpielerAufSaphir);
-        // Levelwahl.saphire++;
+        LEVELWAHL.saphire++;
         
       }
       if (SpielerAufBusch != null) 
@@ -225,12 +225,12 @@ public class WELT
       spieler.draw(g);
       DecimalFormat twodigits = new DecimalFormat("00");
       String score = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
-      String scoreSaphir = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
+      String scoreSaphir = twodigits.format(LEVELWAHL.saphire);
       g.setColor(Color.BLACK);
       g.setFont(font);
       fm = g.getFontMetrics();
       g.drawString(score, 2+fm.stringWidth(score)/2, 858+g.getFont().getSize());
-      g.drawString(scoreSaphir, 98+fm.stringWidth(score)/2, 858+g.getFont().getSize());
+      g.drawString(scoreSaphir, 122+fm.stringWidth(score)/2, 858+g.getFont().getSize());
     }
     
   

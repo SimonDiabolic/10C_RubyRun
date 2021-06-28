@@ -15,6 +15,7 @@ public class LEVELWAHL
     public static int hoehe;
     public static int breite;
     static String level;
+    static int saphire;
     public LEVELWAHL()
     {
         buttons = new BUTTON[10];
@@ -56,16 +57,16 @@ public class LEVELWAHL
       {
           if(buttons[i].update())
           {
-              if (i == 0)      {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 1) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 2) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 3) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 4) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 5) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 6) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 7) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 8) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
-              else if (i == 9) {level=("level"+ (i+1)); FRAME.spielzustand = 2;}
+              if (i == 0)      {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 1) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 2) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 3) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 4) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 5) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 6) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 7) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 8) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
+              else if (i == 9) {level=("lvl/level"+ (i+1)); FRAME.spielzustand = 2;}
           }
       }
     }
