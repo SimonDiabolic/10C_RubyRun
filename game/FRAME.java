@@ -14,7 +14,9 @@ public class FRAME extends JFrame
   private BufferStrategy strat;
   private WELT welt;
   private MENU menu;
+  private LEVELWAHL levelwahl;
   static int spielzustand;
+  
   public FRAME()
   {
       super("RubyRun");
@@ -22,8 +24,12 @@ public class FRAME extends JFrame
       addKeyListener(kb);
       addMouseMotionListener(kb);
       addMouseListener(kb);
-      welt = new WELT();
       menu = new MENU();
+      levelwahl = new LEVELWAHL();
+      WELT welt = null;
+      
+
+      
   }
   public void makestrat()
   {
@@ -45,10 +51,17 @@ public class FRAME extends JFrame
               menu.draw(g);
                           break;
           case 1:
+              levelwahl.draw(g);
+                          break;                
+          case 2:
+              if(welt == null) {welt = new WELT();}
               welt.draw(g);
                           break;
+                          
+         
+                                  
           default:
-          
+        
           break;
       }
   }
@@ -60,6 +73,10 @@ public class FRAME extends JFrame
               menu.update();
                           break;
           case 1:
+              levelwahl.update();
+                          break;
+                          
+          case 2:
               welt.update();
               if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
                           break;
@@ -68,5 +85,6 @@ public class FRAME extends JFrame
           break;
       }
   }
+
 }
 

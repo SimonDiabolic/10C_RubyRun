@@ -51,7 +51,11 @@ public class STEIN extends BEWEGTESOBJEKT
     {
      g.drawImage(look, x, y, null);
     }
-    public int getSteinX() { return x; }
-    public int getSteinY() { return y; }
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public boolean SpielerAufStein()
+    {
+     return (getX()==SPIELER.getXPos()) && (getY()==SPIELER.getYPos());
+    }
 }
 

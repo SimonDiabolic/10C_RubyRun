@@ -40,14 +40,12 @@ public abstract class BEWEGTESOBJEKT
                 y = y+20;//nexty * Textur.kachelgroesse;
         } 
  
-    }
-    public void resetPosition()
-    {
-     // x=oldx;
-     // y=oldy;
-    }
+    }   
     public boolean RubinCollection(){return false;}
-    //public void fallen(){y = y + Textur.kachelgroesse;}
+    public boolean BuschDecay(){return false;}
+    public boolean SpielerAufStein(){return false;}
+    public boolean SaphirCollection(){return false;}
+    public boolean SchlangeSchlaegtSpieler(){return false;}
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);

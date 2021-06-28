@@ -2,23 +2,43 @@ package game;
 //---------------------//
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
+import java.text.DecimalFormat;
 
 //---------------------//
 public class UIBOTTOM
 {
     private int x;
     private int y;
-    private BufferedImage look;
-    
-    
+    private BufferedImage l1;
+    private HERZ[] herzen;
+    int i = 0;
     public UIBOTTOM(int x, int y)
     {
         this.x = x; 
         this.y = y;
-        look = TEXTUR.bar;
+        l1 = TEXTUR.bar;
+        BufferedImage[] HerzZustand = {TEXTUR.hr, TEXTUR.hs};
+        herzen = new HERZ[5];
+
+        herzen[0] = new HERZ(440,825, HerzZustand); 
+        herzen[1] = new HERZ(500,825, HerzZustand); 
+        herzen[2] = new HERZ(560,825, HerzZustand); 
+        herzen[3] = new HERZ(620,825, HerzZustand);  
+        herzen[4] = new HERZ(680,825, HerzZustand);
+
     }
     public void draw(Graphics g)
     {
-        g.drawImage(look, x, y, null);
+      g.drawImage(l1, x, y, null);
+        for(int i = 0; i < herzen.length;i++)
+      {
+          herzen[i].draw(g);
+      }
     }
+    public void lebenNehmen()
+    {
+          herzen[i].HerzZustand = 1;
+          i++;
+    }
+    
 }

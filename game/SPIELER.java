@@ -62,7 +62,7 @@ public class SPIELER
      }
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 4)
      {
-         System.exit(1); 
+         FRAME.spielzustand = 1;
      }
  }
  public static int getXPos()
@@ -82,6 +82,10 @@ public class SPIELER
  {
      return direction;
  }
+ 
+ 
+  
+    
 }
 
 
