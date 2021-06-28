@@ -21,9 +21,9 @@ public class LEVELWAHL
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
-        // buttons[0] = new BUTTON(200, "Spiel starten", texturen, f); 
-        // buttons[1] = new BUTTON(350, "Spiel beenden", texturen, f); 
-        // buttons[2] = new BUTTON(500, "About", texturen, f); 
+        buttons[0] = new BUTTON(200, "Spiel starten", texturen, f); 
+        buttons[1] = new BUTTON(350, "Spiel beenden", texturen, f); 
+        buttons[2] = new BUTTON(500, "About", texturen, f); 
         
         background = TEXTUR.background;
         title = TEXTUR.titel;
@@ -46,7 +46,7 @@ public class LEVELWAHL
       {
           if(buttons[i].update())
           {
-              if (i == 0) FRAME.spielzustand = 1;
+              if (i == 0) FRAME.spielzustand = 2;
               else if (i == 1) System.exit(0);
               else if (i == 2);
           }

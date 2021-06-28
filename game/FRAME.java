@@ -47,10 +47,10 @@ public class FRAME extends JFrame
           case 0:
               menu.draw(g);
                           break;
-          case 2:
+          case 1:
               levelwahl.draw(g);
                           break;                
-          case 1:
+          case 2:
               welt.draw(g);
                           break;
                           
@@ -69,6 +69,10 @@ public class FRAME extends JFrame
               menu.update();
                           break;
           case 1:
+              levelwahl.update();
+                          break;
+                          
+          case 2:
               welt.update();
               if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
                           break;

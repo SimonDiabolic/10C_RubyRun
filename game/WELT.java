@@ -29,7 +29,7 @@ public class WELT
       private int spawny;
       private int anzahlRubine;
 
-      private int punkte;
+      public int punkte;
       private int leben;
       private int damage;
       private Font font;
@@ -162,6 +162,7 @@ public class WELT
              if (damage == 5)
              {
                  leben--;
+                 uibottom.lebenNehmen();
                  damage = 0;
                  
                  if (leben == 0)
@@ -214,7 +215,6 @@ public class WELT
           
       }
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
-      
       if(punkte < zuSammelndeRubine)
       {
           Lock.draw(g);
@@ -222,11 +222,13 @@ public class WELT
       spieler.draw(g);
       DecimalFormat twodigits = new DecimalFormat("00");
       String score = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
+      String scoreSaphir = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
       g.setColor(Color.BLACK);
       g.setFont(font);
       fm = g.getFontMetrics();
       g.drawString(score, 2+fm.stringWidth(score)/2, 858+g.getFont().getSize());
-      g.drawString("Leben: " + leben + "/5", 50, 770+g.getFont().getSize());
+      g.drawString(scoreSaphir, 98+fm.stringWidth(score)/2, 858+g.getFont().getSize());
     }
+    
   
 }
