@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.util.LinkedList;
 import java.util.Iterator;
+import java.text.DecimalFormat;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class WELT
       private int leben;
       private int damage;
       private Font font;
+      private FontMetrics fm;
       
       private LOCK Lock;
       private int locky;
@@ -52,7 +54,7 @@ public class WELT
       LockExists = true;
       
       
-      font = new Font("Monospaced", Font.BOLD,30);
+      font = new Font("Monospaced", Font.BOLD,26); 
   }
 
   /*
@@ -199,14 +201,13 @@ public class WELT
           Lock.draw(g);
       }
       spieler.draw(g);
-      
+      DecimalFormat twodigits = new DecimalFormat("00");
+      String score = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
       g.setColor(Color.BLACK);
       g.setFont(font);
-      g.drawString("Rubine: " + punkte +"/"+(int)zuSammelndeRubine, 500, 770+g.getFont().getSize());
+      fm = g.getFontMetrics();
+      g.drawString(score, 2+fm.stringWidth(score)/2, 858+g.getFont().getSize());
       g.drawString("Leben: " + leben + "/5", 50, 770+g.getFont().getSize());
-      // System.out.println("erzeugte Rubine: " + anzahlRubine);  
-      // System.out.println("zu Sammelnde Rubine: " + zuSammelndeRubine);
-      // System.out.println("Punkte:" + punkte);
     }
   
 }
