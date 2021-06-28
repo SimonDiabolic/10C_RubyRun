@@ -23,9 +23,9 @@ public class MENU
         
         int x = MENU.breite/2 + 400/2;
         
-        buttons[0] = new BUTTON(x,200, "Spiel starten", texturen, f); 
-        buttons[1] = new BUTTON(x,350, "Spiel beenden", texturen, f); 
-        buttons[2] = new BUTTON(x,500, "About", texturen, f); 
+        buttons[0] = new BUTTON(x,310, "Spiel starten", texturen, f); 
+        buttons[1] = new BUTTON(x,460, "Spiel beenden", texturen, f); 
+        buttons[2] = new BUTTON(x,610, "About", texturen, f); 
         
         background = TEXTUR.background;
         title = TEXTUR.titel;
@@ -36,7 +36,7 @@ public class MENU
     public void draw(Graphics g)
     {
         g.drawImage(background, 0, 0, breite, hoehe, null); 
-        g.drawImage(title, breite/2 - title.getWidth()/2, 15, null);
+        g.drawImage(title, breite/2 - title.getWidth()/2, 155, null);
         for(int i = 0; i < buttons.length;i++)
       {
           buttons[i].draw(g);
