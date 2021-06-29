@@ -7,15 +7,16 @@ public class STEIN extends BEWEGTESOBJEKT
     STEIN (int x, int y)
     {
         super(x,y);
+        type = 's';
         look = TEXTUR.stein;
     }
     public void update()
     {
         if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
         {
-            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirection()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirection() != 0)
+            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirectionX()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirectionX() != 0)
               {
-                  int nextx = x + (SPIELER.getDirection() * TEXTUR.kachelgroesse);
+                  int nextx = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
                   int nexty = y;
                   if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 )
                   {
@@ -30,7 +31,7 @@ public class STEIN extends BEWEGTESOBJEKT
                       }
                       if (moveok)
                       {
-                          x = x + (SPIELER.getDirection() * TEXTUR.kachelgroesse);
+                          x = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
                       }
                       else
                       {
