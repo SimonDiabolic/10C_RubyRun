@@ -59,14 +59,13 @@ public class SPIELER
      int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
      for (BEWEGTESOBJEKT i : BEWEGTESOBJEKT.other) 
                       {
-                          int ix = i.getX();
-                          int iy = i.getY();
+                          
                           for (BEWEGTESOBJEKT j : BEWEGTESOBJEKT.other) 
                           {
-                              if (i.getType() == 's' && j.getType() == 's' &&
-                              ((spielerposx + directionx == i.getX() / TEXTUR.kachelgroesse && spielerposy == i.getY() / TEXTUR.kachelgroesse) || (WELT.kacheln [spielerposx + directionx] 
-                              [spielerposy].getLookID() == 1) && (spielerposx == j.getX() / TEXTUR.kachelgroesse && spielerposy + directiony == j.getY() / TEXTUR.kachelgroesse) || 
-                              WELT.kacheln [spielerposx + directionx] [spielerposy].getLookID() == 1))
+                              if (i.getType() == 's' && j.getType() == 's' && directionx != 0 && directiony != 0 && WELT.kacheln[spielerposx][spielerposy].getLookID()!=1 &&
+                              ((spielerposx - directionx == i.getX() / TEXTUR.kachelgroesse && spielerposy == i.getY() / TEXTUR.kachelgroesse) || (WELT.kacheln [spielerposx - directionx] 
+                              [spielerposy].getLookID() == 1) && (spielerposx == j.getX() / TEXTUR.kachelgroesse && spielerposy - directiony == j.getY() / TEXTUR.kachelgroesse) || 
+                              WELT.kacheln [spielerposx] [spielerposy - directiony].getLookID() == 1))
                               {
                                   resetPosition ();
                                   
@@ -85,6 +84,12 @@ public class SPIELER
      {
          FRAME.spielzustand = 1;
      }
+     
+ }
+ public static void resetDirection()
+ {
+     directionx = 0;
+     directiony = 0;
  }
  public static int getXPos()
  {

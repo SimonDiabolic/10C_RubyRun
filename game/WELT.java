@@ -232,6 +232,6 @@ public class WELT
       g.drawString(score, 2+fm.stringWidth(score)/2, 858+g.getFont().getSize());
       g.drawString(scoreSaphir, 122+fm.stringWidth(score)/2, 858+g.getFont().getSize());
     }
-    
+  
   
 }
