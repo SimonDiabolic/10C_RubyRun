@@ -17,6 +17,7 @@ public class LEVELWAHL
     public static int breite;
     public static String level;
     public static int saphire;
+    public static int currentLevel;
     public LEVELWAHL()
     {
         buttons = new game.BUTTON[10];
@@ -58,17 +59,21 @@ public class LEVELWAHL
       {
           if(buttons[i].update())
           {
-              if (i == 0)      {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 1) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 2) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 3) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 4) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 5) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 6) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 7) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 8) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
-              else if (i == 9) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;}
+              if (i == 0)      {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 1) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 2) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 3) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 4) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 5) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 6) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 7) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 8) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 9) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
           }
       }
+    }
+    public static void loadLevel(int lvl)
+    {
+        level=("lvl/level"+ lvl); FRAME.spielzustand = 2;currentLevel++;
     }
 }

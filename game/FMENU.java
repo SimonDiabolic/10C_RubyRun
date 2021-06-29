@@ -35,13 +35,15 @@ public class FMENU
         perfekt = TEXTUR.perfekt;
         BufferedImage[] texturen = {TEXTUR.next, TEXTUR.next1, TEXTUR.next1};
         BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
+        BufferedImage[] texturen2 = {TEXTUR.goMenu, TEXTUR.goMenu1, TEXTUR.goMenu1};
   
         f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
-        buttons = new BUTTON[2];
+        buttons = new BUTTON[3];
         buttons[0] = new BUTTON(545, 730, "", texturen, f); 
-        buttons[1] = new BUTTON(126, 730, "", texturen1, f); 
+        buttons[1] = new BUTTON(126, 730, "", texturen1, f);
+        buttons[2] = new BUTTON(300, 730, "", texturen2, f);
         
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
@@ -74,8 +76,9 @@ public class FMENU
       {
           if(buttons[i].update())
           {
-              if (i == 0) {game.FRAME.spielzustand = 1; FRAME.fmenu = null;}
+              if (i == 0) {LEVELWAHL.loadLevel(LEVELWAHL.currentLevel+1);FRAME.spielzustand = 2;FRAME.fmenu = null;}
               else if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;}
+              else if (i == 2){FRAME.spielzustand = 1; FRAME.fmenu = null;}
           }
       }
     }

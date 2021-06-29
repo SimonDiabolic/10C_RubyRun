@@ -69,6 +69,7 @@ public class WELT
       uibottom = new UIBOTTOM(0,800);
       kacheln = new KACHEL[breite] [hoehe];
       zeugs = new LinkedList<BEWEGTESOBJEKT>();
+      anzahlRubine = 0;
       punkte = 0;
       damage = 0;
       leben = 5;
@@ -90,7 +91,8 @@ public class WELT
                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Saphir
                     if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Stein
                     if(c.getRed()==0   &&c.getGreen() == 255     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
-                     /**
+                    if(c.getRed()==0   &&c.getGreen() == 250     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
+                    /**
                       * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
                      if(c.getRed()==255 &&c.getGreen() == 0 && c.getBlue() == 0)
@@ -115,6 +117,11 @@ public class WELT
                      {
                          zeugs.add(new SCHLANGE(x,y,'y'));                         
                      }
+                     if(c.getRed()==0   &&c.getGreen() == 250    && c.getBlue() == 0)
+                     {
+                         zeugs.add(new SCHLANGE(x,y,'x'));                         
+                     }
+                     
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
                       */
@@ -170,11 +177,12 @@ public class WELT
          if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
-             if (damage == 5)
+             if (damage == 1)
              {
                  leben--;
                  uibottom.lebenNehmen();
                  damage = 0;
+                 
                  
                  if (leben == 0)
                  {
@@ -240,7 +248,7 @@ public class WELT
       }
       spieler.draw(g);
       DecimalFormat twodigits = new DecimalFormat("00");
-      String score = twodigits.format(punkte) +"/"+(int)zuSammelndeRubine;
+      String score = twodigits.format(punkte) +"/"+twodigits.format((int)zuSammelndeRubine);
       String scoreSaphir = twodigits.format(LEVELWAHL.saphire);
       g.setColor(Color.BLACK);
       g.setFont(font);
