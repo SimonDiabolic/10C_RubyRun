@@ -41,11 +41,11 @@
         int nexty = y / TEXTUR.kachelgroesse + bewegungsrichtung;
         if (coodaxis == 'x')
         {
-            nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
+            nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung - 1;
         }
         else if (coodaxis == 'x')
         {
-            nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
+            nexty = y / TEXTUR.kachelgroesse + bewegungsrichtung - 1;
         }
         boolean moveok = false;
         if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
