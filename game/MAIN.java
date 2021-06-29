@@ -24,6 +24,7 @@ public class MAIN
          
          f.repaint();
          
+         SPIELER.resetDirection();
          try
          {
              Thread.sleep(150);

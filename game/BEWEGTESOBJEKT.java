@@ -8,10 +8,11 @@ public abstract class BEWEGTESOBJEKT
 {
     protected int x;
     protected int y;
-    protected int oldx;
+    protected int oldx; 
     protected int oldy;
     protected BufferedImage look;
-    protected LinkedList<BEWEGTESOBJEKT> other;
+    protected static LinkedList<BEWEGTESOBJEKT> other;
+    protected static char type; //s für stein, r für rubin, b für busch
     BEWEGTESOBJEKT (int x, int y)
     {
         this.x = x * TEXTUR.kachelgroesse;
@@ -46,6 +47,7 @@ public abstract class BEWEGTESOBJEKT
     public boolean SpielerAufStein(){return false;}
     public boolean SaphirCollection(){return false;}
     public boolean SchlangeSchlaegtSpieler(){return false;}
+    public char getType () {return type;}
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);

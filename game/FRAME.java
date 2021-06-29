@@ -12,11 +12,11 @@ import java.awt.event.KeyEvent;
 public class FRAME extends JFrame
 {
   private BufferStrategy strat;
-  private WELT welt;
+  public static WELT welt;
   private MENU menu;
   private LEVELWAHL levelwahl;
-  static int spielzustand;
-  
+  public static FMENU fmenu;
+  public static int spielzustand;
   public FRAME()
   {
       super("RubyRun");
@@ -25,8 +25,6 @@ public class FRAME extends JFrame
       addMouseMotionListener(kb);
       addMouseListener(kb);
       menu = new MENU();
-      levelwahl = new LEVELWAHL();
-      WELT welt = null;
       
 
       
@@ -51,11 +49,16 @@ public class FRAME extends JFrame
               menu.draw(g);
                           break;
           case 1:
+              if(levelwahl == null) {levelwahl = new LEVELWAHL();}
               levelwahl.draw(g);
                           break;                
           case 2:
               if(welt == null) {welt = new WELT();}
               welt.draw(g);
+                          break;
+          case 3:
+              if(fmenu == null) {fmenu = new FMENU();}
+              fmenu.draw(g);
                           break;
                           
          
@@ -79,6 +82,9 @@ public class FRAME extends JFrame
           case 2:
               welt.update();
               if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
+                          break;
+          case 3:
+              fmenu.update();
                           break;
           default:
           

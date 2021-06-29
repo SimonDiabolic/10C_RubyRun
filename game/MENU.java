@@ -17,18 +17,18 @@ public class MENU
     public MENU()
     {
         buttons = new BUTTON[3];
-        BufferedImage[] texturen = {TEXTUR.button, TEXTUR.buttonmouseover, TEXTUR.buttonpressed};  
+        BufferedImage[] texturen = {game.TEXTUR.button, game.TEXTUR.buttonmouseover, game.TEXTUR.buttonpressed};  
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
         int x = MENU.breite/2 + 400/2;
         
-        buttons[0] = new BUTTON(x,200, "Spiel starten", texturen, f); 
-        buttons[1] = new BUTTON(x,350, "Spiel beenden", texturen, f); 
-        buttons[2] = new BUTTON(x,500, "About", texturen, f); 
+        buttons[0] = new BUTTON(x,310, "Spiel starten", texturen, f); 
+        buttons[1] = new BUTTON(x,460, "Spiel beenden", texturen, f); 
+        buttons[2] = new BUTTON(x,610, "About", texturen, f); 
         
-        background = TEXTUR.background;
-        title = TEXTUR.titel;
+        background = game.TEXTUR.background;
+        title = game.TEXTUR.titel;
         breite = background.getWidth();
         hoehe = background.getHeight();
         
@@ -36,7 +36,7 @@ public class MENU
     public void draw(Graphics g)
     {
         g.drawImage(background, 0, 0, breite, hoehe, null); 
-        g.drawImage(title, breite/2 - title.getWidth()/2, 15, null);
+        g.drawImage(title, breite/2 - title.getWidth()/2, 155, null);
         for(int i = 0; i < buttons.length;i++)
       {
           buttons[i].draw(g);
@@ -48,7 +48,7 @@ public class MENU
       {
           if(buttons[i].update())
           {
-              if (i == 0) FRAME.spielzustand = 1;
+              if (i == 0) game.FRAME.spielzustand = 1;
               else if (i == 1) System.exit(0);
               else if (i == 2);
           }

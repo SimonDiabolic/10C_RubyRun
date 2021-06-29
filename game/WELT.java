@@ -27,11 +27,11 @@ public class WELT
       static int hoehe; 
       private int spawnx;
       private int spawny;
-      private int anzahlRubine;
-
+      public static int anzahlRubine;
+      public static int anzahlSaphire;
       
-      public int punkte;
-      private int leben;
+      public static int punkte;
+      public static int leben;
       private int damage;
       private Font font;
       private FontMetrics fm;
@@ -108,6 +108,7 @@ public class WELT
                      }
                      if(c.getRed()==0   &&c.getGreen() == 0    && c.getBlue() == 255)
                      {
+                         anzahlSaphire++;
                          zeugs.add(new SAPHIR(x,y));                         
                      }
                      if(c.getRed()==0   &&c.getGreen() == 255    && c.getBlue() == 0)
@@ -177,7 +178,9 @@ public class WELT
                  
                  if (leben == 0)
                  {
-                     FRAME.spielzustand = 1;
+                     FRAME.spielzustand = 3;
+                     FMENU.WinOrLoose = "loose";
+                     FRAME.welt = null;
                     }
                 }
          }
@@ -212,6 +215,7 @@ public class WELT
             spieler.resetPosition();
         }
       }
+      
   }
   public void draw(Graphics g)
   {    
@@ -244,6 +248,6 @@ public class WELT
       g.drawString(score, 2+fm.stringWidth(score)/2, 858+g.getFont().getSize());
       g.drawString(scoreSaphir, 122+fm.stringWidth(score)/2, 858+g.getFont().getSize());
     }
-    
+  
   
 }

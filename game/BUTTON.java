@@ -1,4 +1,5 @@
-package game;
+package game
+;
 //---------------------//
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -37,19 +38,19 @@ public class BUTTON
     }
     public boolean update()
     {
-         if(KEYBOARD.getButton() != 1&& ButtonStatus == 2)
+         if(game.KEYBOARD.getButton() != 1&& ButtonStatus == 2)
          {
              ButtonStatus = 0;
              return true;
          }
         
          ButtonStatus = 0;
-         int MausX = KEYBOARD.getMouseX();
-         int MausY = KEYBOARD.getMouseY();
-         if(COLLISION.RechteckZuRechteck(MausX,MausY, 0, 0, x, y, look[ButtonStatus].getWidth(), 
+         int MausX = game.KEYBOARD.getMouseX();
+         int MausY = game.KEYBOARD.getMouseY();
+         if(game.COLLISION.RechteckZuRechteck(MausX,MausY, 0, 0, x, y, look[ButtonStatus].getWidth(), 
                      look[ButtonStatus].getHeight()))
                      {
-                        if(KEYBOARD.getButton() == 1) ButtonStatus = 2;
+                        if(game.KEYBOARD.getButton() == 1) ButtonStatus = 2;
                         else ButtonStatus = 1;
                      }
          return false;
