@@ -113,7 +113,7 @@ public class WELT
                      }
                      if(c.getRed()==0   &&c.getGreen() == 255    && c.getBlue() == 0)
                      {
-                         zeugs.add(new SCHLANGE(x,y));                         
+                         zeugs.add(new SCHLANGE(x,y,'y'));                         
                      }
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
