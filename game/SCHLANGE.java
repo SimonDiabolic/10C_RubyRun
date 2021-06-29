@@ -65,6 +65,18 @@
         }
         else    
                 bewegungsrichtung = bewegungsrichtung * -1;
+<<<<<<< HEAD
             }
 }
 
+=======
+    }
+    
+    
+    public boolean isteseineSchlange()
+    {
+        return true;
+    }
+    
+    }
+>>>>>>> b42aa0345f9e03b7eccab0d7eaf177f319fc403f

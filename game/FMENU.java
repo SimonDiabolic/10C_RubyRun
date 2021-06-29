@@ -12,6 +12,7 @@ public class FMENU
 {
     private BufferedImage background;
     private BufferedImage title;
+    private BufferedImage perfekt;
     private BUTTON[] buttons;
     public static int hoehe;
     public static int breite;
@@ -26,30 +27,25 @@ public class FMENU
     public static boolean Rperfekt;
     public static boolean Sperfekt;
     public static boolean Hperfekt;
+    
     public FMENU()
     {
         background = game.TEXTUR.background;
         title = game.TEXTUR.titel;
-        BufferedImage[] texturen1 = {TEXTUR.next, TEXTUR.next1, TEXTUR.next1};
-        BufferedImage[] texturen = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
+        perfekt = TEXTUR.perfekt;
+        BufferedImage[] texturen = {TEXTUR.next, TEXTUR.next1, TEXTUR.next1};
+        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
   
-     f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
-     font = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
+        f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
+        font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
         buttons = new BUTTON[2];
-        buttons[0] = new BUTTON(126, 730, "", texturen, f); 
-        buttons[1] = new BUTTON(545, 730, "", texturen1, f); 
+        buttons[0] = new BUTTON(545, 730, "", texturen, f); 
+        buttons[1] = new BUTTON(126, 730, "", texturen1, f); 
         
-      if(WELT.punkte == WELT.anzahlRubine) {Rperfekt = true;}
-      else Rperfekt = false;
-      if(LEVELWAHL.saphire == WELT.anzahlSaphire) {Sperfekt = true;}
-      else Sperfekt = false;
-      if(WELT.leben != 0) {Hperfekt = false;}
-      else Hperfekt = true;
-        
-      rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
-      saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
-      damage = "Hits: " + (5-WELT.leben);
+        rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
+        saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
+        damage = "Hits: " + (5-WELT.leben);
 
         breite = background.getWidth();
         hoehe = background.getHeight();
@@ -61,13 +57,16 @@ public class FMENU
         g.setColor(Color.BLACK);
         g.setFont(font);
         fm = g.getFontMetrics();
-        g.drawString(rubine,MENU.breite/2 -fm.stringWidth(rubine)/2,310);
+        g.drawString(rubine,MENU.breite/2 -fm.stringWidth(rubine)/2,330);
         g.drawString(saphire,MENU.breite/2 -fm.stringWidth(saphire)/2,460);
-        g.drawString(damage,MENU.breite/2 -fm.stringWidth(damage)/2,610);
+        g.drawString(damage,MENU.breite/2 -fm.stringWidth(damage)/2,590);
         for(int i = 0; i < buttons.length;i++)
       {
         buttons[i].draw(g);
       }
+      if(WELT.punkte == WELT.anzahlRubine)g.drawImage(perfekt,MENU.breite/2 - perfekt.getWidth()/2,350, null); 
+      if(LEVELWAHL.saphire == WELT.anzahlSaphire)g.drawImage(perfekt,MENU.breite/2 -perfekt.getWidth()/2,480, null);
+      if(WELT.leben != 0)g.drawImage(perfekt,MENU.breite/2 -perfekt.getWidth()/2,610, null);
     }
     public void update()
     {
@@ -80,4 +79,4 @@ public class FMENU
           }
       }
     }
-}
+  }

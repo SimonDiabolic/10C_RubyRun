@@ -145,9 +145,15 @@ public class WELT
       BEWEGTESOBJEKT SpielerAufRubin = null;
       BEWEGTESOBJEKT SpielerAufBusch = null;
       BEWEGTESOBJEKT SpielerAufSaphir = null;
+      BEWEGTESOBJEKT SteinAufSchlange = null;
+      
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       for (BEWEGTESOBJEKT i : zeugs) {
          i.update();
+         if (i.SteinAufSchlange() != null)
+         {
+             SteinAufSchlange = i.SteinAufSchlange(); 
+         }
          if (i.RubinCollection()) 
          {
             SpielerAufRubin = i;
@@ -160,6 +166,7 @@ public class WELT
          {
             SpielerAufBusch = i;
          }
+         
          if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
@@ -187,6 +194,11 @@ public class WELT
              LockExists = false;
             }
       }
+      
+      if(SteinAufSchlange != null) {
+        zeugs.remove(SteinAufSchlange);              
+      }
+      
       if (SpielerAufSaphir != null) {
         zeugs.remove(SpielerAufSaphir);
         LEVELWAHL.saphire++;
