@@ -54,5 +54,11 @@ public class SCHLANGE extends BEWEGTESOBJEKT
             else    
                 bewegungsrichtung = bewegungsrichtung * -1;
     }
-}
-
+    
+    
+    public boolean isteseineSchlange()
+    {
+        return true;
+    }
+    
+    }

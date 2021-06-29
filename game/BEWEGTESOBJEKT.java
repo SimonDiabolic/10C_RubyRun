@@ -31,7 +31,7 @@ public abstract class BEWEGTESOBJEKT
         {
             boolean moveok = true;
             for (BEWEGTESOBJEKT i : other) {
-                if (nextx == i.getX() / TEXTUR.kachelgroesse && 
+                 if (nextx == i.getX() / TEXTUR.kachelgroesse && 
                     nexty == i.getY() / TEXTUR.kachelgroesse) {
                     moveok = false;
                 }
@@ -49,5 +49,13 @@ public abstract class BEWEGTESOBJEKT
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);
+    }
+    public boolean isteseineSchlange()
+    {
+        return false;
+    }
+    public BEWEGTESOBJEKT SteinAufSchlange()
+    {
+        return null;
     }
 }

@@ -4,10 +4,12 @@ import java.awt.Graphics;
 
 public class STEIN extends BEWEGTESOBJEKT
 {
+    BEWEGTESOBJEKT SteinaufSchlange;
     STEIN (int x, int y)
     {
         super(x,y);
         look = TEXTUR.stein;
+        SteinaufSchlange = null;
     }
     public void update()
     {
@@ -44,8 +46,36 @@ public class STEIN extends BEWEGTESOBJEKT
               SPIELER.resetPosition();
             }         
         }
-        super.update();
+        SteinaufSchlange = null;
+        int nextx = x / TEXTUR.kachelgroesse ;
+        int nexty = y / TEXTUR.kachelgroesse + 1;
+        if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
+        {
+            boolean moveok = true;
+            for (BEWEGTESOBJEKT i : other) {
+                if (nextx == i.getX() / TEXTUR.kachelgroesse && 
+                    nexty == i.getY() / TEXTUR.kachelgroesse) {
+                    if (i.isteseineSchlange() == false)
+                    {
+                        moveok = false;
+                    }
+                    else 
+                    {
+                        SteinaufSchlange = i;
+                        
+                    }
+                }
+            }
+            
+            if (moveok)
+                y = y+20;//nexty * Textur.kachelgroesse;
+           
+            }
         
+    }
+    public BEWEGTESOBJEKT SteinAufSchlange()
+    {
+        return SteinaufSchlange;
     }
     public void draw(Graphics g)
     {
