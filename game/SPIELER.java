@@ -82,7 +82,9 @@ public class SPIELER
      }
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 4)
      {
-         FRAME.spielzustand = 1;
+         FRAME.spielzustand = 3;
+         FMENU.WinOrLoose = "win";
+         FRAME.welt = null;
      }
      
  }

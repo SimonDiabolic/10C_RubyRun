@@ -170,7 +170,9 @@ public class WELT
                  
                  if (leben == 0)
                  {
-                     FRAME.spielzustand = 1;
+                     FRAME.spielzustand = 3;
+                     FMENU.WinOrLoose = "loose";
+                     FRAME.welt = null;
                     }
                 }
          }
