@@ -32,8 +32,8 @@ public class TEXTUR
      static BufferedImage next1 = IMAGELOADER.loadImage("next1");
      static BufferedImage retry = IMAGELOADER.loadImage("retry");
      static BufferedImage retry1 = IMAGELOADER.loadImage("retry1");
-     // static BufferedImage goMenu = IMAGELOADER.loadImage("goMenu");
-     // static BufferedImage goMenu1 = IMAGELOADER.loadImage("goMenu1");
+     static BufferedImage goMenu = IMAGELOADER.loadImage("goMenu");
+     static BufferedImage goMenu1 = IMAGELOADER.loadImage("goMenu1");
      static BufferedImage perfekt = IMAGELOADER.loadImage("perfekt");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
