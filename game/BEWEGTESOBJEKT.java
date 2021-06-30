@@ -33,7 +33,7 @@ public abstract class BEWEGTESOBJEKT
             boolean moveok = true;
             for (BEWEGTESOBJEKT i : other) {
                  if (nextx == i.getX() / TEXTUR.kachelgroesse && 
-                    nexty == i.getY() / TEXTUR.kachelgroesse) {
+                     nexty == i.getY() / TEXTUR.kachelgroesse) {
                     moveok = false;
                 }
             }

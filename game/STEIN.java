@@ -61,7 +61,7 @@ public class STEIN extends BEWEGTESOBJEKT
                         moveok = false;
                     }
                     else 
-                    {
+                     {
                         SteinaufSchlange = i;
                         
                     }
