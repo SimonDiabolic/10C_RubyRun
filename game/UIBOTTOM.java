@@ -27,7 +27,7 @@ public class UIBOTTOM
         herzen = new HERZ[5];
         
         buttons =  new BUTTON[1];
-        buttons[0] = new BUTTON(350,825, "", texturen1, f);
+        buttons[0] = new BUTTON(300,825, "", texturen1, f);
         
         herzen[0] = new HERZ(440,825, HerzZustand); 
         herzen[1] = new HERZ(500,825, HerzZustand); 
@@ -39,10 +39,10 @@ public class UIBOTTOM
     public void draw(Graphics g)
     {
       g.drawImage(l1, x, y, null);
-        for(int i = 0; i < buttons.length;i++)
-      {
-          buttons[i].draw(g);
-      }
+        // for(int i = 0; i < buttons.length;i++)
+      // {
+          // buttons[i].draw(g);
+      // }
         for(int i = 0; i < herzen.length;i++)
       {
           herzen[i].draw(g);
