@@ -20,6 +20,8 @@ private int height = TEXTUR.kachelgroesse;
 public static int directionx;
 public static int directiony;
 private BufferedImage look;
+public static int oldx1;
+public static int oldy1;
 public SPIELER(int x, int y)
 {
  this/*(Spricht globale Variable an)*/.x = x;
@@ -115,5 +117,3 @@ public void update(boolean playermove)
   
     
 }
-
-

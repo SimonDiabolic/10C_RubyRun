@@ -42,7 +42,7 @@ public class WELT
       private int lockx;
       private double zuSammelndeRubine;
       private boolean LockExists;
-      private UIBOTTOM uibottom;
+      public static UIBOTTOM uibottom;
       
       
  
