@@ -2,6 +2,8 @@
     import java.awt.image.BufferedImage;
     import java.awt.Graphics;
     import java.util.LinkedList;
+    import java.util.Timer;
+import java.util.TimerTask;
     
     public class SCHLANGE extends BEWEGTESOBJEKT
     {
@@ -9,6 +11,8 @@
         char coodaxis;
         int leftx = x/TEXTUR.kachelgroesse - 1;
         int rightx = x/TEXTUR.kachelgroesse + 1;
+        private boolean linksWand;
+        private boolean rechtsWand;
         SCHLANGE (int x, int y, char coodaxis)
         {
             super(x,y);
@@ -19,8 +23,21 @@
         }
         public void update()
         {   
+            
+            // if (coodaxis == 'x' && WELT.kacheln[leftx][y/TEXTUR.kachelgroesse].getLookID() == 1)
+            // {
+                // // SchlangeBewegung();
+                // linksWand = true;
+            // } 
+            // else linksWand =  false;
+            // if (coodaxis == 'x' && WELT.kacheln[rightx][y/TEXTUR.kachelgroesse].getLookID() == 1 && linksWand == true)
+            // {
+                
+            // }
             SchlangeBewegung();
+            
         }
+        
         public void draw(Graphics g)
         {
          g.drawImage(look, x, y, null);
@@ -41,12 +58,9 @@
         public void SchlangeBewegung()
         {
                     
-        if (coodaxis == 'x' && WELT.kacheln[leftx][y/TEXTUR.kachelgroesse].getLookID() != 1)
-        
+        if (coodaxis == 'x')
         {
-        if (WELT.kacheln[rightx][y/TEXTUR.kachelgroesse].getLookID() != 1)
-        
-        {int nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
+        int nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
         int nexty = y / TEXTUR.kachelgroesse ;
         
         boolean moveok = false;
@@ -63,15 +77,19 @@
             } 
         if(moveok)
             {
-                x = x + 10*bewegungsrichtung;
+                            
+                        x = x + 40*bewegungsrichtung;
+                    
+                
+                
             }
             else
             {
-               if(bewegungsrichtung == -1) x = x + 30*bewegungsrichtung;
-                bewegungsrichtung = bewegungsrichtung*-1;
+               // if(bewegungsrichtung == -1) //x = x + 30*bewegungsrichtung;
+            bewegungsrichtung = bewegungsrichtung*-1;
             }
         }
-        }
+    
         if (coodaxis == 'y')
         {
         int nextx = x / TEXTUR.kachelgroesse ;
@@ -89,7 +107,7 @@
             } 
         if(moveok)
             {
-                y = y + 10*bewegungsrichtung;
+                y = y + 20*bewegungsrichtung;
             }
             else
             {
@@ -98,8 +116,9 @@
             }
         
          
+        
         }
-        }
+    }
         public boolean isteseineSchlange()
         {
             return true;

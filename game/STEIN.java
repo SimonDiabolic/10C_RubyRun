@@ -23,23 +23,30 @@ public class STEIN extends BEWEGTESOBJEKT
     {
         if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
         {
-            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirectionX()][y/TEXTUR.kachelgroesse].getLookID()!=1 && SPIELER.getDirectionX() != 0)
+            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirectionX()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirectionX() != 0)
               {
                   int nextx = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
                   int nexty = y;
-                  boolean moveok = true;
-                  for (BEWEGTESOBJEKT i : other) 
+                  if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 )
                   {
-                    if (nextx / TEXTUR.kachelgroesse == i.getX() / TEXTUR.kachelgroesse && nexty / TEXTUR.kachelgroesse == i.getY() / TEXTUR.kachelgroesse) 
+                      boolean moveok = true;
+                      for (BEWEGTESOBJEKT i : other) 
                       {
-                          moveok = false;
-                          
+                          if (nextx / TEXTUR.kachelgroesse == i.getX() / TEXTUR.kachelgroesse && nexty / TEXTUR.kachelgroesse == i.getY() / TEXTUR.kachelgroesse) 
+                          {
+                              moveok = false;
+                              
+                          }
                       }
-                  }
-                  if (moveok)
-                  {
-                      x = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
-                      justVerschoben = true;
+                      if (moveok)
+                      {
+                          x = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
+                      }
+                      else
+                      {
+                          SPIELER.resetPosition();
+                      }
+                  
                   }
                }
             else
@@ -102,6 +109,8 @@ public class STEIN extends BEWEGTESOBJEKT
                }
             }    
     }
+        
+    
     
     public BEWEGTESOBJEKT SteinAufSchlange()
     {
