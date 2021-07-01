@@ -32,8 +32,8 @@ public class LEVELWAHL
         buttons[4] = new game.BUTTON(544,367, "", texturen, f); 
         buttons[5] = new game.BUTTON(415,445, "", texturen, f); 
         buttons[6] = new game.BUTTON(220,440, "", texturen, f); 
-        buttons[7] = new game.BUTTON(157,545, "", texturen, f); 
-        buttons[8] = new game.BUTTON(280,630, "", texturen, f); 
+        buttons[7] = new game.BUTTON(165,550, "", texturen, f); 
+        buttons[8] = new game.BUTTON(325,640, "", texturen, f); 
         buttons[9] = new game.BUTTON(543,665, "", texturen, f); 
         
         background = game.TEXTUR.background;
