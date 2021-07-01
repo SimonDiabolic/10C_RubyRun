@@ -23,19 +23,7 @@ import java.util.TimerTask;
         }
         public void update()
         {   
-            
-            // if (coodaxis == 'x' && WELT.kacheln[leftx][y/TEXTUR.kachelgroesse].getLookID() == 1)
-            // {
-                // // SchlangeBewegung();
-                // linksWand = true;
-            // } 
-            // else linksWand =  false;
-            // if (coodaxis == 'x' && WELT.kacheln[rightx][y/TEXTUR.kachelgroesse].getLookID() == 1 && linksWand == true)
-            // {
-                
-            // }
             SchlangeBewegung();
-            
         }
         
         public void draw(Graphics g)
@@ -85,7 +73,6 @@ import java.util.TimerTask;
             }
             else
             {
-               // if(bewegungsrichtung == -1) //x = x + 30*bewegungsrichtung;
             bewegungsrichtung = bewegungsrichtung*-1;
             }
         }
@@ -111,7 +98,6 @@ import java.util.TimerTask;
             }
             else
             {
-               if(bewegungsrichtung == -1) //y = y + 30*bewegungsrichtung;
                 bewegungsrichtung = bewegungsrichtung*-1;
             }
         
