@@ -107,11 +107,11 @@ import java.util.TimerTask;
             } 
         if(moveok)
             {
-                y = y + 20*bewegungsrichtung;
+                y = y + 40*bewegungsrichtung;
             }
             else
             {
-               if(bewegungsrichtung == -1) y = y + 30*bewegungsrichtung;
+               if(bewegungsrichtung == -1) //y = y + 30*bewegungsrichtung;
                 bewegungsrichtung = bewegungsrichtung*-1;
             }
         
