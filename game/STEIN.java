@@ -41,6 +41,7 @@ public class STEIN extends BEWEGTESOBJEKT
                       if (moveok)
                       {
                           x = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
+                          justVerschoben = true;
                       }
                       else
                       {

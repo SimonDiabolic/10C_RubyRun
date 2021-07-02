@@ -3,7 +3,7 @@
     import java.awt.Graphics;
     import java.util.LinkedList;
     import java.util.Timer;
-import java.util.TimerTask;
+    import java.util.TimerTask;
     
     public class SCHLANGE extends BEWEGTESOBJEKT
     {
@@ -11,6 +11,7 @@ import java.util.TimerTask;
         char coodaxis;
         int leftx = x/TEXTUR.kachelgroesse - 1;
         int rightx = x/TEXTUR.kachelgroesse + 1;
+        int counter;
         private boolean linksWand;
         private boolean rechtsWand;
         SCHLANGE (int x, int y, char coodaxis)
@@ -23,7 +24,15 @@ import java.util.TimerTask;
         }
         public void update()
         {   
-            SchlangeBewegung();
+            if(counter == 2)
+            {counter = 0;SchlangeBewegung();}
+            else if (counter == 5)
+            counter++;
+            else if (counter == 1)
+            counter++;
+            else if (counter == 0)
+            counter++;
+            // SchlangeBewegung();
         }
         
         public void draw(Graphics g)
@@ -64,12 +73,15 @@ import java.util.TimerTask;
                 }
             } 
         if(moveok)
-            {
-                            
-                        x = x + 40*bewegungsrichtung;
-                    
-                
-                
+            {           
+                x = x + 20*bewegungsrichtung;
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask(){
+                    public void run()
+                    {
+                        x = x + 20*bewegungsrichtung;
+                    }
+                },100);
             }
             else
             {
@@ -94,7 +106,14 @@ import java.util.TimerTask;
             } 
         if(moveok)
             {
-                y = y + 40*bewegungsrichtung;
+                y = y + 20*bewegungsrichtung;
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask(){
+                    public void run()
+                    {
+                        y = y + 20*bewegungsrichtung;
+                    }
+                },100);
             }
             else
             {
@@ -105,10 +124,10 @@ import java.util.TimerTask;
         
         }
     }
-        public boolean isteseineSchlange()
-        {
-            return true;
-        }
+    public boolean isteseineSchlange()
+    {
+        return true;
+    }
         
            
 }
