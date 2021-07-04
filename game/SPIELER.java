@@ -89,6 +89,12 @@ public void update(boolean playermove)
          FRAME.welt = null;
      }
      
+     if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 5)
+                     {
+                      spielerposx = WELT.telex;  
+                      spielerposy = WELT.teley;  
+                     }
+                     
  }
  public static void resetDirection()
  {
@@ -107,13 +113,9 @@ public void update(boolean playermove)
  {
      x=oldx;
      y=oldy;
- }
+ } 
  public static int getDirectionX()
  {
      return directionx;
  }
- 
- 
-  
-    
 }

@@ -3,7 +3,7 @@ package game;
 public class MAIN
 {
   static int width = 800;
-  static int height = 920;
+  static int height = 920; 
   
   public static void main(String[] args)
   {

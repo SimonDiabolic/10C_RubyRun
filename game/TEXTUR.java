@@ -35,6 +35,8 @@ public class TEXTUR
      static BufferedImage goMenu = IMAGELOADER.loadImage("goMenu");
      static BufferedImage goMenu1 = IMAGELOADER.loadImage("goMenu1");
      static BufferedImage perfekt = IMAGELOADER.loadImage("perfekt");
+     static BufferedImage telea = IMAGELOADER.loadImage("telea");
+     static BufferedImage teleb = IMAGELOADER.loadImage("teleb");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  

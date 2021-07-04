@@ -30,6 +30,9 @@ public class WELT
       public static int anzahlRubine;
       public static int anzahlSaphire;
       
+      public static int telex;
+      public static int teley;
+      
       public static int punkte;
       public static int leben;
       private int damage;
@@ -86,6 +89,8 @@ public class WELT
                     if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
                     if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4);   //LookID 4 = AusgangControll
+                    if(c.getRed()==250   &&c.getGreen() == 250     && c.getBlue() == 250)    kacheln[x] [y] = new KACHEL(x,y,5);   //LookID 5 = Teleportstein A
+                    if(c.getRed()==200  &&c.getGreen() == 200     && c.getBlue() == 200)    kacheln[x] [y] = new KACHEL(x,y,6);   //LookID 6 = Teleportstein B
                     if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Busch
                     if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin
                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Saphir
@@ -139,6 +144,14 @@ public class WELT
                          locky = y*TEXTUR.kachelgroesse;
                          
                      }
+                     
+                     if(c.getRed()==200   &&c.getGreen() == 200     && c.getBlue() == 200)
+                     {
+                         
+                         //telex = ;
+                         //teley = y*TEXTUR.kachelgroesse;
+                     }
+                     
               }
          }
          for (BEWEGTESOBJEKT i : zeugs) {
@@ -177,7 +190,7 @@ public class WELT
          if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
-             if (damage == 1)
+             if (damage == 2)
              {
                  leben--;
                  uibottom.lebenNehmen();
