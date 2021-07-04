@@ -11,7 +11,7 @@ import java.awt.FontMetrics;
 public class PAUSE
 {
     private BufferedImage background;
-    private BufferedImage title;
+    private BufferedImage pause;
     private BufferedImage perfekt;
     private BUTTON[] buttons;
     public static int hoehe;
@@ -31,19 +31,17 @@ public class PAUSE
     public PAUSE()
     {
         background = game.TEXTUR.background;
-        title = game.TEXTUR.titel;
+        pause = game.TEXTUR.pause;
         perfekt = TEXTUR.perfekt;
-        BufferedImage[] texturen = {TEXTUR.next, TEXTUR.next1, TEXTUR.next1};
-        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
+        BufferedImage[] texturen1 = {TEXTUR.resume, TEXTUR.resume1, TEXTUR.resume1};
         BufferedImage[] texturen2 = {TEXTUR.goMenu, TEXTUR.goMenu1, TEXTUR.goMenu1};
   
         f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
-        buttons = new BUTTON[3];
-        buttons[0] = new BUTTON(545, 730, "", texturen, f); 
-        buttons[1] = new BUTTON(126, 730, "", texturen1, f);
-        buttons[2] = new BUTTON(300, 730, "", texturen2, f);
+        buttons = new BUTTON[2];
+        buttons[0] = new BUTTON(126, 730, "", texturen1, f);
+        buttons[1] = new BUTTON(545, 730, "", texturen2, f);
         
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
@@ -55,7 +53,7 @@ public class PAUSE
     public void draw(Graphics g)
     {
         g.drawImage(background, 0, 0, breite, hoehe, null); 
-        g.drawImage(title, breite/2 - title.getWidth()/2, 155, null);
+        g.drawImage(pause, breite/2 - pause.getWidth()/2, 155, null);
         g.setColor(Color.BLACK);
         g.setFont(font);
         fm = g.getFontMetrics();
@@ -76,9 +74,8 @@ public class PAUSE
       {
           if(buttons[i].update())
           {
-              if (i == 0) {LEVELWAHL.loadLevel(LEVELWAHL.currentLevel+1);FRAME.spielzustand = 2;FRAME.fmenu = null;}
-              else if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;}
-              else if (i == 2){FRAME.spielzustand = 1; FRAME.fmenu = null;}
+              if (i == 0){FRAME.spielzustand = 2;FRAME.pause = null;}
+              else if (i == 1){FRAME.spielzustand = 1; FRAME.pause = null;FRAME.welt = null;}
           }
       }
     }
