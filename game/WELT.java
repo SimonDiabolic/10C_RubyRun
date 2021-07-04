@@ -30,6 +30,9 @@ public class WELT
       public static int anzahlRubine;
       public static int anzahlSaphire;
       
+      public static int telex;
+      public static int teley;
+      
       public static int punkte;
       public static int leben;
       private int damage;
@@ -141,6 +144,14 @@ public class WELT
                          locky = y*TEXTUR.kachelgroesse;
                          
                      }
+                     
+                     if(c.getRed()==200   &&c.getGreen() == 200     && c.getBlue() == 200)
+                     {
+                         
+                         //telex = ;
+                         //teley = y*TEXTUR.kachelgroesse;
+                     }
+                     
               }
          }
          for (BEWEGTESOBJEKT i : zeugs) {
@@ -179,7 +190,7 @@ public class WELT
          if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
-             if (damage == 1)
+             if (damage == 2)
              {
                  leben--;
                  uibottom.lebenNehmen();
