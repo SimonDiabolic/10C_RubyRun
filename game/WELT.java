@@ -262,6 +262,7 @@ public class WELT
       {
           Lock.draw(g);
       }
+      if(tutorial)tut.draw(g);
       spieler.draw(g);
       DecimalFormat twodigits = new DecimalFormat("00");
       String score = twodigits.format(punkte) +"/"+twodigits.format((int)zuSammelndeRubine);
