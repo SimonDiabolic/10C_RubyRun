@@ -64,7 +64,11 @@ public class FRAME extends JFrame
           case 4:
               if(pause == null) {pause = new PAUSE();}
               pause.draw(g);
-                          break;                
+                          break;    
+          case 5:
+              if(welt == null) {welt = new WELT();}
+              welt.draw(g);
+                          break;
          
                                   
           default:
@@ -85,7 +89,7 @@ public class FRAME extends JFrame
                           
           case 2:
               welt.update();
-              // if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 4;
+              if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 4;
                           break;
           case 3:
               fmenu.update();
@@ -93,6 +97,11 @@ public class FRAME extends JFrame
           case 4:
               pause.update();
                           break;
+          case 5:
+              welt.update();
+                          break;
+              
+          
                           
           default:
           

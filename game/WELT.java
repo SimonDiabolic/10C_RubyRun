@@ -47,6 +47,9 @@ public class WELT
       private boolean LockExists;
       public static UIBOTTOM uibottom;
       
+      public static boolean tutorial;
+      TUTORIAL tut;
+      
       
  
   public WELT()
@@ -55,7 +58,7 @@ public class WELT
       spieler = new SPIELER(spawnx,spawny);
       Lock = new LOCK(lockx,locky);
       LockExists = true;
-      
+      if(tutorial) tut = new TUTORIAL();
       font = new Font("Monospaced", Font.BOLD,26); 
   }
 
@@ -89,8 +92,8 @@ public class WELT
                     if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
                     if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4);   //LookID 4 = AusgangControll
-                    if(c.getRed()==250   &&c.getGreen() == 250     && c.getBlue() == 250)    kacheln[x] [y] = new KACHEL(x,y,5);   //LookID 5 = Teleportstein A
-                    if(c.getRed()==200  &&c.getGreen() == 200     && c.getBlue() == 200)    kacheln[x] [y] = new KACHEL(x,y,6);   //LookID 6 = Teleportstein B
+                    if(c.getRed()==250   &&c.getGreen() == 250     && c.getBlue() == 250)  kacheln[x] [y] = new KACHEL(x,y,5);   //LookID 5 = Teleportstein A
+                    if(c.getRed()==200  &&c.getGreen() == 200     && c.getBlue() == 200)   kacheln[x] [y] = new KACHEL(x,y,6);   //LookID 6 = Teleportstein B
                     if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)     kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Busch
                     if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin
                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Saphir
@@ -147,9 +150,8 @@ public class WELT
                      
                      if(c.getRed()==200   &&c.getGreen() == 200     && c.getBlue() == 200)
                      {
-                         
-                         //telex = ;
-                         //teley = y*TEXTUR.kachelgroesse;
+                         telex = x;
+                         teley = y;
                      }
                      
               }
@@ -237,6 +239,7 @@ public class WELT
         }
       }
       uibottom.update();
+      if(tutorial)tut.update();
   }
   public void draw(Graphics g)
   {    

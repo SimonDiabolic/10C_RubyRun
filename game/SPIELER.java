@@ -91,8 +91,8 @@ public void update(boolean playermove)
      
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 5)
                      {
-                      spielerposx = WELT.telex;  
-                      spielerposy = WELT.teley;  
+                      x = WELT.telex*TEXTUR.kachelgroesse;  
+                      y = WELT.teley*TEXTUR.kachelgroesse;  
                      }
                      
  }

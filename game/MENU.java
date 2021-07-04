@@ -25,7 +25,7 @@ public class MENU
         
         buttons[0] = new BUTTON(x,310, "Spiel starten", texturen, f); 
         buttons[1] = new BUTTON(x,460, "Spiel beenden", texturen, f); 
-        buttons[2] = new BUTTON(x,610, "About", texturen, f); 
+        buttons[2] = new BUTTON(x,610, "Tutorial", texturen, f); 
         
         background = game.TEXTUR.background;
         title = game.TEXTUR.titel;
@@ -50,7 +50,7 @@ public class MENU
           {
               if (i == 0) game.FRAME.spielzustand = 1;
               else if (i == 1) System.exit(0);
-              else if (i == 2);
+              else if (i == 2){game.FRAME.spielzustand = 5;LEVELWAHL.loadLevel(0);WELT.tutorial = true;}
           }
       }
     }
