@@ -39,10 +39,10 @@ public class UIBOTTOM
     public void draw(Graphics g)
     {
       g.drawImage(l1, x, y, null);
-        // for(int i = 0; i < buttons.length;i++)
-      // {
-          // buttons[i].draw(g);
-      // }
+        for(int i = 0; i < buttons.length;i++)
+      {
+          buttons[i].draw(g);
+      }
         for(int i = 0; i < herzen.length;i++)
       {
           herzen[i].draw(g);
@@ -54,7 +54,7 @@ public class UIBOTTOM
       {
           if(buttons[i].update())
           {
-            if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;}
+            if (i == 0){FRAME.welt = null;FRAME.spielzustand = 2;}
           }
       } 
     }

@@ -16,6 +16,7 @@ public class FRAME extends JFrame
   private MENU menu;
   private LEVELWAHL levelwahl;
   public static FMENU fmenu;
+  public static PAUSE pause;
   public static int spielzustand;
   public FRAME()
   {
@@ -60,7 +61,10 @@ public class FRAME extends JFrame
               if(fmenu == null) {fmenu = new FMENU();}
               fmenu.draw(g);
                           break;
-                          
+          case 4:
+              if(pause == null) {pause = new PAUSE();}
+              pause.draw(g);
+                          break;                
          
                                   
           default:
@@ -81,11 +85,15 @@ public class FRAME extends JFrame
                           
           case 2:
               welt.update();
-              if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 0;
+              // if(KEYBOARD.isKeyPressed(KeyEvent.VK_ESCAPE)) spielzustand = 4;
                           break;
           case 3:
               fmenu.update();
                           break;
+          case 4:
+              pause.update();
+                          break;
+                          
           default:
           
           break;

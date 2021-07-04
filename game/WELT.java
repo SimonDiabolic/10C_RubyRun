@@ -223,7 +223,7 @@ public class WELT
             spieler.resetPosition();
         }
       }
-      
+      uibottom.update();
   }
   public void draw(Graphics g)
   {    
