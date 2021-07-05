@@ -2,6 +2,9 @@ package game;
 //---------------------//
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
+import java.util.Timer;
+import java.util.TimerTask;
+
 //---------------------//
 
 public class TUTORIAL
@@ -21,6 +24,15 @@ public class TUTORIAL
     }
     public void update()
     {
-      
+      if(SPIELER.getXPos()==360 && SPIELER.getYPos() == 40)
+        {
+            for(int i= 0; i<4;i++)
+            {
+                
+            }
+        }
+    }
+    void gehen()
+    {
     }
 }
