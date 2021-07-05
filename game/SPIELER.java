@@ -36,31 +36,31 @@ public void draw(Graphics g)
 }
 public void update(boolean playermove)
 {
- if(playermove)
- {
-     if(KEYBOARD.isKeyPressed(KeyEvent.VK_W)) 
-     {newy = 1;directiony = -1;}
-     if(KEYBOARD.isKeyPressed(KeyEvent.VK_S))
-     {newy = -1;directiony = 1;}
-     if(KEYBOARD.isKeyPressed(KeyEvent.VK_D))
-     {newx = 1; directionx = 1;}
-     if(KEYBOARD.isKeyPressed(KeyEvent.VK_A))
-     {newx = -1; directionx = -1;}
+    if(playermove)
+    {
+        if(KEYBOARD.isKeyPressed(KeyEvent.VK_W)) 
+        {newy = 1;directiony = -1;}
+        if(KEYBOARD.isKeyPressed(KeyEvent.VK_S))
+        {newy = -1;directiony = 1;}
+        if(KEYBOARD.isKeyPressed(KeyEvent.VK_D))
+        {newx = 1; directionx = 1;}
+        if(KEYBOARD.isKeyPressed(KeyEvent.VK_A))
+        {newx = -1; directionx = -1;}
       oldy = y;
       oldx = x;
-     if(newy == -1)
-     {y = y+TEXTUR.kachelgroesse; newy = 0;}
-     if(newy == 1)
-     {y = y-TEXTUR.kachelgroesse; newy = 0;}
-     if(newx == 1)
-     {x = x+TEXTUR.kachelgroesse; newx = 0;}
-     if(newx == -1)
-     {x = x-TEXTUR.kachelgroesse; newx = 0;}
- }
- int spielerposx = (int) (getXPos())/TEXTUR.kachelgroesse;
- int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
- for (BEWEGTESOBJEKT i : BEWEGTESOBJEKT.other) 
- {
+      if(newy == -1)
+      {y = y+TEXTUR.kachelgroesse; newy = 0;}
+      if(newy == 1)
+      {y = y-TEXTUR.kachelgroesse; newy = 0;}
+      if(newx == 1)
+      {x = x+TEXTUR.kachelgroesse; newx = 0;}
+      if(newx == -1)
+      {x = x-TEXTUR.kachelgroesse; newx = 0;}
+    }
+    int spielerposx = (int) (getXPos())/TEXTUR.kachelgroesse;
+    int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
+    /*for (BEWEGTESOBJEKT i : BEWEGTESOBJEKT.other) 
+     * {
                       
      for (BEWEGTESOBJEKT j : BEWEGTESOBJEKT.other) 
      {
@@ -73,7 +73,8 @@ public void update(boolean playermove)
                               
              }
              }
-                      }
+                      }*/
+     if (directionx != 0 && directiony != 0) {resetPosition();}
      if (WELT.kacheln[spielerposx - directionx] [spielerposy].getLookID() == 1 && WELT.kacheln[spielerposx] [spielerposy - directiony].getLookID() == 1)
      {
          resetPosition ();
