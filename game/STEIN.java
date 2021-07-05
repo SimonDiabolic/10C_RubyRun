@@ -103,7 +103,7 @@ public class STEIN extends BEWEGTESOBJEKT
                         {
                           justVerschoben  = false;
                         }
-                        },100);
+                        },50);
                    }
                    if(justVerschoben == false)
                    y = y+20;
