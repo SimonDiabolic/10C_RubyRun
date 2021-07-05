@@ -46,6 +46,7 @@ public class TEXTUR
      static BufferedImage goMenu1 = IMAGELOADER.loadImage("goMenu1");
      
      static BufferedImage WASD = IMAGELOADER.loadImage("WASDtoMove");
+     static BufferedImage WayBlock = IMAGELOADER.loadImage("StupidYou");
      
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
