@@ -68,7 +68,7 @@ public class FMENU
       }
       if(WELT.punkte == WELT.anzahlRubine)g.drawImage(perfekt,MENU.breite/2 - perfekt.getWidth()/2,350, null); 
       if(LEVELWAHL.saphire == WELT.anzahlSaphire)g.drawImage(perfekt,MENU.breite/2 -perfekt.getWidth()/2,480, null);
-      if(WELT.leben != 0)g.drawImage(perfekt,MENU.breite/2 -perfekt.getWidth()/2,610, null);
+      if(WELT.leben == 5)g.drawImage(perfekt,MENU.breite/2 -perfekt.getWidth()/2,610, null);
     }
     public void update()
     {
