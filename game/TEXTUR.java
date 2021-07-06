@@ -48,6 +48,28 @@ public class TEXTUR
      static BufferedImage WASD = IMAGELOADER.loadImage("WASDtoMove");
      static BufferedImage WayBlock = IMAGELOADER.loadImage("StupidYou");
      
+     static BufferedImage lvl1busch1 = IMAGELOADER.loadImage("lvl1busch1");
+     //static BufferedImage lvl1busch2 = IMAGELOADER.loadImage("lvl1busch2");
+     static BufferedImage lvl2figur1 = IMAGELOADER.loadImage("lvl2figur1");
+     static BufferedImage lvl2figur2 = IMAGELOADER.loadImage("lvl2figur2");
+     static BufferedImage lvl3rubin1 = IMAGELOADER.loadImage("lvl3rubin1");
+    // static BufferedImage lvl3rubin2 = IMAGELOADER.loadImage("lvl3rubin2");
+    static BufferedImage lvl4schlange1 = IMAGELOADER.loadImage("lvl4schlange1");
+    //static BufferedImage lvl4schlange2 = IMAGELOADER.loadImage("lvl4schlange2");
+    static BufferedImage lvl5saphir1 = IMAGELOADER.loadImage("lvl5saphir1");
+    //static BufferedImage lvl5saphir2 = IMAGELOADER.loadImage("lvl5saphir2");
+    static BufferedImage lvl6stein1 = IMAGELOADER.loadImage("lvl6stein1");
+    //static BufferedImage lvl6stein2 = IMAGELOADER.loadImage("lvl6stein2");
+    static BufferedImage lvl7snake1 = IMAGELOADER.loadImage("lvl7snake1");
+    //static BufferedImage lvl7snake2 = IMAGELOADER.loadImage("lvl7snake2");
+    static BufferedImage lvl8totenkopf1 = IMAGELOADER.loadImage("lvl8totenkopf1");
+    static BufferedImage lvl8totenkopf2 = IMAGELOADER.loadImage("lvl8totenkopf2");
+    //static BufferedImage lvl9tempel1 = IMAGELOADER.loadImage("lvl9tempel1");
+    //static BufferedImage lvl9tempel2 = IMAGELOADER.loadImage("lvl9tempel2");
+    static BufferedImage lvl10vulkan1 = IMAGELOADER.loadImage("lvl10vulkan1");
+    static BufferedImage lvl10vulkan2 = IMAGELOADER.loadImage("lvl10vulkan2");
+    
+     
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  
