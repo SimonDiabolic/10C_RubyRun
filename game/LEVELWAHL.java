@@ -25,16 +25,16 @@ public class LEVELWAHL
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
-        buttons[0] = new game.BUTTON(135,197, "", texturen, f); 
+        buttons[0] = new game.BUTTON(175,190, "", texturen, f); 
         buttons[1] = new game.BUTTON(280,212, "", texturen, f); 
         buttons[2] = new game.BUTTON(426,197, "", texturen, f);
-        buttons[3] = new game.BUTTON(560,238, "", texturen, f); 
+        buttons[3] = new game.BUTTON(530,238, "", texturen, f); 
         buttons[4] = new game.BUTTON(544,367, "", texturen, f); 
-        buttons[5] = new game.BUTTON(415,445, "", texturen, f); 
-        buttons[6] = new game.BUTTON(220,440, "", texturen, f); 
-        buttons[7] = new game.BUTTON(165,550, "", texturen, f); 
+        buttons[5] = new game.BUTTON(380,445, "", texturen, f); 
+        buttons[6] = new game.BUTTON(220,450, "", texturen, f); 
+        buttons[7] = new game.BUTTON(175,550, "", texturen, f); 
         buttons[8] = new game.BUTTON(325,640, "", texturen, f); 
-        buttons[9] = new game.BUTTON(543,665, "", texturen, f); 
+        buttons[9] = new game.BUTTON(510,675, "", texturen, f); 
         
         background = game.TEXTUR.background;
         map = game.TEXTUR.map;
