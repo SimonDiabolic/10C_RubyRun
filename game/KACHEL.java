@@ -23,6 +23,7 @@ public class KACHEL
         if(lookid == 4) look = TEXTUR.ranke; //Ausgang kontrolle, feld nur direkt nach AusgangAUF erreichbar, wenn player auf feld game ende
         if(lookid == 5) look = TEXTUR.telea;
         if(lookid == 6) look = TEXTUR.teleb;
+        
     }
     public void draw(Graphics g)
     {

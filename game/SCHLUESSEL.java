@@ -3,12 +3,12 @@ import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
-public class SAPHIR extends BEWEGTESOBJEKT
+public class SCHLUESSEL extends BEWEGTESOBJEKT
 {
-    SAPHIR (int x, int y)
+    SCHLUESSEL (int x, int y)
     {
         super(x,y);
-        look = TEXTUR.saphir;
+        look = TEXTUR.schluessel;
         
     }
     public void update()

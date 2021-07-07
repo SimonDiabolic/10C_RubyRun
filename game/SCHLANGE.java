@@ -13,7 +13,7 @@
             this.coodaxis = coodaxis;
             look = TEXTUR.schlange;
             bewegungsrichtung = 1;
-            type = 'z';
+            type = 'z'; // z für zisch
         }
         public void update()
         {   

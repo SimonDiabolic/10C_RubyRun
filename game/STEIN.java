@@ -56,6 +56,7 @@ public class STEIN extends BEWEGTESOBJEKT
               SPIELER.resetPosition();
             }         
         }
+      
         SteinaufSchlange = null;
         //Stein plumpst runter
         int nextx = x / TEXTUR.kachelgroesse ;
@@ -67,7 +68,7 @@ public class STEIN extends BEWEGTESOBJEKT
             for (BEWEGTESOBJEKT i : other) {
                 if (nextx == i.getX() / TEXTUR.kachelgroesse && 
                     nexty == i.getY() / TEXTUR.kachelgroesse) {
-                    if (i.isteseineSchlange() == false)
+                    if (i.getType() == 'z')
                     {
                         moveok = false;
                     }
