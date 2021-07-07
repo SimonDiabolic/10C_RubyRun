@@ -21,6 +21,7 @@ public class STEIN extends BEWEGTESOBJEKT
     }
     public void update()
     {
+        //Steineverschieben
         if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
         {
             if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirectionX()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirectionX() != 0)
@@ -56,6 +57,7 @@ public class STEIN extends BEWEGTESOBJEKT
             }         
         }
         SteinaufSchlange = null;
+        //Stein plumpst runter
         int nextx = x / TEXTUR.kachelgroesse ;
         int nexty = y / TEXTUR.kachelgroesse + 1;
         int SpielerUnterStein = 0;
@@ -94,18 +96,7 @@ public class STEIN extends BEWEGTESOBJEKT
             }
             if (moveok)
                { 
-                   if(justVerschoben)
-                   {
-                       
-                       Timer timer = new Timer();
-                       timer.schedule(new TimerTask(){
-                        public void run()
-                        {
-                          justVerschoben  = false;
-                        }
-                        },50);
-                   }
-                   if(justVerschoben == false)
+                   
                    y = y+20;
                }
             }    
