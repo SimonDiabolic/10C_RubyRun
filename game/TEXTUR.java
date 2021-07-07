@@ -14,6 +14,7 @@ public class TEXTUR
      static BufferedImage stein = IMAGELOADER.loadImage("stein");
      static BufferedImage AusgangZU = IMAGELOADER.loadImage("AusgangZU");
      static BufferedImage AusgangAUF = IMAGELOADER.loadImage("AusgangAUF");
+     static BufferedImage Türraufrechts = IMAGELOADER.loadImage("Türraufrechts");
      static BufferedImage telea = IMAGELOADER.loadImage("telea");
      static BufferedImage teleb = IMAGELOADER.loadImage("teleb");
      static BufferedImage busch = IMAGELOADER.loadImage("Busch");
