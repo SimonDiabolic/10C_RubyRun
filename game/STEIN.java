@@ -95,23 +95,12 @@ public class STEIN extends BEWEGTESOBJEKT
                 },1000);
             }
             if (moveok)
-               { 
-                   if(justVerschoben)
-                   {
-                       
-                       Timer timer = new Timer();
-                       timer.schedule(new TimerTask(){
-                        public void run()
-                        {
-                          justVerschoben  = false;
-                        }
-                        },100);
-                   }
-                   if(justVerschoben == false)
+
                    y = y+20;
                }
             }      
-    }
+    
+
         
     
     
