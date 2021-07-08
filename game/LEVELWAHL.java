@@ -23,7 +23,7 @@ public class LEVELWAHL
         buttons = new game.BUTTON[10];
         BufferedImage[] lvl1 = {TEXTUR.lvl1busch1,TEXTUR.lvl1busch1,TEXTUR.lvl1busch1};
         BufferedImage[] lvl2 = {TEXTUR.lvl2figur1,TEXTUR.lvl2figur2,TEXTUR.lvl2figur2};
-        BufferedImage[] lvl3 = {TEXTUR.lvl3rubin1, TEXTUR.lvl3rubin1,TEXTUR.lvl3rubin1};
+        BufferedImage[] lvl3 = {TEXTUR.lvl3rubin1, TEXTUR.lvl3rubin2,TEXTUR.lvl3rubin1};
         BufferedImage[] lvl4 = {TEXTUR.lvl4schlange1, TEXTUR.lvl4schlange1,TEXTUR.lvl4schlange1};
         BufferedImage[] lvl5 = {TEXTUR.lvl5saphir1, TEXTUR.lvl5saphir1,TEXTUR.lvl5saphir1};
         BufferedImage[] lvl6 = {TEXTUR.lvl6stein1, TEXTUR.lvl6stein1,TEXTUR.lvl6stein1};
@@ -34,14 +34,14 @@ public class LEVELWAHL
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
-        buttons[0] = new game.BUTTON(175,190, "", lvl1, f); 
-        buttons[1] = new game.BUTTON(280,212, "", lvl2, f); 
+        buttons[0] = new game.BUTTON(180,190, "", lvl1, f); 
+        buttons[1] = new game.BUTTON(285,212, "", lvl2, f); 
         buttons[2] = new game.BUTTON(426,197, "", lvl3, f);
         buttons[3] = new game.BUTTON(530,238, "", lvl4, f); 
         buttons[4] = new game.BUTTON(544,367, "", lvl5, f); 
         buttons[5] = new game.BUTTON(380,445, "", lvl6, f); 
         buttons[6] = new game.BUTTON(220,450, "", lvl7, f); 
-        buttons[7] = new game.BUTTON(175,550, "", lvl8, f); 
+        buttons[7] = new game.BUTTON(185,550, "", lvl8, f); 
         buttons[8] = new game.BUTTON(325,640, "", lvl9, f); 
         buttons[9] = new game.BUTTON(510,675, "", lvl10, f); 
         
