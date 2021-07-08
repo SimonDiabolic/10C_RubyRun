@@ -26,7 +26,7 @@ public class LEVELWAHL
         BufferedImage[] lvl3 = {TEXTUR.lvl3rubin1, TEXTUR.lvl3rubin2,TEXTUR.lvl3rubin1};
         BufferedImage[] lvl4 = {TEXTUR.lvl4schlange1, TEXTUR.lvl4schlange1,TEXTUR.lvl4schlange1};
         BufferedImage[] lvl5 = {TEXTUR.lvl5saphir1, TEXTUR.lvl5saphir1,TEXTUR.lvl5saphir1};
-        BufferedImage[] lvl6 = {TEXTUR.lvl6stein1, TEXTUR.lvl6stein1,TEXTUR.lvl6stein1};
+        BufferedImage[] lvl6 = {TEXTUR.lvl6stein1, TEXTUR.lvl6stein2,TEXTUR.lvl6stein1};
         BufferedImage[] lvl7 = {TEXTUR.lvl7snake1, TEXTUR.lvl7snake2,TEXTUR.lvl7snake1};
         BufferedImage[] lvl8 = {TEXTUR.lvl8totenkopf1, TEXTUR.lvl8totenkopf2,TEXTUR.lvl8totenkopf1};
         BufferedImage[] lvl9 = {TEXTUR.x1, TEXTUR.x2,TEXTUR.x2};
