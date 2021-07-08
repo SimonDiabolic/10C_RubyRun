@@ -96,7 +96,7 @@ public class STEIN extends BEWEGTESOBJEKT
                 },1000);
             }
             if (moveok)
-               { 
+               {
                    
                    y = y+20;
                }
