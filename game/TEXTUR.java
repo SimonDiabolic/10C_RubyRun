@@ -62,7 +62,7 @@ public class TEXTUR
      static BufferedImage lvl6stein1 = IMAGELOADER.loadImage("lvl6stein1");
     //static BufferedImage lvl6stein2 = IMAGELOADER.loadImage("lvl6stein2");
      static BufferedImage lvl7snake1 = IMAGELOADER.loadImage("lvl7snake1");
-    //static BufferedImage lvl7snake2 = IMAGELOADER.loadImage("lvl7snake2");
+     static BufferedImage lvl7snake2 = IMAGELOADER.loadImage("lvl7snake2");
      static BufferedImage lvl8totenkopf1 = IMAGELOADER.loadImage("lvl8totenkopf1");
      static BufferedImage lvl8totenkopf2 = IMAGELOADER.loadImage("lvl8totenkopf2");
     //static BufferedImage lvl9tempel1 = IMAGELOADER.loadImage("lvl9tempel1");
