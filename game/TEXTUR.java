@@ -69,7 +69,10 @@ public class TEXTUR
     //static BufferedImage lvl9tempel2 = IMAGELOADER.loadImage("lvl9tempel2");
      static BufferedImage lvl10vulkan1 = IMAGELOADER.loadImage("lvl10vulkan1");
      static BufferedImage lvl10vulkan2 = IMAGELOADER.loadImage("lvl10vulkan2");
-    
+     
+     //Bosslvl Prototypen
+    static BufferedImage WandBoss = IMAGELOADER.loadImage("WandBoss");
+    static BufferedImage WegBoss = IMAGELOADER.loadImage("WegBoss");
      
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
