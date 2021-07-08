@@ -58,7 +58,6 @@ public class STEIN extends BEWEGTESOBJEKT
         }
       
         SteinaufSchlange = null;
-        //Stein plumpst runter
         int nextx = x / TEXTUR.kachelgroesse ;
         int nexty = y / TEXTUR.kachelgroesse + 1;
         int SpielerUnterStein = 0;
@@ -68,7 +67,7 @@ public class STEIN extends BEWEGTESOBJEKT
             for (BEWEGTESOBJEKT i : other) {
                 if (nextx == i.getX() / TEXTUR.kachelgroesse && 
                     nexty == i.getY() / TEXTUR.kachelgroesse) {
-                    if (i.getType() == 'z')
+                    if (i.isteseineSchlange() == false)
                     {
                         moveok = false;
                     }
@@ -97,10 +96,21 @@ public class STEIN extends BEWEGTESOBJEKT
             }
             if (moveok)
                { 
-                   
+                   if(justVerschoben)
+                   {
+                       
+                       Timer timer = new Timer();
+                       timer.schedule(new TimerTask(){
+                        public void run()
+                        {
+                          justVerschoben  = false;
+                        }
+                        },100);
+                   }
+                   if(justVerschoben == false)
                    y = y+20;
                }
-            }    
+            }      
     }
         
     
