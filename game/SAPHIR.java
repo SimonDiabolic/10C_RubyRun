@@ -23,7 +23,7 @@ public class SAPHIR extends BEWEGTESOBJEKT
     public int getRubinY() { return y; }
     public boolean SaphirCollection()
     {
-        if ((getX()==SPIELER.getXPos()) && (getY()==SPIELER.getYPos()))
+        if (COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
         {
             return true;
         }
