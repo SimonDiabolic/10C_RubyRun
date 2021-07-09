@@ -61,7 +61,7 @@ public class TEXTUR
      static BufferedImage lvl3rubin1 = IMAGELOADER.loadImage("lvl3rubin1");
      static BufferedImage lvl3rubin2 = IMAGELOADER.loadImage("lvl3rubin2");
      static BufferedImage lvl4schlange1 = IMAGELOADER.loadImage("lvl4schlange1");
-    //static BufferedImage lvl4schlange2 = IMAGELOADER.loadImage("lvl4schlange2");
+     static BufferedImage lvl4schlange2 = IMAGELOADER.loadImage("lvl4schlange2");
      static BufferedImage lvl5saphir1 = IMAGELOADER.loadImage("lvl5saphir1");
     //static BufferedImage lvl5saphir2 = IMAGELOADER.loadImage("lvl5saphir2");
      static BufferedImage lvl6stein1 = IMAGELOADER.loadImage("lvl6stein1");
