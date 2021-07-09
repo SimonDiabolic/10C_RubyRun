@@ -2,19 +2,19 @@ package game;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 
-public class LOCK
+public class AUSGANG
 {
     private BufferedImage look;
     public int x;
     public int y;
     
-    LOCK(int lockx, int locky)
+    AUSGANG(int lockx, int locky)
     {
         this.x = lockx;
         this.y = locky;
         look = IMAGELOADER.loadImage("AusgangZu");
     }
-    public boolean SpielerAufSchloss()
+    public boolean SpielerAufAusgang()
     {
         if ((x==SPIELER.getXPos()) && (y==SPIELER.getYPos()))
         {

@@ -59,21 +59,6 @@ public void update(boolean playermove)
     }
     int spielerposx = (int) (getXPos())/TEXTUR.kachelgroesse;
     int spielerposy = (int) (getYPos())/TEXTUR.kachelgroesse;
-    /*for (BEWEGTESOBJEKT i : BEWEGTESOBJEKT.other) 
-     * {
-                      
-     for (BEWEGTESOBJEKT j : BEWEGTESOBJEKT.other) 
-     {
-         if (directionx != 0 && directiony != 0 && WELT.kacheln[spielerposx][spielerposy].getLookID()!=1 &&
-         ((i.getType() == 's' && spielerposx - directionx == i.getX() / TEXTUR.kachelgroesse && spielerposy == i.getY() / TEXTUR.kachelgroesse) || (WELT.kacheln [spielerposx - directionx] 
-         [spielerposy].getLookID() == 1) && (j.getType() == 's' && spielerposx == j.getX() / TEXTUR.kachelgroesse && spielerposy - directiony == j.getY() / TEXTUR.kachelgroesse) || 
-         WELT.kacheln [spielerposx] [spielerposy - directiony].getLookID() == 1))
-         {
-             resetPosition ();
-                              
-             }
-             }
-                      }*/
      if (directionx != 0 && directiony != 0) {resetPosition();}
      if (WELT.kacheln[spielerposx - directionx] [spielerposy].getLookID() == 1 && WELT.kacheln[spielerposx] [spielerposy - directiony].getLookID() == 1)
      {
@@ -89,12 +74,12 @@ public void update(boolean playermove)
          FMENU.WinOrLoose = "win";
          FRAME.welt = null;
      }
-     
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 5)
-                     {
-                      x = WELT.telex*TEXTUR.kachelgroesse;  
-                      y = WELT.teley*TEXTUR.kachelgroesse;  
-                     }
+     {
+          x = WELT.telex*TEXTUR.kachelgroesse;  
+          y = WELT.teley*TEXTUR.kachelgroesse;  
+     }
+     
                      
  }
  public static void resetDirection()

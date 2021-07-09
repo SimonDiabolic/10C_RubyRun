@@ -35,16 +35,19 @@ public class WELT
       
       public static int punkte;
       public static int leben;
+      public static int keys;
       private int damage;
       private Font font;
       private FontMetrics fm;
       
       static String level;
-      private LOCK Lock;
-      private int locky;
-      private int lockx;
+      private AUSGANG Ausgang;
+      private SCHLOSS schloss;
+      private DOOR door;
+      private int ausgangy;
+      private int ausgangx;
       private double zuSammelndeRubine;
-      private boolean LockExists;
+      private boolean AusgangExists;
       public static UIBOTTOM uibottom;
       
       public static boolean tutorial;
@@ -56,8 +59,8 @@ public class WELT
   {
       loadNextLevel(); //ruft die Methode zum Laden eines neuen Levels auf
       spieler = new SPIELER(spawnx,spawny);
-      Lock = new LOCK(lockx,locky);
-      LockExists = true;
+      Ausgang = new AUSGANG(ausgangx,ausgangy);
+      AusgangExists = true;
       if(tutorial) tut = new TUTORIAL();
       font = new Font("Monospaced", Font.BOLD,26); 
   }
@@ -101,6 +104,7 @@ public class WELT
                     if(c.getRed()==0   &&c.getGreen() == 255     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
                     if(c.getRed()==0   &&c.getGreen() == 250     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
                     if(c.getRed()==1   &&c.getGreen() == 1    && c.getBlue() == 1)         kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlüssel
+                    if(c.getRed()==2   &&c.getGreen() == 2    && c.getBlue() == 2)         kacheln[x] [y] = new KACHEL(x,y,7);   //LookID 0; Schlüoss (Y-1 == Tür!)
                     /**
                       * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
@@ -134,6 +138,11 @@ public class WELT
                      {
                          zeugs.add(new SCHLUESSEL(x,y));                         
                      }
+                     if(c.getRed()==2   &&c.getGreen() == 2    && c.getBlue() == 2)
+                     {
+                         schloss = new SCHLOSS(x*TEXTUR.kachelgroesse,y*TEXTUR.kachelgroesse);
+                         door = new DOOR(x*TEXTUR.kachelgroesse,y*TEXTUR.kachelgroesse+TEXTUR.kachelgroesse);
+                     }
                      
                       /**
                       * Erfragt Koordinaten der Spawnkachel (Kachel mit der LookID 2) und setzt die Koordinaten für den Spielereinstiegspunkt diesen gleich
@@ -148,9 +157,8 @@ public class WELT
                       */
                      if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)
                      {
-                         lockx = x*TEXTUR.kachelgroesse;
-                         locky = y*TEXTUR.kachelgroesse;
-                         
+                         ausgangx = x*TEXTUR.kachelgroesse;
+                         ausgangy = y*TEXTUR.kachelgroesse;
                      }
                      
                      if(c.getRed()==200   &&c.getGreen() == 200     && c.getBlue() == 200)
@@ -221,17 +229,15 @@ public class WELT
       if (SpielerAufRubin != null) {
         zeugs.remove(SpielerAufRubin);
         punkte++;
-        if(punkte >= zuSammelndeRubine && LockExists == true )
+        if(punkte >= zuSammelndeRubine && AusgangExists == true )
             {    
-             Lock = null;
-             LockExists = false;
+             Ausgang = null;
+             AusgangExists = false;
             }
       }
-      
       if(SteinAufSchlange != null) {
         zeugs.remove(SteinAufSchlange);              
       }
-      
       if (SpielerAufSaphir != null) {
         zeugs.remove(SpielerAufSaphir);
         LEVELWAHL.saphire++;
@@ -242,11 +248,30 @@ public class WELT
           zeugs.remove(SpielerAufBusch);
       }
       if(SpielerHatKey != null) {
-        zeugs.remove(SpielerHatKey);              
+        zeugs.remove(SpielerHatKey);  
+        keys++;
+      } 
+      if(door != null && COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,door.x,door.y,10,10))
+      {
+          spieler.resetPosition();
       }
+      if(keys < 1)
+      {
+        if(schloss != null && schloss.SpielerAufSchloss())
+        {
+            spieler.resetPosition();
+        }
+      }
+      else if(schloss != null && schloss.SpielerAufSchloss())
+      {
+          schloss = null;
+          door = null;
+          keys--;
+      }
+      
       if(punkte < zuSammelndeRubine)
       {
-        if(Lock.SpielerAufSchloss())
+        if(Ausgang.SpielerAufAusgang())
         {
             spieler.resetPosition();
         }
@@ -273,7 +298,15 @@ public class WELT
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       if(punkte < zuSammelndeRubine)
       {
-          Lock.draw(g);
+          Ausgang.draw(g);
+      }
+      if(door != null)
+      {
+          door.draw(g);
+      }
+      if(schloss != null)
+      {
+          schloss.draw(g);
       }
       if(tutorial)tut.draw(g);
       spieler.draw(g);
