@@ -21,7 +21,7 @@ public class SAPHIR extends BEWEGTESOBJEKT
     }
     public int getRubinX() { return x; }
     public int getRubinY() { return y; }
-    public boolean SchluesselCollection()
+    public boolean SaphirCollection()
     {
         if ((getX()==SPIELER.getXPos()) && (getY()==SPIELER.getYPos()))
         {

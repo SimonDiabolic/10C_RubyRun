@@ -100,6 +100,7 @@ public class WELT
                     if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Stein
                     if(c.getRed()==0   &&c.getGreen() == 255     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
                     if(c.getRed()==0   &&c.getGreen() == 250     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
+                    if(c.getRed()==1   &&c.getGreen() == 1    && c.getBlue() == 1)         kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlüssel
                     /**
                       * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
@@ -128,6 +129,10 @@ public class WELT
                      if(c.getRed()==0   &&c.getGreen() == 250    && c.getBlue() == 0)
                      {
                          zeugs.add(new SCHLANGE(x,y,'x'));                         
+                     }
+                     if(c.getRed()==1   &&c.getGreen() == 1    && c.getBlue() == 1)
+                     {
+                         zeugs.add(new SCHLUESSEL(x,y));                         
                      }
                      
                       /**
@@ -168,6 +173,7 @@ public class WELT
       BEWEGTESOBJEKT SpielerAufBusch = null;
       BEWEGTESOBJEKT SpielerAufSaphir = null;
       BEWEGTESOBJEKT SteinAufSchlange = null;
+      BEWEGTESOBJEKT SpielerHatKey = null;
       
       double zuSammelndeRubine = Math.round(anzahlRubine*0.75);
       for (BEWEGTESOBJEKT i : zeugs) {
@@ -188,11 +194,15 @@ public class WELT
          {
             SpielerAufBusch = i;
          }
+         if (i.SchluesselCollection()) 
+         {
+            SpielerHatKey = i;
+         }
          
          if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
          {
              damage++;
-             if (damage == 2)
+             if (damage == 1)
              {
                  leben--;
                  uibottom.lebenNehmen();
@@ -230,6 +240,9 @@ public class WELT
       if (SpielerAufBusch != null) 
       {
           zeugs.remove(SpielerAufBusch);
+      }
+      if(SpielerHatKey != null) {
+        zeugs.remove(SpielerHatKey);              
       }
       if(punkte < zuSammelndeRubine)
       {

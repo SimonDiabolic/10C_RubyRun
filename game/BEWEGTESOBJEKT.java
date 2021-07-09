@@ -47,6 +47,7 @@ public abstract class BEWEGTESOBJEKT
     public boolean SpielerAufStein(){return false;}
     public boolean SaphirCollection(){return false;}
     public boolean SchlangeSchlaegtSpieler(){return false;}
+    public boolean SchluesselCollection(){return false;}
     public char getType () {return type;}
     public void draw(Graphics g)
     {

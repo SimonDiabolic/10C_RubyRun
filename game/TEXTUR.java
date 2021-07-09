@@ -20,6 +20,7 @@ public class TEXTUR
      static BufferedImage busch = IMAGELOADER.loadImage("Busch");
      static BufferedImage saphir = IMAGELOADER.loadImage("saphir");
      static BufferedImage schlange = IMAGELOADER.loadImage("schlange");
+     static BufferedImage key = IMAGELOADER.loadImage("key");
      
      static BufferedImage background = IMAGELOADER.loadImage("background");
      static BufferedImage titel = IMAGELOADER.loadImage("titel");

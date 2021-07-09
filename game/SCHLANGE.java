@@ -27,7 +27,7 @@
         public int getSchlangeY() { return y; }
         public boolean SchlangeSchlaegtSpieler()
         {
-            if ((getX()==SPIELER.getXPos()) && (getY()==SPIELER.getYPos()))
+            if (COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
             {
                 return true;
             }
