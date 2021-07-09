@@ -26,8 +26,8 @@ public SPIELER(int x, int y)
 {
  this/*(Spricht globale Variable an)*/.x = x;
  this.y = y;
- 
-look = IMAGELOADER.loadImage("spieler");
+ look = IMAGELOADER.loadImage("Spielerrechts");
+
 
 }
 public void draw(Graphics g)
@@ -43,9 +43,9 @@ public void update(boolean playermove)
         if(KEYBOARD.isKeyPressed(KeyEvent.VK_S))
         {newy = -1;directiony = 1;}
         if(KEYBOARD.isKeyPressed(KeyEvent.VK_D))
-        {newx = 1; directionx = 1;}
+        {newx = 1; directionx = 1;look = IMAGELOADER.loadImage("Spielerrechts");}
         if(KEYBOARD.isKeyPressed(KeyEvent.VK_A))
-        {newx = -1; directionx = -1;}
+        {newx = -1; directionx = -1;look = IMAGELOADER.loadImage("Spielerlinks");}
       oldy = y;
       oldx = x;
       if(newy == -1)
