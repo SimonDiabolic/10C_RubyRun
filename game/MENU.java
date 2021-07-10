@@ -23,8 +23,8 @@ public class MENU
         
         int x = MENU.breite/2 + 400/2;
         
-        buttons[0] = new BUTTON(x,310, "start game", texturen, f); 
-        buttons[1] = new BUTTON(x,460, "end game", texturen, f); 
+        buttons[0] = new BUTTON(x,310, "Start game", texturen, f); 
+        buttons[1] = new BUTTON(x,460, "End game", texturen, f); 
         buttons[2] = new BUTTON(x,610, "Tutorial", texturen, f); 
         
         background = game.TEXTUR.background;
