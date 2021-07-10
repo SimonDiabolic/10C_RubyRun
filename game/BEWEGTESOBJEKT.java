@@ -28,7 +28,7 @@ public abstract class BEWEGTESOBJEKT
     {  
         int nextx = x / TEXTUR.kachelgroesse ;
         int nexty = y / TEXTUR.kachelgroesse + 1;
-        if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
+        if(WELT.kacheln[nextx] [nexty].getLookID() == 0)
         {
             boolean moveok = true;
             for (BEWEGTESOBJEKT i : other) {
