@@ -33,17 +33,18 @@ public class FMENU
         background = game.TEXTUR.background;
         title = game.TEXTUR.titel;
         perfekt = TEXTUR.perfekt;
-        BufferedImage[] texturen = {TEXTUR.next, TEXTUR.next1, TEXTUR.next1};
-        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
-        BufferedImage[] texturen2 = {TEXTUR.goMenu, TEXTUR.goMenu1, TEXTUR.goMenu1};
+        BufferedImage[] texturen = {TEXTUR.next, TEXTUR.next1, TEXTUR.next2};
+        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry2};
+        BufferedImage[] texturen2 = {TEXTUR.goMenu, TEXTUR.goMenu1, TEXTUR.goMenu2};
   
         f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
         buttons = new BUTTON[3];
-        buttons[0] = new BUTTON(545, 690, "", texturen, f); 
+        buttons[0] = new BUTTON(555, 690, "", texturen, f); 
         buttons[1] = new BUTTON(126, 690, "", texturen1, f);
         buttons[2] = new BUTTON(300, 690, "", texturen2, f);
+        // Position muss noch richtig gesetzt werden
         
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;

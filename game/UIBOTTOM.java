@@ -22,12 +22,12 @@ public class UIBOTTOM
         l1 = TEXTUR.bar;
         f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         
-        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry1};
+        BufferedImage[] texturen1 = {TEXTUR.retry, TEXTUR.retry1, TEXTUR.retry2};
         BufferedImage[] HerzZustand = {TEXTUR.hr, TEXTUR.hs};
         herzen = new HERZ[5];
         
         buttons =  new BUTTON[1];
-        buttons[0] = new BUTTON(300,825, "", texturen1, f);
+        buttons[0] = new BUTTON(265,810, "", texturen1, f);
         
         herzen[0] = new HERZ(440,825, HerzZustand); 
         herzen[1] = new HERZ(500,825, HerzZustand); 
