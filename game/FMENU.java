@@ -41,9 +41,9 @@ public class FMENU
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
         buttons = new BUTTON[3];
-        buttons[0] = new BUTTON(555, 690, "", texturen, f); 
-        buttons[1] = new BUTTON(126, 690, "", texturen1, f);
-        buttons[2] = new BUTTON(300, 690, "", texturen2, f);
+        buttons[0] = new BUTTON(502, 691, "", texturen, f); 
+        buttons[1] = new BUTTON(150, 691, "", texturen1, f);
+        buttons[2] = new BUTTON(315, 691, "", texturen2, f);
         // Position muss noch richtig gesetzt werden
         
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
