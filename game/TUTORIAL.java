@@ -47,7 +47,7 @@ public class TUTORIAL
       }
       if(SPIELER.getXPos()==480 && SPIELER.getYPos() == 560)
       {
-          g.drawImage(WASD, 800/2 - WASD.getWidth()/2, 700, null);
+          g.drawImage(WayBlock, 800/2 - WayBlock.getWidth()/2, 700, null);
       }
       if(SPIELER.getXPos()==280 && SPIELER.getYPos() == 640)
       {
