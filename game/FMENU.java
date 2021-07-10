@@ -44,7 +44,6 @@ public class FMENU
         buttons[0] = new BUTTON(502, 691, "", texturen, f); 
         buttons[1] = new BUTTON(150, 691, "", texturen1, f);
         buttons[2] = new BUTTON(315, 691, "", texturen2, f);
-        // Position muss noch richtig gesetzt werden
         
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
