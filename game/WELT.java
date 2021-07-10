@@ -277,7 +277,7 @@ public class WELT
         }
       }
       uibottom.update();
-      if(tutorial)tut.update();
+      //if(tutorial)tut.update();
   }
   public void draw(Graphics g)
   {    
