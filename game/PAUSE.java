@@ -33,16 +33,17 @@ public class PAUSE
         background = game.TEXTUR.background;
         pause = game.TEXTUR.pause;
         perfekt = TEXTUR.perfekt;
-        BufferedImage[] texturen1 = {TEXTUR.resume, TEXTUR.resume1, TEXTUR.resume1};
+        BufferedImage[] texturen1 = {TEXTUR.resume, TEXTUR.resume1, TEXTUR.resume2};
         BufferedImage[] texturen2 = {TEXTUR.goMenu, TEXTUR.goMenu1, TEXTUR.goMenu2};
   
         f = new Font("Monospaced",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
         buttons = new BUTTON[2];
+
         buttons[0] = new BUTTON(200, 691, "", texturen1, f);
         buttons[1] = new BUTTON(445, 691, "", texturen2, f);
-        
+
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
         damage = "Hits: " + (5-WELT.leben);

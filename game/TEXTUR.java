@@ -44,6 +44,7 @@ public class TEXTUR
      static BufferedImage perfekt = IMAGELOADER.loadImage("perfekt");
      static BufferedImage resume = IMAGELOADER.loadImage("resume");
      static BufferedImage resume1 = IMAGELOADER.loadImage("resume1");
+     static BufferedImage resume2 = IMAGELOADER.loadImage("resume2");
      static BufferedImage next = IMAGELOADER.loadImage("next");
      static BufferedImage next1 = IMAGELOADER.loadImage("next1");
      static BufferedImage next2 = IMAGELOADER.loadImage("next2");
