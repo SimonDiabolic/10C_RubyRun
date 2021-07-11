@@ -8,7 +8,7 @@ import java.awt.FontMetrics;
 
 //---------------------//
 
-public class FMENU
+public class LEVELCOMPLETE
 {
     private BufferedImage background;
     private BufferedImage title;
@@ -28,7 +28,7 @@ public class FMENU
     public static boolean Sperfekt;
     public static boolean Hperfekt;
     
-    public FMENU()
+    public LEVELCOMPLETE()
     {
         background = game.TEXTUR.background;
         title = game.TEXTUR.titel;
@@ -76,9 +76,13 @@ public class FMENU
       {
           if(buttons[i].update())
           {
-              if (i == 0) {LEVELWAHL.loadLevel(LEVELWAHL.currentLevel+1);FRAME.spielzustand = 2;FRAME.fmenu = null;}
-              else if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;}
-              else if (i == 2){FRAME.spielzustand = 1; FRAME.fmenu = null;}
+              if (i == 0) {LEVELWAHL.loadLevel(LEVELWAHL.currentLevel+1);FRAME.spielzustand = 2;FRAME.fmenu = null;
+                  if(WELT.tutorial) 
+                  WELT.tutorial = false;} //nächstes Level
+              else if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;} //restartet das level
+              else if (i == 2){FRAME.spielzustand = 1; FRAME.fmenu = null;
+                  if(WELT.tutorial) 
+                  WELT.tutorial = false;} //Geht zur Levelwahl
           }
       }
     }

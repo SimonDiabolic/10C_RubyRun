@@ -15,7 +15,7 @@ public class FRAME extends JFrame
   public static WELT welt;
   private MENU menu;
   private LEVELWAHL levelwahl;
-  public static FMENU fmenu;
+  public static LEVELCOMPLETE fmenu;
   public static PAUSE pause;
   public static int spielzustand;
   public FRAME()
@@ -58,7 +58,7 @@ public class FRAME extends JFrame
               welt.draw(g);
                           break;
           case 3:
-              if(fmenu == null) {fmenu = new FMENU();}
+              if(fmenu == null) {fmenu = new LEVELCOMPLETE();}
               fmenu.draw(g);
                           break;
           case 4:
