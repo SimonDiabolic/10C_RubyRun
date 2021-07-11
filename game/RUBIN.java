@@ -5,11 +5,11 @@ import java.util.LinkedList;
 
 public class RUBIN extends BEWEGTESOBJEKT
 {
-    RUBIN (int x, int y)
+    RUBIN (int x, int y, boolean BossLevel)
     {
         super(x,y);
-        look = TEXTUR.rubin;
-        
+          if (BossLevel) look = TEXTUR.RubinBoss;
+            else look = TEXTUR.rubin;
     }
     public void update()
     {

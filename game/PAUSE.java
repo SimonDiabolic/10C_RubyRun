@@ -40,9 +40,12 @@ public class PAUSE
         font = new Font("Monospaced",Font.BOLD/*Fett/Kursiv*/,30/*Schriftgröße*/);
         
         buttons = new BUTTON[2];
-        buttons[0] = new BUTTON(140, 710, "", texturen1, f);
-        buttons[1] = new BUTTON(545, 730, "", texturen2, f);
-        
+
+
+        buttons[0] = new BUTTON(210, 691, "", texturen1, f);
+        buttons[1] = new BUTTON(430, 691, "", texturen2, f);
+
+
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;
         damage = "Hits: " + (5-WELT.leben);
