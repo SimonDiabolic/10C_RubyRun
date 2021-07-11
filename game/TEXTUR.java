@@ -96,10 +96,12 @@ public class TEXTUR
      static BufferedImage lvl10vulkan2 = IMAGELOADER.loadImage("lvl10vulkan2");
      static BufferedImage lvl10vulkan3 = IMAGELOADER.loadImage("lvl10vulkan3");
      
-     //Bosslvl Prototypen
+     //Bosslvl 
     static BufferedImage WandBoss = IMAGELOADER.loadImage("WandBoss");
     static BufferedImage WegBoss = IMAGELOADER.loadImage("WegBoss");
-     
+    static BufferedImage SteinBoss = IMAGELOADER.loadImage("SteinBoss"); 
+    static BufferedImage RubinBoss = IMAGELOADER.loadImage("RubinBoss");
+    static BufferedImage BuschBoss = IMAGELOADER.loadImage("BuschBoss");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  

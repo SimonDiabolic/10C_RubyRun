@@ -53,7 +53,9 @@ public class WELT
       public static boolean tutorial;
       TUTORIAL tut;
       
-      
+      //public enum Elemente {
+        //Ranke, Wand
+      //}
  
   public WELT()
   {
@@ -86,11 +88,16 @@ public class WELT
               {
                  for(int y = 0; y < hoehe;y++)
                  {
+                     //Elemente element = Elemente.Ranke;
+                     //int lookid = 0;
                      Color c = new Color(map.getRGB(x,y));
                      /**
                       * if(c.getRed()==ROTWERT && c.getGreen()==GRUENWERT && c.getBlue()==BLAUWERT) kacheln[x] [y] = new Kachel(POSITIONx,POSITIONy,lookID);
                       */
-                    if(c.getRed()==150   &&c.getGreen() == 150   && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
+                    if(c.getRed()==150   &&c.getGreen() == 150   && c.getBlue() == 150) 
+                       // element = Elemente.Ranke;
+                    
+                    kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0 = Ranke
                     if(c.getRed()==255 &&c.getGreen() == 115    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1 = FüllelementWand
                     if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2);   //LookID 2 = Spawnpunkt
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3);   //LookID 3 = Ausgang
@@ -105,6 +112,15 @@ public class WELT
                     if(c.getRed()==0   &&c.getGreen() == 250     && c.getBlue() == 0)      kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlange
                     if(c.getRed()==1   &&c.getGreen() == 1    && c.getBlue() == 1)         kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Schlüssel
                     if(c.getRed()==2   &&c.getGreen() == 2    && c.getBlue() == 2)         kacheln[x] [y] = new KACHEL(x,y,7);   //LookID 0; Schlüoss (Y-1 == Tür!)
+                    if(c.getRed()==50   &&c.getGreen() == 50    && c.getBlue() == 50)      kacheln[x] [y] = new KACHEL(x,y,1);   //LookID 1; Wand für Bosslevel
+                    if(c.getRed()==150   &&c.getGreen() == 250    && c.getBlue() == 350)   kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Weg für Bosslevel
+                    if(c.getRed()==75   &&c.getGreen() == 75    && c.getBlue() == 75)   kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Stein für Bosslevel
+                    if(c.getRed()==75   &&c.getGreen() == 150    && c.getBlue() == 75)   kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Rubin für Bosslevel
+                    if(c.getRed()==75   &&c.getGreen() == 75    && c.getBlue() == 150)   kacheln[x] [y] = new KACHEL(x,y,0);   //LookID 0; Busch für Bosslevel
+                    //if (element == Elemente.Ranke)
+                      //  lookid= 0;
+                    
+                    //kacheln[x] [y] = new KACHEL(x,y,lookid);
                     /**
                       * Erstellt alle Objekte die von BEWWEGTESOBJEKT erben
                       */
@@ -277,7 +293,7 @@ public class WELT
         }
       }
       uibottom.update();
-      //if(tutorial)tut.update();
+      
   }
   public void draw(Graphics g)
   {    
