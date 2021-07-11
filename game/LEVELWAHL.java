@@ -21,7 +21,7 @@ public class LEVELWAHL
     public LEVELWAHL()
     {
         buttons = new game.BUTTON[10];
-        BufferedImage[] lvl1 = {TEXTUR.lvl1busch1,TEXTUR.lvl1busch2,TEXTUR.lvl1busch1};
+        BufferedImage[] lvl1 = {TEXTUR.lvl1busch1,TEXTUR.lvl1busch2,TEXTUR.lvl1busch3};
         BufferedImage[] lvl2 = {TEXTUR.lvl2figur1,TEXTUR.lvl2figur2,TEXTUR.lvl2figur3};
         BufferedImage[] lvl3 = {TEXTUR.lvl3rubin1, TEXTUR.lvl3rubin2,TEXTUR.lvl3rubin2};
         BufferedImage[] lvl4 = {TEXTUR.lvl4schlange1, TEXTUR.lvl4schlange2,TEXTUR.lvl4schlange3};
