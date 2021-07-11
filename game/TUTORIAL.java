@@ -21,6 +21,7 @@ public class TUTORIAL
     private BufferedImage WayBlock;
     private boolean drawWayBlock;
     private boolean FirstWayBlock;
+    private boolean drawWASD;
     public TUTORIAL()
     {
         WASD = TEXTUR.WASD;
@@ -34,12 +35,22 @@ public class TUTORIAL
         T8 = TEXTUR.T8;
         T9 = TEXTUR.T9;
         FirstWayBlock = true;
+        drawWASD = true;
     }
     public void draw(Graphics g)
     {
-      if(SPIELER.getXPos()==80 && SPIELER.getYPos() == 40)
+      if(SPIELER.getXPos()==80 && SPIELER.getYPos() == 40 && drawWASD)
       {
+          Timer timer = new Timer();
           g.drawImage(WASD, 800/2 - WASD.getWidth()/2, 700, null);
+                timer.schedule(new TimerTask(){
+                    public void run()
+                    {
+                        drawWASD = false;
+                    }
+                },1000);
+                
+                
       }
       if(SPIELER.getXPos()==320 && SPIELER.getYPos() == 80)
       {

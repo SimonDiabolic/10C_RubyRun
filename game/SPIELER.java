@@ -71,7 +71,7 @@ public void update(boolean playermove)
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 4)
      {
          FRAME.spielzustand = 3;
-         FMENU.WinOrLoose = "win";
+         LEVELCOMPLETE.WinOrLoose = "win";
          FRAME.welt = null;
      }
      if(WELT.kacheln[spielerposx] [spielerposy].getLookID() == 5)
