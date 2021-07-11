@@ -18,6 +18,7 @@ public class TUTORIAL
     private BufferedImage T7;
     private BufferedImage T8;
     private BufferedImage T9;
+    private BufferedImage ESC;
     private BufferedImage WayBlock;
     private boolean drawWayBlock;
     private boolean FirstWayBlock;
@@ -31,6 +32,7 @@ public class TUTORIAL
     private boolean drawT7;
     private boolean drawT8;
     private boolean drawT9;
+    private boolean drawESC;
     public TUTORIAL()
     {
         WASD = TEXTUR.WASD;
@@ -43,6 +45,7 @@ public class TUTORIAL
         T7 = TEXTUR.T7;
         T8 = TEXTUR.T8;
         T9 = TEXTUR.T9;
+        ESC = TEXTUR.ESC;
         FirstWayBlock = true;
         drawWASD = true;
         drawT2 = true;
@@ -53,6 +56,7 @@ public class TUTORIAL
         drawT7 = true;
         drawT8 = true;
         drawT9 = true;
+        drawESC= true;
         drawWayBlock = true;
     }
     public void draw(Graphics g)
@@ -112,6 +116,18 @@ public class TUTORIAL
                     }
                 },2500);
       }
+      
+      if(SPIELER.getXPos()==280 && SPIELER.getYPos() == 400 && drawESC)
+      {
+          Timer timer = new Timer();
+          g.drawImage(ESC, 800/2 - ESC.getWidth()/2, 700, null);
+          timer.schedule(new TimerTask(){
+                    public void run()
+                    {
+                        drawESC = false;
+                    }
+                },2500);
+      }
       if(SPIELER.getXPos()==520 && SPIELER.getYPos() == 400 && drawT6)
       {
           Timer timer = new Timer();
@@ -119,7 +135,7 @@ public class TUTORIAL
           timer.schedule(new TimerTask(){
                     public void run()
                     {
-                        drawWASD = false;
+                        drawT6 = false;
                     }
                 },2500);
       }

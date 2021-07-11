@@ -41,8 +41,10 @@ public class PAUSE
         
         buttons = new BUTTON[2];
 
-        buttons[0] = new BUTTON(200, 691, "", texturen1, f);
-        buttons[1] = new BUTTON(445, 691, "", texturen2, f);
+
+        buttons[0] = new BUTTON(210, 691, "", texturen1, f);
+        buttons[1] = new BUTTON(430, 691, "", texturen2, f);
+
 
         rubine = "Rubine: " +WELT.punkte +"/" + WELT.anzahlRubine;
         saphire = "Saphire: " +LEVELWAHL.saphire +"/" + WELT.anzahlSaphire;

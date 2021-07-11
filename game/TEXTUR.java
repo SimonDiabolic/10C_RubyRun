@@ -65,6 +65,7 @@ public class TEXTUR
      static BufferedImage T7 = IMAGELOADER.loadImage("Tutorial7");
      static BufferedImage T8 = IMAGELOADER.loadImage("Tutorial8");
      static BufferedImage T9 = IMAGELOADER.loadImage("Tutorial9");
+     static BufferedImage ESC = IMAGELOADER.loadImage("TutorialESC");
      
      static BufferedImage lvl1busch1 = IMAGELOADER.loadImage("lvl1busch1");
      static BufferedImage lvl1busch2 = IMAGELOADER.loadImage("lvl1busch2");
