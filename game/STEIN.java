@@ -8,27 +8,25 @@ import java.util.TimerTask;
 
 public class STEIN extends BEWEGTESOBJEKT
 {
-    BEWEGTESOBJEKT SteinaufSchlange;
-    private boolean justVerschoben;
-    
-    STEIN (int x, int y)
-    {
-        super(x,y);
-        type = 's';
-        look = TEXTUR.stein;
-        SteinaufSchlange = null;
-        
-    }
-    public void update()
-    {
-        //Steineverschieben
-        if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
-        {
-            if(WELT.kacheln[x/TEXTUR.kachelgroesse + SPIELER.getDirectionX()][y/TEXTUR.kachelgroesse].getLookID()==0 && SPIELER.getDirectionX() != 0)
-              {
-                  int nextx = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
-                  int nexty = y;
-                  if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 || 
+BEWEGTESOBJEKT SteinaufSchlange;
+private boolean justVerschoben;
+
+STEIN (int x, int y)
+{
+super(x,y);
+type = 's';
+look = TEXTUR.stein;
+SteinaufSchlange = null;
+
+}
+public void update()
+{
+         //Steineverschieben
+         if(COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
+         {
+                int nextx = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
+                int nexty = y;
+              if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 || 
                     WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 2 ||
                     WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 5 ||
                     WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 6 )
@@ -52,30 +50,29 @@ public class STEIN extends BEWEGTESOBJEKT
                           SPIELER.resetPosition();
                       }
                   
-                  }
-               }
-            else
-            {
-              SPIELER.resetPosition();
+                 }
             }         
-        }
+        
       
-        SteinaufSchlange = null;
-        int nextx = x / TEXTUR.kachelgroesse ;
-        int nexty = y / TEXTUR.kachelgroesse + 1;
-        int SpielerUnterStein = 0;
-        if(WELT.kacheln[nextx] [nexty].getLookID() == 0 )
-        {
-            boolean moveok = true;
-            for (BEWEGTESOBJEKT i : other) {
-                if (nextx == i.getX() / TEXTUR.kachelgroesse && 
-                    nexty == i.getY() / TEXTUR.kachelgroesse) {
-                    if (i.isteseineSchlange() == false)
-                    {
-                        moveok = false;
-                    }
-                    else 
-                     {
+            SteinaufSchlange = null;
+            int nextx = x / TEXTUR.kachelgroesse ;
+            int nexty = y / TEXTUR.kachelgroesse + 1;
+            int SpielerUnterStein = 0;
+            if(WELT.kacheln[nextx] [nexty].getLookID() == 0 || 
+            WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 2 ||
+            WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 5 ||
+            WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 6)
+            {   
+                boolean moveok = true;
+                for (BEWEGTESOBJEKT i : other) {
+                    if (nextx == i.getX() / TEXTUR.kachelgroesse && 
+                        nexty == i.getY() / TEXTUR.kachelgroesse) {
+                        if (i.isteseineSchlange() == false)
+                        {
+                                moveok = false; 
+                        }
+                        else 
+                        {
                         SteinaufSchlange = i;
                         
                     }
@@ -88,7 +85,7 @@ public class STEIN extends BEWEGTESOBJEKT
                 Timer timer = new Timer();
                 timer.schedule(new TimerTask(){
                     public void run()
-                    {
+                     {
                         if(SPIELER.getXPos() == x && SPIELER.getYPos() == y+TEXTUR.kachelgroesse)
                         {
                         y = y+20;
@@ -105,7 +102,7 @@ public class STEIN extends BEWEGTESOBJEKT
                 y = WELT.teley*TEXTUR.kachelgroesse;  
             }
                }
-            }      
+    }      
     public BEWEGTESOBJEKT SteinAufSchlange()
     {
         return SteinaufSchlange;
