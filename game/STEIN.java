@@ -28,7 +28,10 @@ public class STEIN extends BEWEGTESOBJEKT
               {
                   int nextx = x + (SPIELER.getDirectionX() * TEXTUR.kachelgroesse);
                   int nexty = y;
-                  if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 )
+                  if(WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 0 || 
+                    WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 2 ||
+                    WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 5 ||
+                    WELT.kacheln[nextx/TEXTUR.kachelgroesse] [nexty/TEXTUR.kachelgroesse].getLookID() == 6 )
                   {
                       boolean moveok = true;
                       for (BEWEGTESOBJEKT i : other) 
@@ -96,6 +99,11 @@ public class STEIN extends BEWEGTESOBJEKT
             }
             if (moveok)
                    y = y+20;
+            if(WELT.kacheln[x/TEXTUR.kachelgroesse] [y/TEXTUR.kachelgroesse].getLookID() == 5)
+            {
+                x = WELT.telex*TEXTUR.kachelgroesse;  
+                y = WELT.teley*TEXTUR.kachelgroesse;  
+            }
                }
             }      
     public BEWEGTESOBJEKT SteinAufSchlange()
