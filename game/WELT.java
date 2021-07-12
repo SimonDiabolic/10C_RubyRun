@@ -94,6 +94,7 @@ public class WELT
                     if(c.getRed()==255 &&c.getGreen() == 115    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,1,false);   //LookID 1 = FüllelementWand
                     if(c.getRed()==0   &&c.getGreen() == 150     && c.getBlue() == 150)    kacheln[x] [y] = new KACHEL(x,y,2,false);   //LookID 2 = Spawnpunkt
                     if(c.getRed()==255   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3,false);   //LookID 3 = Ausgang
+                    if(c.getRed()==255   &&c.getGreen() == 20     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,3,false);   //LookID 3 = AusgangRechts
                     if(c.getRed()==250   &&c.getGreen() == 255     && c.getBlue() == 0)    kacheln[x] [y] = new KACHEL(x,y,4,false);   //LookID 4 = AusgangControll
                     if(c.getRed()==250   &&c.getGreen() == 250     && c.getBlue() == 250)  kacheln[x] [y] = new KACHEL(x,y,5,false);   //LookID 5 = Teleportstein A
                     if(c.getRed()==200  &&c.getGreen() == 200     && c.getBlue() == 200)   kacheln[x] [y] = new KACHEL(x,y,6,false);   //LookID 6 = Teleportstein B
