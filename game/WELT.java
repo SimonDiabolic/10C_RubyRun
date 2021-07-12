@@ -98,6 +98,8 @@ public class WELT
                     if(c.getRed()==250   &&c.getGreen() == 250     && c.getBlue() == 250)  kacheln[x] [y] = new KACHEL(x,y,5,false);   //LookID 5 = Teleportstein A
                     if(c.getRed()==200  &&c.getGreen() == 200     && c.getBlue() == 200)   kacheln[x] [y] = new KACHEL(x,y,6,false);   //LookID 6 = Teleportstein B
                     if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)     kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Busch
+                    if(c.getRed()==200   &&c.getGreen() == 100    && c.getBlue() == 200)     kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Feuer
+                    if(c.getRed()==200   &&c.getGreen() == 150    && c.getBlue() == 200)     kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Feuer
                     if(c.getRed()==255   &&c.getGreen() == 0    && c.getBlue() == 0)       kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Rubin
                     if(c.getRed()==0 &&c.getGreen() == 0     && c.getBlue() == 255)        kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Saphir
                     if(c.getRed()==0   &&c.getGreen() == 0     && c.getBlue() == 0)        kacheln[x] [y] = new KACHEL(x,y,0,false);   //LookID 0; Stein
@@ -123,6 +125,7 @@ public class WELT
                          anzahlRubine++;
                          zeugs.add(new RUBIN(x,y,false));
                      }
+                     
                      if(c.getRed()==75 &&c.getGreen() == 150 && c.getBlue() == 75)
                      {
                          anzahlRubine++;
@@ -131,6 +134,14 @@ public class WELT
                      if(c.getRed()==0 &&c.getGreen() == 0   && c.getBlue() == 0)
                      {
                          zeugs.add(new STEIN(x,y));
+                     }
+                     if(c.getRed()==200 &&c.getGreen() == 100   && c.getBlue() == 200)
+                     {
+                         zeugs.add(new FEUER(x,y,'x'));
+                     }
+                     if(c.getRed()==200 &&c.getGreen() == 150   && c.getBlue() == 200)
+                     {
+                         zeugs.add(new FEUER(x,y,'y'));
                      }
                      if(c.getRed()==40   &&c.getGreen() == 100    && c.getBlue() == 40)
                      {

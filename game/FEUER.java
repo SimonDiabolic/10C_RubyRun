@@ -1,55 +1,39 @@
-    package game;
-    import java.awt.image.BufferedImage;
-    import java.awt.Graphics;
-    import java.util.LinkedList;
+package game;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics;
+import java.util.LinkedList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class FEUER extends BEWEGTESOBJEKT
+{
+    int bewegungsrichtung;
+    char coodaxis;
     
-    public class SCHLANGE extends BEWEGTESOBJEKT
+    FEUER (int x,int y, char coodaxis)
     {
-        int bewegungsrichtung;
-        char coodaxis;
-        SCHLANGE (int x, int y, char coodaxis)
-        {
-            super(x,y);
-            this.coodaxis = coodaxis;
-            look = TEXTUR.schlange;
-            bewegungsrichtung = 1;
-            type = 'z'; // z für zisch
-        }
-        public void update()
+        super(x,y);
+        this.coodaxis = coodaxis;
+        look = TEXTUR.feuer;
+        bewegungsrichtung = 1;
+    }
+    public void update()
         {   
-            SchlangeBewegung();
+            FeuerBewegung();
         }
-        public void draw(Graphics g)
+    public void draw(Graphics g)
         {
          g.drawImage(look, x, y, null);
         }
-        public int getSchlangeX() { return x; }
-        public int getSchlangeY() { return y; }
-        public boolean SchlangeSchlaegtSpieler()
-        {
-            if (COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public void SchlangeBewegung()
-        {
-                    
+    public int getFeuerX() { return x; }
+    public int getFeuerY() { return y; }
+    public void FeuerBewegung()
+    {
         if (coodaxis == 'x')
-        
-        {
-        int nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
-        int nexty = y / TEXTUR.kachelgroesse ;
-                
+        {int nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
+        int nexty = y / TEXTUR.kachelgroesse ;   
         if(bewegungsrichtung == -1 && x % TEXTUR.kachelgroesse != 0)
-        {
-            nextx++;
-        }
-        
+        {nextx++;}
         boolean moveok = false;
         if(WELT.kacheln[nextx] [nexty].getLookID() == 0)
             {
@@ -61,9 +45,18 @@
                     }
                 }
             } 
+        int gegangen = 0;
         if(moveok)
             {
                 x = x + 10*bewegungsrichtung;
+                if (x == 40*bewegungsrichtung)
+                {
+                    gegangen = 1;
+                    System.out.println("gegangen: 1");
+                }
+                
+                //}
+                //while (x <= getFeuerX()+TEXTUR.kachelgroesse*bewegungsrichtung);
             }
             else
             {
@@ -98,19 +91,16 @@
                 bewegungsrichtung = bewegungsrichtung*-1;
             }
         }
-        }
-        public boolean isteseineSchlange()
+    }
+    public boolean SpielerAufFeuer()
         {
-            return true;
+         if (COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        
-           
 }
-
-
-    
-    
-    
-    
-    
-
