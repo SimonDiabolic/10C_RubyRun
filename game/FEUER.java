@@ -9,13 +9,16 @@ public class FEUER extends BEWEGTESOBJEKT
 {
     int bewegungsrichtung;
     char coodaxis;
-    
+    int startpunktx;
+    int startpunkty;
     FEUER (int x,int y, char coodaxis)
     {
         super(x,y);
         this.coodaxis = coodaxis;
         look = TEXTUR.feuer;
         bewegungsrichtung = 1;
+        startpunktx = x * TEXTUR.kachelgroesse;
+        startpunkty = y * TEXTUR.kachelgroesse;
     }
     public void update()
         {   
@@ -27,6 +30,7 @@ public class FEUER extends BEWEGTESOBJEKT
         }
     public int getFeuerX() { return x; }
     public int getFeuerY() { return y; }
+    
     public void FeuerBewegung()
     {
         if (coodaxis == 'x')
@@ -44,19 +48,20 @@ public class FEUER extends BEWEGTESOBJEKT
                         moveok = false;
                     }
                 }
-            } 
-        int gegangen = 0;
+                
+            
+               if (bewegungsrichtung == 1 && x >= startpunktx + 80) {
+                   
+                   moveok = false;
+                }
+               if (bewegungsrichtung == -1 && x <= startpunktx - 80) {
+                   
+                   moveok = false;
+                }
+            }
         if(moveok)
             {
                 x = x + 10*bewegungsrichtung;
-                if (x == 40*bewegungsrichtung)
-                {
-                    gegangen = 1;
-                    System.out.println("gegangen: 1");
-                }
-                
-                //}
-                //while (x <= getFeuerX()+TEXTUR.kachelgroesse*bewegungsrichtung);
             }
             else
             {
@@ -81,6 +86,14 @@ public class FEUER extends BEWEGTESOBJEKT
                         moveok = false;
                     }
                 }             
+               if (bewegungsrichtung == 1 && y >= startpunkty + 80) {
+                   
+                   moveok = false;
+                }
+               if (bewegungsrichtung == -1 && y <= startpunkty - 80) {
+                   
+                   moveok = false;
+                }
             } 
         if(moveok)
             {
