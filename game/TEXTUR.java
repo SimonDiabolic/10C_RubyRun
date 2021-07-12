@@ -70,7 +70,7 @@ public class TEXTUR
      
      static BufferedImage lvl1busch1 = IMAGELOADER.loadImage("lvl1busch1");
      static BufferedImage lvl1busch2 = IMAGELOADER.loadImage("lvl1busch2");
-     //static BufferedImage lvl1busch3 = IMAGELOADER.loadImage("lvl1busch3");
+     static BufferedImage lvl1busch3 = IMAGELOADER.loadImage("lvl1busch3");
      static BufferedImage lvl2figur1 = IMAGELOADER.loadImage("lvl2figur1");
      static BufferedImage lvl2figur2 = IMAGELOADER.loadImage("lvl2figur2");
      static BufferedImage lvl2figur3 = IMAGELOADER.loadImage("lvl2figur3");
@@ -92,8 +92,8 @@ public class TEXTUR
      static BufferedImage lvl8totenkopf1 = IMAGELOADER.loadImage("lvl8totenkopf1");
      static BufferedImage lvl8totenkopf2 = IMAGELOADER.loadImage("lvl8totenkopf2");
      static BufferedImage lvl8totenkopf3 = IMAGELOADER.loadImage("lvl8totenkopf3");
-    //static BufferedImage lvl9telea1 = IMAGELOADER.loadImage("lvl9telea1");
-    //static BufferedImage lvl9telea2 = IMAGELOADER.loadImage("lvl9telea2");
+     static BufferedImage lvl9tele1 = IMAGELOADER.loadImage("lvl9tele1");
+     static BufferedImage lvl9tele2 = IMAGELOADER.loadImage("lvl9tele2");
     //static BufferedImage lvl9telea3 = IMAGELOADER.loadImage("lvl9telea3");
      static BufferedImage lvl10vulkan1 = IMAGELOADER.loadImage("lvl10vulkan1");
      static BufferedImage lvl10vulkan2 = IMAGELOADER.loadImage("lvl10vulkan2");

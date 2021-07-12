@@ -21,7 +21,7 @@ public class LEVELWAHL
     public LEVELWAHL()
     {
         buttons = new game.BUTTON[10];
-        BufferedImage[] lvl1 = {TEXTUR.lvl1busch1,TEXTUR.lvl1busch2,TEXTUR.lvl1busch1};
+        BufferedImage[] lvl1 = {TEXTUR.lvl1busch1,TEXTUR.lvl1busch2,TEXTUR.lvl1busch3};
         BufferedImage[] lvl2 = {TEXTUR.lvl2figur1,TEXTUR.lvl2figur2,TEXTUR.lvl2figur3};
         BufferedImage[] lvl3 = {TEXTUR.lvl3rubin1, TEXTUR.lvl3rubin2,TEXTUR.lvl3rubin2};
         BufferedImage[] lvl4 = {TEXTUR.lvl4schlange1, TEXTUR.lvl4schlange2,TEXTUR.lvl4schlange3};
@@ -33,7 +33,7 @@ public class LEVELWAHL
         BufferedImage[] lvl6 = {TEXTUR.lvl6stein1, TEXTUR.lvl6stein2,TEXTUR.lvl6stein3};
         BufferedImage[] lvl7 = {TEXTUR.lvl7snake1, TEXTUR.lvl7snake2,TEXTUR.lvl7snake2};
         BufferedImage[] lvl8 = {TEXTUR.lvl8totenkopf1, TEXTUR.lvl8totenkopf2,TEXTUR.lvl8totenkopf3};
-        BufferedImage[] lvl9 = {TEXTUR.x1, TEXTUR.x2,TEXTUR.x2};
+        BufferedImage[] lvl9 = {TEXTUR.lvl9tele1, TEXTUR.lvl9tele2,TEXTUR.lvl9tele2};
         BufferedImage[] lvl10 ={TEXTUR.lvl10vulkan1, TEXTUR.lvl10vulkan2,TEXTUR.lvl10vulkan3};
         
         Font f = new Font("SansSerif",Font.BOLD + Font.ITALIC/*Fett/Kursiv*/,25/*Schriftgröße*/);
