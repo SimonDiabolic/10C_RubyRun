@@ -8,8 +8,8 @@ public class RUBIN extends BEWEGTESOBJEKT
     RUBIN (int x, int y, boolean BossLevel)
     {
         super(x,y);
-          if (BossLevel) look = TEXTUR.RubinBoss;
-            else look = TEXTUR.rubin;
+         if(WELT.bosslevel) look = TEXTUR.RubinBoss;
+        look = TEXTUR.rubin;
     }
     public void update()
     {

@@ -80,7 +80,9 @@ public class PAUSE
               if (i == 0){FRAME.spielzustand = 2;FRAME.pause = null;}
               else if (i == 1){FRAME.spielzustand = 1; FRAME.pause = null;FRAME.welt = null;
                   if(WELT.tutorial) 
-                  WELT.tutorial = false;}
+                  WELT.tutorial = false;
+                if(WELT.bosslevel) 
+                  WELT.bosslevel = false;}
           }
       }
     }

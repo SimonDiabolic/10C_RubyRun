@@ -81,7 +81,7 @@ public class LEVELWAHL
               else if (i == 6) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
               else if (i == 7) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
               else if (i == 8) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
-              else if (i == 9) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);}
+              else if (i == 9) {level=("lvl/level"+ (i+1)); game.FRAME.spielzustand = 2;currentLevel=(i+1);WELT.bosslevel = true;}
           }
       }
     }

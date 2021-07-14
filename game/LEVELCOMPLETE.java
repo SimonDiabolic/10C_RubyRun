@@ -82,7 +82,9 @@ public class LEVELCOMPLETE
               else if (i == 1){FRAME.spielzustand = 2;FRAME.fmenu = null;} //restartet das level
               else if (i == 2){FRAME.spielzustand = 1; FRAME.fmenu = null;
                   if(WELT.tutorial) 
-                  WELT.tutorial = false;} //Geht zur Levelwahl
+                  WELT.tutorial = false;
+                if(WELT.bosslevel) 
+                  WELT.bosslevel = false;} //Geht zur Levelwahl
           }
       }
     }

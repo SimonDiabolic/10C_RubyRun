@@ -11,18 +11,19 @@ public class KACHEL
     private BufferedImage look;
     
     
-    public KACHEL(int x, int y, int lookid, boolean BossLevel)
+    public KACHEL(int x, int y, int lookid)
     {
         this.x = x; 
         this.y = y;
         this.lookid = lookid;
         if(lookid == 0) {
-                if (BossLevel) look = TEXTUR.WegBoss;
-                else look = TEXTUR.ranke;
+            look = TEXTUR.ranke;
             }
-        if(lookid == 1){ 
-            if (BossLevel) look = TEXTUR.WandBoss;
-            else look = TEXTUR.wandFuellelement;}
+        if(lookid == 1)
+        { 
+            look = TEXTUR.wandFuellelement;
+            if(WELT.bosslevel) look = TEXTUR.WandBoss;
+        }
         if(lookid == 2)
          look = TEXTUR.spawn;
         if(lookid == 3)
