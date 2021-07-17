@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
-
+import java.util.concurrent.TimeUnit;
 public class FEUER extends BEWEGTESOBJEKT
 {
     int bewegungsrichtung;
@@ -30,9 +30,13 @@ public class FEUER extends BEWEGTESOBJEKT
         }
     public int getFeuerX() { return x; }
     public int getFeuerY() { return y; }
-    
+    public void Warten()
+    {
+        
+    }
     public void FeuerBewegung()
     {
+      
         if (coodaxis == 'x')
         {int nextx = x / TEXTUR.kachelgroesse + bewegungsrichtung;
         int nexty = y / TEXTUR.kachelgroesse ;   
@@ -48,25 +52,17 @@ public class FEUER extends BEWEGTESOBJEKT
                         moveok = false;
                     }
                 }
-                
-            
                if (bewegungsrichtung == 1 && x >= startpunktx + 80) {
-                   
                    moveok = false;
                 }
                if (bewegungsrichtung == -1 && x <= startpunktx - 80) {
-                   
                    moveok = false;
                 }
             }
         if(moveok)
-            {
-                x = x + 10*bewegungsrichtung;
-            }
+            {x = x + 10*bewegungsrichtung;}
             else
-            {
-                bewegungsrichtung = bewegungsrichtung*-1;
-            }
+            {bewegungsrichtung = bewegungsrichtung*-1;}
         }
         if (coodaxis == 'y')
         {
@@ -87,33 +83,34 @@ public class FEUER extends BEWEGTESOBJEKT
                     }
                 }             
                if (bewegungsrichtung == 1 && y >= startpunkty + 80) {
-                   
                    moveok = false;
                 }
                if (bewegungsrichtung == -1 && y <= startpunkty - 80) {
-                   
                    moveok = false;
-                }
-            } 
+                }} 
         if(moveok)
-            {
-                y = y + 10*bewegungsrichtung;
-            }
+            { y = y + 10*bewegungsrichtung;}
             else
-            {
-                bewegungsrichtung = bewegungsrichtung*-1;
-            }
+            {bewegungsrichtung = bewegungsrichtung*-1;}
         }
+        /**if (x==startpunktx&&y==startpunkty)
+        {
+            try
+            {
+                TimeUnit.SECONDS.sleep(2);
+            }
+            catch (java.lang.InterruptedException ie)
+            {
+                ie.printStackTrace();
+            }
+        }**/
     }
+    
     public boolean SpielerAufFeuer()
         {
          if (COLLISION.RechteckZuRechteck(SPIELER.getXPos(),SPIELER.getYPos(),10,10,x,y,10,10))
-            {
-                return true;
-            }
+            {return true;}
             else
-            {
-                return false;
-            }
+            {return false;}
         }
 }

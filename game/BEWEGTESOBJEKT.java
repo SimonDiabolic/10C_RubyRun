@@ -49,6 +49,7 @@ public abstract class BEWEGTESOBJEKT
     public boolean SchlangeSchlaegtSpieler(){return false;}
     public boolean SchluesselCollection(){return false;}
     public char getType () {return type;}
+    public boolean SpielerAufFeuer() {return false;}
     public void draw(Graphics g)
     {
      g.drawImage(look, x, y, null);

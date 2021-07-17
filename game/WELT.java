@@ -235,7 +235,7 @@ public class WELT
             SpielerHatKey = i;
          }
          
-         if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler())
+         if (i.SpielerAufStein() || i.SchlangeSchlaegtSpieler()|| i.SpielerAufFeuer())
          {
              damage++;
              if (damage == 1)
