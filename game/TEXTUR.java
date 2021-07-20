@@ -106,6 +106,8 @@ public class TEXTUR
     static BufferedImage RubinBoss = IMAGELOADER.loadImage("RubinBoss");
     static BufferedImage BuschBoss = IMAGELOADER.loadImage("BuschBoss");
     static BufferedImage SchlangeBoss = IMAGELOADER.loadImage("SchlangeBoss");
+    static BufferedImage SaphirBoss = IMAGELOADER.loadImage("SaphirBoss");
+    static BufferedImage barBoss = IMAGELOADER.loadImage("barBoss");
     /*
      * Gibt die Kachelgröße, gemessen an der Höhe des Kachelbildes aus
      */  
